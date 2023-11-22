@@ -1,0 +1,47 @@
+CEO
+	->creeaza conturi pentru admini
+	->angajeaza admini si concediaza
+	->schimba salariul la admini
+	->verifica profitul
+	->verifica rata de proiecte realizate/neterminate
+	->face promovari bazate pe cerere(aici la cerere vor fi campuri cu salariu, tip user, procentaj proiecte, total proiecte, vechime)
+	->creeaza cont de user
+	->modifica conturi pentru toata lumea
+
+Sef pe sectie
+	->angajeaza plebi
+	->asigneaza proiecte (adica verifica cererea de proiect de la client si il adauga in baza de date
+	->da note la proiecte
+	->schimba salariul in functie de note
+	->asigneaza team leader pe proiecte
+	->trimite proiectul la team leader-ul destinat acestui proiect(adica daca echipa face front => primesc proiect de front)
+	->poate vizualiza toate echipele
+	->vizualizeaza proiectele si stadiul in care sunt(vom da posibilitatea team leader-ului sa schimbe procentajul in care se afla proiectul)
+	->pune un termen limita pe proiect
+	->elimina proiecte nedorite / terminate
+	->verifica daca proiectele sunt terminate(adica daca tema leader-ul le-a pus pe 100%)
+	->poate propune promovari
+	->verifica daca sunt cereri de mariri de la plebi
+	->modifica conturi la plebi
+
+TeamLeader(este ales dintre plebi)
+	->isi alege echipa
+	->poate elimina si adauga oameni in echipa
+	->poate vizualiza echipa
+	->adauga procentaj la realizare proiect
+	->verifica pentru fiecare daca si-a terminat munca(tot procentaje)
+	->daca toti si-au terminat treaba, pune proiectul pe 100%
+
+Pleb
+	->face cerere la sef pentru marire
+	->scrie cat la suta din proiect a termiat
+	->poate vizualiza proiectul in care este
+	->poate vizualiza echipa din care face parte
+	
+Client
+	->isi creeaza cont(putem trimite ceva confirmare pe mail daca vreti sau putem face la CEO sa le faca cont, gen ei sa faca o cerere sau cv de genu unde sa iti scrie datele)
+	->cere proiect(va avea un buton unde va putea vizualiza statusul proiectului, adica daca a fost respins sau in ce stadiu este)
+	(daca suntem smecheri facem si de ala de refiew, da nu cred ca ne bagam la de astea)
+	
+	
+	

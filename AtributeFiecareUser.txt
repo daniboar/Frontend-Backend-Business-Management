@@ -1,0 +1,13 @@
+CEO : o sa fie un user creat automat, nu se mai poate face alt cont cu CEO
+	-> id
+	-> email
+	-> telefon
+Sef : -> id
+	-> email
+	-> salariu
+	->telefon
+
+team leader -> id 
+		-> id (pleb)
+	-> id echipa
+
