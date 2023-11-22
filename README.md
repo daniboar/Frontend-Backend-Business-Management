@@ -1,6 +1,6 @@
 # PENTRU ERORI LA LANSAREA APLICATIEI 
 
-Porneste un terminat si scrie: $env:NODE_OPTIONS = "--openssl-legacy-provider"
+Porneste un terminal si scrie: $env:NODE_OPTIONS = "--openssl-legacy-provider"
 
 # Getting Started with Create React App
 
