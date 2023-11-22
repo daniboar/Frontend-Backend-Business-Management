@@ -1,52 +1,39 @@
 import React, { useState } from 'react';
 import Welcome from './Welcome';
 import LoginForm from './LogIn';
-import Modal from 'react-modal';
+import CV from './CV';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showCVModal, setShowCVModal] = useState(false);
 
   const handleLoginClick = () => {
     setShowLogin(true);
+    setShowCVModal(false);
   };
 
   const handleBackClick = () => {
     setShowLogin(false);
+    setShowCVModal(false);
   };
 
   const handleApplyCVClick = () => {
-      setIsModalOpen(true);
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  }
-
-
+    setShowCVModal(true);
+    setShowLogin(false);
+  };
 
   return (
     <div className="App">
       {showLogin ? (
-        <LoginForm onBackClick={handleBackClick}/>
+        <LoginForm onBackClick={handleBackClick} />
+      ) : showCVModal ? (
+        <CV onBackClick={handleBackClick} />
       ) : (
-        <Welcome 
-        onLoginClick={handleLoginClick} 
-        onApplyCVClick ={handleApplyCVClick}/>    
+        <Welcome
+          onLoginClick={handleLoginClick}
+          onApplyCVClick={handleApplyCVClick}
+        />
       )}
-      <Modal
-        isOpen ={isModalOpen}
-        onRequestClose = {closeModal}
-        contentLabel = "CV adaugat cu sucess"
-      >
-        <h1>CV
-          <p>Nume: Boar</p>
-            <p> Prenume: Daniel-Ioan </p>
-             <p>Email: daniboar@yahoo.com</p>
-             <p>Domeniu: IT</p>
-        </h1>
-        <button onClick = {closeModal}>Inchide</button>
-      </Modal>
     </div>
   );
 }

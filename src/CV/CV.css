@@ -1,0 +1,55 @@
+/* CV.css */
+
+#cvform {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================
+   Subliniat Titlu
+   ===================== */
+#headerTitle {
+  color: #333;
+  text-decoration: underline; /* Am adăugat această linie pentru a sublinia textul */
+  font-style: bold;
+  font-style: italic;
+  text-decoration-color: rgb(34,193,195);
+}
+
+.row {
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px; /* Dimensiunea fontului pentru label-uri */
+}
+
+input {
+  padding: 8px;
+  width: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px; /* Adaugă această linie pentru a micșora dimensiunea fontului pentru textfield-uri */
+}
+
+button {
+  padding: 10px;
+  background: rgb(34,193,195);
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.25s ease-out;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
