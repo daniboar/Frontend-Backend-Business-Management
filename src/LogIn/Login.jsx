@@ -1,11 +1,12 @@
 import React from 'react';
 import './Login.css';
 
-const LoginForm = () => {
+const LoginForm = ({ onBackClick}) => {
   return (
     <div id="loginform">
       <FormHeader title="Login" />
       <Form />
+      <BackButton onBackClick={onBackClick} />
     </div>
   );
 };
@@ -32,5 +33,11 @@ const FormInput = (props) => (
     <input type={props.type} placeholder={props.placeholder} />
   </div>
 );
+
+const BackButton = ({onBackClick}) => (
+  <div id = "button" className="row">
+    <button onClick={onBackClick}>HomePage</button>
+  </div>
+)
 
 export default LoginForm;

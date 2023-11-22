@@ -1,0 +1,43 @@
+/* Restul stilurilor pentru container */
+.welcome-container {
+    text-align: center;
+    padding: 50px;
+    margin: 150px auto;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #f8f8f8;
+    position: relative; /* Adaugat pentru pozitionare absoluta a logo-ului */
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  p {
+    color: #555;
+    font-size: 18px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .logo {
+    max-width: 10%; /* Asigură că logo-ul nu depășește lățimea containerului */
+    position: absolute; /* Așează logo-ul în partea de jos a containerului */
+    right: 10px;
+    top: 10px;
+  }
+  

@@ -9,7 +9,7 @@ body {
 
 #loginform {
   max-width: 500px;
-  min-width: 300px;
+  min-width: 400px;
   max-height: 700px;
   width: 30%;
   height: 60%;
@@ -45,8 +45,6 @@ body {
   transition: box-shadow 0.2s ease-in;
 }
 
-/* ... rest of your styles ... */
-
 
 .row input:focus{
    box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
@@ -62,6 +60,7 @@ body {
 .row input:focus::-webkit-input-placeholder{
   opacity: 0;
 }
+
 
 .row label{
   align-self: start;
@@ -89,7 +88,7 @@ body {
 }
 
 #button{
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 #iconGroup{
