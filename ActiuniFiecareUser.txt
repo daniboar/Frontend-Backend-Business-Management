@@ -41,7 +41,7 @@ Pleb
 Client
 	->isi creeaza cont(putem trimite ceva confirmare pe mail daca vreti sau putem face la CEO sa le faca cont, gen ei sa faca o cerere sau cv de genu unde sa iti scrie datele)
 	->cere proiect(va avea un buton unde va putea vizualiza statusul proiectului, adica daca a fost respins sau in ce stadiu este)
-	(daca suntem smecheri facem si de ala de refiew, da nu cred ca ne bagam la de astea)
+	
 	
 	
 	
