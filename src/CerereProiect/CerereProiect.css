@@ -1,0 +1,51 @@
+#cerereProiectForm {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#headerTitle {
+    color: black; /* Schimbarea culorii la negru */
+    text-decoration: underline;
+    font-style: bold;
+    font-style: italic;
+    text-decoration-color: rgb(34, 193, 195);
+    font-size: 24px; /* Mărirea dimensiunii fontului */
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

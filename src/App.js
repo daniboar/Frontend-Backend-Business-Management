@@ -2,36 +2,50 @@ import React, { useState } from 'react';
 import Welcome from './Welcome';
 import LoginForm from './LogIn';
 import CV from './CV';
+import CerereProiect from './CerereProiect';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [showCVModal, setShowCVModal] = useState(false);
+  const [showCerereProiect, setShowCerereProiect] = useState(false);
 
-  const handleLoginClick = () => {
+  const handleLoginButtonClick = () => {
     setShowLogin(true);
     setShowCVModal(false);
+    setShowCerereProiect(false);
   };
 
-  const handleBackClick = () => {
+  const handleApplyCVButtonClick = () => {
+    setShowCVModal(true);
+    setShowLogin(false);
+    setShowCerereProiect(false);
+  };
+
+  const handleApplyProjectButtonClick = () => {
+    setShowCerereProiect(true);
     setShowLogin(false);
     setShowCVModal(false);
   };
 
-  const handleApplyCVClick = () => {
-    setShowCVModal(true);
+  const handleBackButtonClick = () => {
     setShowLogin(false);
+    setShowCVModal(false);
+    setShowCerereProiect(false);
   };
 
   return (
     <div className="App">
       {showLogin ? (
-        <LoginForm onBackClick={handleBackClick} />
+        <LoginForm onBackClick={handleBackButtonClick} />
       ) : showCVModal ? (
-        <CV onBackClick={handleBackClick} />
+        <CV onBackClick={handleBackButtonClick} />
+      ) : showCerereProiect ? (
+        <CerereProiect onBackClick={handleBackButtonClick} />
       ) : (
         <Welcome
-          onLoginClick={handleLoginClick}
-          onApplyCVClick={handleApplyCVClick}
+          onLoginClick={handleLoginButtonClick}
+          onApplyCVClick={handleApplyCVButtonClick}
+          onApplyProjectClick={handleApplyProjectButtonClick}
         />
       )}
     </div>
