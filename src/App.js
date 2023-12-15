@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Welcome from './Welcome/Welcome.jsx';
-//import LoginForm from './LogIn/Login.jsx';
+import Welcome from './Welcome/Welcome.jsx';import LoginForm from './LogIn/Login.jsx';
 import CV from './CV/CV.jsx';
 import CerereProiect from './CerereProiect/CerereProiect.jsx';
-import CEO from './LogIn/CEO/CEO.jsx';
+//import CEO from './LogIn/CEO/CEO.jsx';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -37,7 +36,7 @@ function App() {
   return (
     <div className="App">
       {showLogin ? (
-        <CEO onBackClick={handleBackButtonClick} />
+        <LoginForm onBackClick={handleBackButtonClick} />
       ) : showCVModal ? (
         <CV onBackClick={handleBackButtonClick} />
       ) : showCerereProiect ? (

@@ -13,19 +13,20 @@
     font-style: italic;
     text-decoration-color: rgb(34, 193, 195);
     font-size: 24px; /* Mărirea dimensiunii fontului */
+    text-align: center;
 }
 
-.row {
+#row {
     margin-bottom: 10px;
 }
 
-label {
+#label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-input {
+#input {
     padding: 8px;
     width: 100%;
     margin-bottom: 10px;
@@ -44,8 +45,4 @@ button {
     cursor: pointer;
     transition: opacity 0.25s ease-out;
     font-weight: bold;
-}
-
-button:hover {
-    background-color: #0056b3;
 }

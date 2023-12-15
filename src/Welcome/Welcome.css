@@ -1,4 +1,10 @@
 /* Restul stilurilor pentru container */
+body {
+  background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+}
 .welcome-container {
     text-align: center;
     padding: 50px;
@@ -9,18 +15,21 @@
     max-width: 800px;
     background-color: #f8f8f8;
     position: relative; /* Adaugat pentru pozitionare absoluta a logo-ului */
+    display: flex;
+  flex-direction: column; /* Afișează butoanele unul sub altul */
+  align-items: center; /* Aliniază butoanele în centrul containerului */
   }
   
-  h1 {
+  .welcome-h1 {
     color: #333;
   }
   
-  p {
+  .welcome-p {
     color: #555;
     font-size: 18px;
   }
   
-  button {
+  .welcome-button {
     background-color: #4CAF50;
     color: white;
     border: none;
