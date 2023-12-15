@@ -8,11 +8,11 @@
 		<version>3.2.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>project</artifactId>
+	<groupId>proiect_spring</groupId>
+	<artifactId>Proiect_IS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>project</name>
-	<description>Project IS</description>
+	<name>Proiect_IS</name>
+	<description>Proiect pentru IS</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

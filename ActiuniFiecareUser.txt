@@ -32,15 +32,14 @@ TeamLeader(este ales dintre plebi)
 	->verifica pentru fiecare daca si-a terminat munca(tot procentaje)
 	->daca toti si-au terminat treaba, pune proiectul pe 100%
 
-Pleb
-	->face cerere la sef pentru marire
+Angajat
 	->scrie cat la suta din proiect a termiat
-	->poate vizualiza proiectul in care este
-	->poate vizualiza echipa din care face parte
+	->poate vizualiza proiectul in care este dupa id-ul proiectului
+	->poate vizualiza echipa din care face parte dupa id-ul echipei
+	->i se poate mari salariul
 	
 Client
-	->isi creeaza cont(putem trimite ceva confirmare pe mail daca vreti sau putem face la CEO sa le faca cont, gen ei sa faca o cerere sau cv de genu unde sa iti scrie datele)
-	->cere proiect(va avea un buton unde va putea vizualiza statusul proiectului, adica daca a fost respins sau in ce stadiu este)
+	-> are proiecte si poate verifica procentul proiectelor
 	
 	
 	

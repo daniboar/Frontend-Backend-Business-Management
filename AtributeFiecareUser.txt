@@ -11,3 +11,7 @@ team leader -> id
 		-> id (pleb)
 	-> id echipa
 
+
+client -> id, nume, prenume, email, parola
+angajat -> id, nume, prenume, email, parola, salariu, procentajProiect, echipaId, proiectId
+
