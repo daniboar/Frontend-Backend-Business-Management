@@ -49,7 +49,6 @@
   transition: opacity 0.25s ease-out;
 }
 
-.row input:hover::-webkit-input-placeholder,
 .row input:focus::-webkit-input-placeholder{
   opacity: 0;
 }

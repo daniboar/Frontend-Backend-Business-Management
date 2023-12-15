@@ -6,7 +6,7 @@ function Welcome({ onLoginClick, onApplyCVClick, onApplyProjectClick }) {
     <div className="welcome-container">
       <h1>Welcome to Business Management</h1>
       <p>Explore the world of business with us.</p>
-      <div className="button-container">
+      <div className="button-container-welcome">
         <button onClick={onLoginClick}>Login</button>
         <button onClick={onApplyCVClick}>Apply your CV</button>
         <button onClick={onApplyProjectClick}>Cerere Proiect</button>
