@@ -1,11 +1,11 @@
 import React from 'react';
-import './CEO.css';
+import  './CEO.css'; // Asigurați-vă că calea este corectă
 
 const CEO = ({ onLogoutClick }) => {
   return (
-    <div className="ceo-page">
+    <div className={'ceo-page'}>
       <h1>Welcome, CEO!</h1>
-      <div className="button-container">
+      <div className={'button-container'}>
         <button>Verificare Proiecte</button>
         <button>Promovari</button>
         <button>Modificare salariu</button>
