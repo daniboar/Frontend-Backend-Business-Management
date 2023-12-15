@@ -4,6 +4,10 @@ import Welcome from './Welcome/Welcome.jsx';
 import CV from './CV/CV.jsx';
 import CerereProiect from './CerereProiect/CerereProiect.jsx';
 import Angajat from './LogIn/Angajat/Angajat.jsx';
+import TeamLeader from './LogIn/TeamLeader/TeamLeader.jsx';
+import Client from './LogIn/Client/Client.jsx';
+import SefSectie from './LogIn/SefSectie/SefSectie.jsx';
+
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -37,7 +41,7 @@ function App() {
   return (
     <div className="App">
       {showLogin ? (
-        <Angajat onBackClick={handleBackButtonClick} />
+        <TeamLeader onBackClick={handleBackButtonClick} />
       ) : showCVModal ? (
         <CV onBackClick={handleBackButtonClick} />
       ) : showCerereProiect ? (

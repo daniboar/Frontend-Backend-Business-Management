@@ -9,8 +9,8 @@ const Angajat = ({ onLogoutClick }) => {
   return (
     <div className="angajat-page">
       <div className="container">
-        <FormHeader title="Welcome, Employee!" />
-        <FormTitle title="Explore Your Work Opportunities" />
+        <FormHeader title="Bun venit, angajatule!" />
+        <FormTitle title="Exploreaza munca si oportunitatile" />
         <div className="button-container">
           <button>Cerere Marire</button>
           <button>Procentaj Proiect</button>

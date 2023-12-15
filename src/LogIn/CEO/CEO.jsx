@@ -9,8 +9,8 @@ const CEO = ({ onLogoutClick }) => {
   return (
     <div className="ceo-page">
       <div className="container">
-        <FormHeader title="Welcome, CEO!" />
-        <FormTitle title="Manage Your Projects and Team" />
+        <FormHeader title="Bun venit, CEO!" />
+        <FormTitle title="Gestioneaza proiectele si echipele" />
         <div className="button-container-ceo">
           <button>Verificare Proiecte</button>
           <button>Promovari</button>

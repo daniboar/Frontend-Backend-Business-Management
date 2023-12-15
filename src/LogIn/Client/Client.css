@@ -1,4 +1,4 @@
-.client-page {
+  .client-page {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
@@ -6,18 +6,26 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  h1 {
-    color: #333;
+  .container {
+    background-color: white; /* Adăugat pentru a face containerul alb */
+    padding: 20px; /* Poți ajusta spațiul interior al containerului după necesități */
+    border-radius: 10px; /* Adăugat pentru a rotunji colțurile containerului */
+  }
+  
+  .button-container-client {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spațiu între butoane */
+  }
+
+  #formTitle {
+    color: black; /* Schimbarea culorii la negru */
+    font-size: 18px;
     text-align: center;
+    margin-bottom: 20px;
   }
   
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  button {
+  .button-container-client button {
     padding: 10px;
     background: rgb(34, 193, 195);
     background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
@@ -29,7 +37,7 @@
     font-weight: bold;
   }
   
-  button:hover {
+  .button-container-client button:hover {
     background-color: #0056b3;
   }
   
