@@ -30,6 +30,11 @@ public class ProiectController {
         return proiectService.getProjectById(id);
     }
 
+    @GetMapping("/echipa/{echipaId}")
+    public List<Proiect> getProjectsByEchipaId(@PathVariable int echipaId) {
+        return proiectService.getProjectsByEchipaId(echipaId);
+    }
+
     @PostMapping
     public Proiect saveProject(@RequestBody Proiect proiect) {
         return proiectService.saveProject(proiect);

@@ -3,8 +3,10 @@ package proiect_spring.Proiect_IS.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proiect_spring.Proiect_IS.model.Angajat;
+import proiect_spring.Proiect_IS.model.Echipa;
 import proiect_spring.Proiect_IS.model.Proiect;
 import proiect_spring.Proiect_IS.repository.AngajatRepository;
+import proiect_spring.Proiect_IS.repository.EchipaRepository;
 import proiect_spring.Proiect_IS.repository.ProiectRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,9 @@ public class ProiectService {
 
     @Autowired
     private AngajatRepository angajatRepository;
+
+    @Autowired
+    private EchipaRepository echipaRepository;
 
     private static final Logger log = LoggerFactory.getLogger(ProiectService.class);
 
@@ -63,4 +68,9 @@ public class ProiectService {
         }
         return proiect;
     }
+
+    public List<Proiect> getProjectsByEchipaId(int echipaId){
+        return proiectRepository.findByEchipe_Id(echipaId);
+    }
+
 }

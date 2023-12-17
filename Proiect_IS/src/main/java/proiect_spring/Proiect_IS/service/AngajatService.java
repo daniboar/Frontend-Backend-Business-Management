@@ -42,11 +42,7 @@ public class AngajatService {
         return angajatRepository.save(existingAngajat);
     }
 
-    public Angajat assignAngajatToEchipa(int angajatId, int echipaId) {
-        Angajat existingAngajat = angajatRepository.findById(angajatId)
-                .orElseThrow(() -> new IllegalArgumentException("Angajatul nu a fost găsit!"));
-
-        existingAngajat.setEchipaId(echipaId);
-        return angajatRepository.save(existingAngajat);
+    public List<Angajat> getAngajatiByEchipaId(int echipaId) {
+        return angajatRepository.findByEchipa_Id(echipaId);
     }
 }

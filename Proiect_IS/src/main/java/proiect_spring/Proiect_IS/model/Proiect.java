@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties({"cereriProiect", "client", "angajati"})
+@JsonIgnoreProperties({"cereriProiect", "client", "angajati", "echipe"})
 public class Proiect {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,9 @@ public class Proiect {
 
     @OneToMany(mappedBy = "proiect")
     private List<CerereProiect> cereriProiect;
+
+    @OneToMany(mappedBy = "proiect", cascade = CascadeType.ALL)
+    private List<Echipa> echipe;
 
     public int getId() {
         return id;
@@ -81,5 +84,13 @@ public class Proiect {
 
     public void setAngajati(List<Angajat> angajati) {
         this.angajati = angajati;
+    }
+
+    public List<Echipa> getEchipe() {
+        return echipe;
+    }
+
+    public void setEchipe(List<Echipa> echipe) {
+        this.echipe = echipe;
     }
 }

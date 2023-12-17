@@ -1,10 +1,11 @@
 package proiect_spring.Proiect_IS.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
-@JsonIgnoreProperties({"proiectAsignat"})
+@JsonIgnoreProperties({"proiectAsignat", "echipa"})
 public class Angajat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +33,10 @@ public class Angajat {
     @Column
     private int procentajProiect;
 
-    @Column
-    private int echipaId;
+    @ManyToOne
+    @JoinColumn(name = "echipa_id")
+    private Echipa echipa;
+
 
     public int getId() {
         return id;
@@ -103,11 +106,16 @@ public class Angajat {
         this.procentajProiect = procentajProiect;
     }
 
-    public int getEchipaId() {
-        return echipaId;
+    public Echipa getEchipa() {
+        return echipa;
     }
 
-    public void setEchipaId(int echipaId) {
-        this.echipaId = echipaId;
+    public void setEchipa(Echipa echipa) {
+        this.echipa = echipa;
+    }
+
+    @JsonProperty("echipaId")
+    public int getEchipaId() {
+        return echipa != null ? echipa.getId() : 0;
     }
 }

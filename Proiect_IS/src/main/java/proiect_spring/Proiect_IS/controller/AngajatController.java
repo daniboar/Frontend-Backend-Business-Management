@@ -28,14 +28,14 @@ public class AngajatController {
         return angajatService.getAngajatById(id).orElse(null);
     }
 
+    @GetMapping("/echipa/{echipaId}")
+    public List<Angajat> getAngajatiByEchipaId(@PathVariable int echipaId) {
+        return angajatService.getAngajatiByEchipaId(echipaId);
+    }
+
     @PutMapping("/{id}/procentaj/{procentaj}") //metoda care imi actualizeaza procentajul unui angajt la un proiect
     public Angajat updateProcentaj(@PathVariable int id, @PathVariable int procentaj) {
         return angajatService.updateProcentaj(id, procentaj);
-    }
-
-    @PutMapping("/{id}/echipa/{echipaId}")  //metoda care imi asigneaza un angajat intr-o echipa
-    public Angajat assignAngajatToEchipa(@PathVariable int id, @PathVariable int echipaId) {
-        return angajatService.assignAngajatToEchipa(id, echipaId);
     }
 
     @PostMapping
@@ -47,4 +47,6 @@ public class AngajatController {
     public void deleteAngajat(@PathVariable int id) {
         angajatService.deleteAngajat(id);
     }
+
+
 }
