@@ -10,7 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/angajati")
 public class AngajatController {
-    private final AngajatService angajatService;
+    @Autowired
+    private AngajatService angajatService;
 
     @Autowired
     public AngajatController(AngajatService angajatService) {

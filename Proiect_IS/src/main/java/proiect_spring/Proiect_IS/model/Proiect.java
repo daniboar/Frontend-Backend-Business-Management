@@ -5,10 +5,11 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties({"cereriProiect", "client"})
+@JsonIgnoreProperties({"cereriProiect", "client", "angajati"})
 public class Proiect {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +24,9 @@ public class Proiect {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
+    @OneToMany(mappedBy = "proiectAsignat", cascade = CascadeType.ALL)
+    private List<Angajat> angajati = new ArrayList<>();
 
     @OneToMany(mappedBy = "proiect")
     private List<CerereProiect> cereriProiect;
@@ -69,5 +73,13 @@ public class Proiect {
 
     public int getClientId() {
         return client != null ? client.getId() : 0;
+    }
+
+    public List<Angajat> getAngajati() {
+        return angajati;
+    }
+
+    public void setAngajati(List<Angajat> angajati) {
+        this.angajati = angajati;
     }
 }
