@@ -37,12 +37,12 @@ public class EchipaController {
         echipaService.deleteEchipa(id);
     }
 
-    @DeleteMapping("/{echipaId}/angajati/{angajatId}")
+    @DeleteMapping("/angajati/{echipaId}/{angajatId}")
     public void stergereAngajat(@PathVariable int echipaId, @PathVariable int angajatId) {
         echipaService.stergereAngajat(echipaId, angajatId);
     }
 
-    @PostMapping("/{echipaId}/asignare_angajat/{angajatId}")
+    @PostMapping("/asignare_angajat/{echipaId}/{angajatId}")
     public void asignareAngajatEchipa(@PathVariable int echipaId, @PathVariable int angajatId) {
         echipaService.asignareAngajatEchipa(echipaId, angajatId);
     }

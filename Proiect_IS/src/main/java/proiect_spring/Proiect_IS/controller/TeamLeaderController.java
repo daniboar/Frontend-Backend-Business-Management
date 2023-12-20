@@ -1,5 +1,8 @@
 package proiect_spring.Proiect_IS.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import proiect_spring.Proiect_IS.model.Angajat;
@@ -26,12 +29,25 @@ public class TeamLeaderController {
         return teamLeaderService.getTeamLeaderById(id);
     }
 
-    @GetMapping("/{teamLeaderId}/echipa")
+
+    @GetMapping("/echipa/{teamLeaderId}")
+    @Operation(summary = "Endpoint pentru a vedea echipa unui TeamLeader", description = "Acest endpoint returnează datele tuturor angajatilor din echipa TeamLeader-ului.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
+            @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error - Eroare internă de server")
+    })
     public List<Angajat> getEchipa(@PathVariable int teamLeaderId) {
         return teamLeaderService.getEchipa(teamLeaderId);
     }
 
-    @GetMapping("/{teamLeaderId}/proiect")
+    @GetMapping("/proiect/{teamLeaderId}")
+    @Operation(summary = "Endpoint pentru a vedea proiectul unui TeamLeader", description = "Acest endpoint returnează datele proiectului unui TeamLeader.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
+            @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error - Eroare internă de server")
+    })
     public Proiect getProiect(@PathVariable int teamLeaderId) {
         return teamLeaderService.getProiect(teamLeaderId);
     }
@@ -41,23 +57,29 @@ public class TeamLeaderController {
         return teamLeaderService.saveTeamLeader(teamLeader);
     }
 
-    @PostMapping("/{teamLeaderId}/echipa/{angajatId}")
+    @PostMapping("/echipa/{teamLeaderId}/{angajatId}")
+    @Operation(summary = "Endpoint pentru ca un TeamLeader sa adauge un angajat in echipa", description = "Acest endpoint primeste id-ul TeamLeaderului si al angajatului")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
+            @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
+            @ApiResponse(responseCode = "500", description = "Internal Server Error - Eroare internă de server")
+    })
     public void adaugaAngajatEchipa(@PathVariable int teamLeaderId, @PathVariable int angajatId) {
         teamLeaderService.adaugaAngajatEchipa(teamLeaderId, angajatId);
     }
 
-    @PostMapping("/{teamLeaderId}/asignare-echipa/{echipaId}")
+    @PostMapping("/asignare-echipa/{teamLeaderId}/{echipaId}")
     public void asignareEchipa(@PathVariable int teamLeaderId, @PathVariable int echipaId) {
         teamLeaderService.asignareEchipa(teamLeaderId, echipaId);
 
     }
 
-    @PostMapping("/{teamLeaderId}/actualizeaza-procentaj")
+    @PostMapping("/actualizeaza-procentaj/{teamLeaderId}")
     public void actualizeazaProcentajTeamLeader(@PathVariable int teamLeaderId) {
         teamLeaderService.actualizeazaProcentajTeamLeader(teamLeaderId);
     }
 
-    @PutMapping("/{teamLeaderId}/proiect/{proiectId}/procentaj/{procentaj}")
+    @PutMapping("/proiect/procentaj/{teamLeaderId}/{proiectId}/{procentaj}")
     public void actualizeazaProcentajProiect(
             @PathVariable int teamLeaderId,
             @PathVariable int proiectId,
@@ -72,11 +94,8 @@ public class TeamLeaderController {
     }
 
 
-    @DeleteMapping("/{teamLeaderId}/echipa/{angajatId}")
+    @DeleteMapping("/echipa/{teamLeaderId}/{angajatId}")
     public void stergeAngajatEchipa(@PathVariable int teamLeaderId, @PathVariable int angajatId) {
         teamLeaderService.stergeAngajatEchipa(teamLeaderId, angajatId);
     }
-
-
-
 }

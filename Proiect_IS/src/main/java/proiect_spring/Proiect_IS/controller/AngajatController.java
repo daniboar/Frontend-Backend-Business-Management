@@ -34,12 +34,12 @@ public class AngajatController {
         return angajatService.getAngajatiByEchipaId(echipaId);
     }
 
-    @PutMapping("/{id}/procentaj/{procentaj}") //metoda care imi actualizeaza procentajul unui angajt la un proiect
+    @PutMapping("/procentaj/{id}/{procentaj}") //metoda care imi actualizeaza procentajul unui angajt la un proiect
     public Angajat updateProcentaj(@PathVariable int id, @PathVariable int procentaj) {
         return angajatService.updateProcentaj(id, procentaj);
     }
 
-    @GetMapping("/{angajatId}/proiect")
+    @GetMapping("/proiect/{angajatId}")
     public Proiect getProiectAngajat(@PathVariable int angajatId) {
         Proiect proiect = angajatService.getProiectAngajat(angajatId);
 

@@ -17,7 +17,7 @@ public class CerereProiectController {
         this.cerereProiectService = cerereProiectService;
     }
 
-    @PutMapping("/{id}/aprobata/{aprobata}")
+    @PutMapping("/aprobata/{id}/{aprobata}")
     public CerereProiect updateAprobata(@PathVariable int id, @PathVariable boolean aprobata) {
         return cerereProiectService.updateAprobata(id, aprobata);
     }

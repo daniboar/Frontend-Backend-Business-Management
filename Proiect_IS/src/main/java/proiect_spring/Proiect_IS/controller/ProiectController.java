@@ -40,12 +40,12 @@ public class ProiectController {
         return proiectService.saveProject(proiect);
     }
 
-    @PutMapping("/{id}/procentaj/{procentaj}") //verificare metoda de actualizare procentaj dat de mine
+    @PutMapping("/procentaj/{id}/{procentaj}") //verificare metoda de actualizare procentaj dat de mine
     public Proiect updateProcentaj(@PathVariable int id, @PathVariable int procentaj) {
         return proiectService.updateProcentaj(id, procentaj);
     }
 
-    @PutMapping("/{id}/actualizeaza_procentaj") //actualizeaza procentajul proiectului in functie de procentajele angajatilor
+    @PutMapping("/actualizeaza_procentaj/{id}") //actualizeaza procentajul proiectului in functie de procentajele angajatilor
     public Proiect actualizeazaProcentajProiect(@PathVariable int id) {
         return proiectService.actualizeazaProcentajProiect(id);
     }
