@@ -1,5 +1,9 @@
 # PENTRU ERORI LA LANSAREA APLICATIEI 
 
+Rulează comanda următoare pentru a instala pachetul react-router-dom:
+# Folosit pentru a da logout
+npm install react-router-dom
+
 Porneste un terminal si scrie: $env:NODE_OPTIONS = "--openssl-legacy-provider"
 
 # Getting Started with Create React App

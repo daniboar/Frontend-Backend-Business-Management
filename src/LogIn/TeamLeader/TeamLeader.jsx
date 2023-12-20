@@ -15,6 +15,8 @@ const TeamLeader = ({ onLogoutClick }) => {
         <div className="button-container-sefSectie">
           <button>Gestiune Echipa</button>
           <button>Gestiune Proiect</button>
+          <button>Propunere Marire</button>
+          <button>Modificare Procentaj proiect</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>

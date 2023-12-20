@@ -1,11 +1,9 @@
-import React from 'react';
-import './CEO.css'; // Asigurați-vă că calea este corectă
+import React, { useEffect } from 'react';
+import './CEO.css';
 
 const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
-
 const FormTitle = (props) => <p id="formTitle">{props.title}</p>;
 
-const CEO = ({ onLogoutClick }) => {
   return (
     <div className="ceo-page">
       <div className="container">
@@ -16,13 +14,11 @@ const CEO = ({ onLogoutClick }) => {
           <button>Promovari</button>
           <button>Modificare salariu</button>
           <button>Vizualizare cererei de proiecte</button>
-          <button onClick={onLogoutClick}>Logout</button>
+          <button>Asignare Team Leader</button>
+          <button>Logout</button>
         </div>
       </div>
     </div>
   );
-};
-
-//<button>Verificare CV-uri</button>
 
 export default CEO;

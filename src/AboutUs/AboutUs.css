@@ -1,0 +1,36 @@
+.about-us-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-container h2 {
+    color: #001f3f; /* Albastru închis */
+    text-decoration: underline;
+  }
+  
+  .title2 {
+    color: #001f3f; /* Roșu */
+    text-decoration: none; /* Eliminăm sublinierea pentru titlurile T2 */
+  }
+  
+  .title2:hover {
+    text-decoration: underline; /* Adăugăm sublinierea la hover pentru titlurile T2 */
+  }
+  
+  #button button {
+    color: black; /* Negru */
+    padding: 10px;
+    background: rgb(34, 193, 195);
+    background: linear-gradient(90deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #button button:hover {
+    background-color: #0056b3;
+  }
