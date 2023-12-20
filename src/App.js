@@ -8,8 +8,8 @@ import CerereProiect from './CerereProiect/CerereProiect.jsx';
 //import Angajat from './LogIn/Angajat/Angajat.jsx';
 //import TeamLeader from './LogIn/TeamLeader/TeamLeader.jsx';
 //import Client from './LogIn/Client/Client.jsx';
-//import SefSectie from './LogIn/SefSectie/SefSectie.jsx';
 //import GestiuneEchipa from './LogIn/TeamLeader/GestiuneEchipa/GestiuneEchipa.jsx';
+//import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMembrii/VizualizareEchipa.jsx'
 
 
 function App() {

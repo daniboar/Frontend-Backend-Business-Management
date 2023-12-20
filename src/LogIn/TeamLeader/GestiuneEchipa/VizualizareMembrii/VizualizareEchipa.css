@@ -1,0 +1,16 @@
+/* VizualizareEchipa.css */
+
+.echipa-title {
+    font-size: 1.8em;
+    color: #333; /* culoarea textului poate fi modificată după preferință */
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    margin-top: 10px;
+  }
+  
+  .text {
+    font-size: 1.5em;
+  }
+  
