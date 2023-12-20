@@ -10,6 +10,7 @@ const GestiuneEchipa = ({ onBackClick }) => {
         <FormHeader title="Gestiunea echipei"/>
         <div className="button-container-echipa">
           <button>Adaugare Membru</button>
+          <button>Stergere Membru</button>
           <button>Vizualizare Echipa</button>
           <button onClick={onBackClick}>Back</button>
         </div>
