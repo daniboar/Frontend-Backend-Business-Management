@@ -42,6 +42,16 @@ public class AngajatService {
         return angajatRepository.save(existingAngajat);
     }
 
+    public Proiect getProiectAngajat(int angajatId) {
+        Optional<Angajat> angajat = getAngajatById(angajatId);
+
+        if (angajat != null) {
+            return angajat.get().getProiectAsignat();
+        }
+
+        return null;
+    }
+
     public List<Angajat> getAngajatiByEchipaId(int echipaId) {
         return angajatRepository.findByEchipa_Id(echipaId);
     }

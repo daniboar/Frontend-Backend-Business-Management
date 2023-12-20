@@ -51,4 +51,21 @@ public class EchipaService {
             angajatRepository.save(angajat);
         }
     }
+
+    public void stergereAngajat(int echipaId, int angajatId) {
+        Echipa echipa = echipaRepository.findById(echipaId).orElse(null);
+        Angajat angajat = angajatRepository.findById(angajatId).orElse(null);
+
+        if (echipa != null && angajat != null) {
+            // Elimină angajatul din echipă
+            List<Angajat> angajatiInEchipa = echipa.getAngajati();
+            angajatiInEchipa.remove(angajat);
+            echipa.setAngajati(angajatiInEchipa);
+            echipaRepository.save(echipa);
+
+            // Actualizează echipa la care este asignat angajatul
+            angajat.setEchipa(null);
+            angajatRepository.save(angajat);
+        }
+    }
 }

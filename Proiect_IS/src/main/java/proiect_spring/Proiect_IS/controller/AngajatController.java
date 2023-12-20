@@ -3,6 +3,7 @@ package proiect_spring.Proiect_IS.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import proiect_spring.Proiect_IS.model.Angajat;
+import proiect_spring.Proiect_IS.model.Proiect;
 import proiect_spring.Proiect_IS.service.AngajatService;
 
 import java.util.List;
@@ -36,6 +37,17 @@ public class AngajatController {
     @PutMapping("/{id}/procentaj/{procentaj}") //metoda care imi actualizeaza procentajul unui angajt la un proiect
     public Angajat updateProcentaj(@PathVariable int id, @PathVariable int procentaj) {
         return angajatService.updateProcentaj(id, procentaj);
+    }
+
+    @GetMapping("/{angajatId}/proiect")
+    public Proiect getProiectAngajat(@PathVariable int angajatId) {
+        Proiect proiect = angajatService.getProiectAngajat(angajatId);
+
+        if (proiect != null) {
+            return proiect;
+        } else {
+            return null;
+        }
     }
 
     @PostMapping
