@@ -10,3 +10,4 @@ import java.util.List;
 public interface CerereProiectRepository extends JpaRepository<CerereProiect, Integer> {
     List<CerereProiect> findByAprobata(boolean aprobata);
 }
+

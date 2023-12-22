@@ -37,12 +37,6 @@ public class TeamLeader {
     @JoinColumn(name = "echipa_id")
     private Echipa echipa;
 
-    // Metodă specifică pentru a gestiona/vizualiza echipa
-    public void gestioneazaEchipa() {
-        // Implementează logica specifică pentru gestionarea echipei
-        System.out.println("TeamLeader-ul " + nume + " " + prenume + " gestionează echipa.");
-    }
-
     public int getId() {
         return id;
     }

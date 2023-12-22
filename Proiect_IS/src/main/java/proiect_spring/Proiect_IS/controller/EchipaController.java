@@ -1,5 +1,6 @@
 package proiect_spring.Proiect_IS.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,32 +19,38 @@ public class EchipaController {
         this.echipaService = echipaService;
     }
     @GetMapping
+    @Operation(summary = "Endpoint pentru a vedea datele tuturor echipelor.")
     public List<Echipa> getAllEchipe() {
         return echipaService.getAllEchipe();
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Endpoint pentru a vedea datele unei echipe.")
     public Echipa getEchipaById(@PathVariable int id) {
         return echipaService.getEchipaById(id);
     }
 
     @PostMapping
+    @Operation(summary = "Endpoint pentru a adauga o noua echipa.")
     public Echipa saveEchipa(@RequestBody Echipa echipa) {
         return echipaService.saveEchipa(echipa);
     }
 
+    @PostMapping("/asignare_angajat/{echipaId}/{angajatId}")
+    @Operation(summary = "Endpoint pentru a adauga un angajat intr-o echipa.")
+    public void asignareAngajatEchipa(@PathVariable int echipaId, @PathVariable int angajatId) {
+        echipaService.asignareAngajatEchipa(echipaId, angajatId);
+    }
+
     @DeleteMapping("/{id}")
+    @Operation(summary = "Endpoint pentru a sterge o echipa.")
     public void deleteEchipa(@PathVariable int id) {
         echipaService.deleteEchipa(id);
     }
 
     @DeleteMapping("/angajati/{echipaId}/{angajatId}")
+    @Operation(summary = "Endpoint pentru a sterge un angajat dintr-o echipa.")
     public void stergereAngajat(@PathVariable int echipaId, @PathVariable int angajatId) {
         echipaService.stergereAngajat(echipaId, angajatId);
-    }
-
-    @PostMapping("/asignare_angajat/{echipaId}/{angajatId}")
-    public void asignareAngajatEchipa(@PathVariable int echipaId, @PathVariable int angajatId) {
-        echipaService.asignareAngajatEchipa(echipaId, angajatId);
     }
 }

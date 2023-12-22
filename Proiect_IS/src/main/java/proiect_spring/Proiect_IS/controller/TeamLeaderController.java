@@ -20,18 +20,20 @@ public class TeamLeaderController {
     private TeamLeaderService teamLeaderService;
 
     @GetMapping
+    @Operation(summary = "Endpoint pentru a vedea datele tuturor TeamLeaderilor")
     public List<TeamLeader> getAllTeamLeaders() {
         return teamLeaderService.getAllTeamLeaders();
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Endpoint pentru a vedea datele unui Teamleader")
     public TeamLeader getTeamLeaderById(@PathVariable int id) {
         return teamLeaderService.getTeamLeaderById(id);
     }
 
 
     @GetMapping("/echipa/{teamLeaderId}")
-    @Operation(summary = "Endpoint pentru a vedea echipa unui TeamLeader", description = "Acest endpoint returnează datele tuturor angajatilor din echipa TeamLeader-ului.")
+    @Operation(summary = "Endpoint pentru a vedea echipa unui TeamLeader")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
             @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
@@ -42,7 +44,7 @@ public class TeamLeaderController {
     }
 
     @GetMapping("/proiect/{teamLeaderId}")
-    @Operation(summary = "Endpoint pentru a vedea proiectul unui TeamLeader", description = "Acest endpoint returnează datele proiectului unui TeamLeader.")
+    @Operation(summary = "Endpoint pentru a vedea proiectul unui TeamLeader")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
             @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
@@ -53,12 +55,13 @@ public class TeamLeaderController {
     }
 
     @PostMapping
+    @Operation(summary = "Endpoint pentru a adauga un nou TeamLeader.", description = "Acest endpoint trebuie sa primeasca toate datele necesare pentru a introduce un TeamLeader in tabela. ")
     public TeamLeader saveTeamLeader(@RequestBody TeamLeader teamLeader) {
         return teamLeaderService.saveTeamLeader(teamLeader);
     }
 
     @PostMapping("/echipa/{teamLeaderId}/{angajatId}")
-    @Operation(summary = "Endpoint pentru ca un TeamLeader sa adauge un angajat in echipa", description = "Acest endpoint primeste id-ul TeamLeaderului si al angajatului")
+    @Operation(summary = "Endpoint pentru ca un TeamLeader sa adauge un angajat in echipa.", description = "Acest endpoint primeste id-ul TeamLeaderului si al angajatului.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Succes - Răspuns OK"),
             @ApiResponse(responseCode = "404", description = "Not Found - Resursa nu a fost găsită"),
@@ -69,17 +72,20 @@ public class TeamLeaderController {
     }
 
     @PostMapping("/asignare-echipa/{teamLeaderId}/{echipaId}")
+    @Operation(summary = "Endpoint pentru a asigna un TeamLeader la o echipa.")
     public void asignareEchipa(@PathVariable int teamLeaderId, @PathVariable int echipaId) {
         teamLeaderService.asignareEchipa(teamLeaderId, echipaId);
 
     }
 
     @PostMapping("/actualizeaza-procentaj/{teamLeaderId}")
+    @Operation(summary = "Endpoint pentru a actualiza automat procentajul proiectului la care lucreaza si TeamLeaderul.", description = "Liderul preia procentajele venite de la angajati, le face suma, iar aceasta suma va fi noul procent actualizat al proiectului echipei")
     public void actualizeazaProcentajTeamLeader(@PathVariable int teamLeaderId) {
         teamLeaderService.actualizeazaProcentajTeamLeader(teamLeaderId);
     }
 
     @PutMapping("/proiect/procentaj/{teamLeaderId}/{proiectId}/{procentaj}")
+    @Operation(summary = "Endpoint pentru a actualiza procentul TeamLeaderului.")
     public void actualizeazaProcentajProiect(
             @PathVariable int teamLeaderId,
             @PathVariable int proiectId,
@@ -89,12 +95,14 @@ public class TeamLeaderController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Endpoint pentru a sterge un TeamLeader din tabela.")
     public void deleteTeamLeader(@PathVariable int id) {
         teamLeaderService.deleteTeamLeader(id);
     }
 
 
     @DeleteMapping("/echipa/{teamLeaderId}/{angajatId}")
+    @Operation(summary = "Endpoint pentru a sterge un angajat din echipa")
     public void stergeAngajatEchipa(@PathVariable int teamLeaderId, @PathVariable int angajatId) {
         teamLeaderService.stergeAngajatEchipa(teamLeaderId, angajatId);
     }

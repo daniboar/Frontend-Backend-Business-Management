@@ -21,6 +21,9 @@ public class Proiect {
     @Column
     private int procentaj;
 
+    @Column
+    private String stareProiect;
+
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
@@ -68,6 +71,14 @@ public class Proiect {
 
     public void setProcentaj(int procentaj) {
         this.procentaj = procentaj;
+    }
+
+    public String getStareProiect() {
+        return stareProiect;
+    }
+
+    public void setStareProiect(String stareProiect) {
+        this.stareProiect = stareProiect;
     }
 
     public void setCereriProiect(List<CerereProiect> cereriProiect) {

@@ -3,15 +3,21 @@ package proiect_spring.Proiect_IS.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proiect_spring.Proiect_IS.model.Angajat;
+import proiect_spring.Proiect_IS.model.CerereMarire;
 import proiect_spring.Proiect_IS.model.Proiect;
 import proiect_spring.Proiect_IS.repository.AngajatRepository;
+import proiect_spring.Proiect_IS.repository.CerereMarireRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class AngajatService {
-    private final AngajatRepository angajatRepository;
+    @Autowired
+    private  AngajatRepository angajatRepository;
+
+    @Autowired
+    private CerereMarireRepository cerereMarireRepository;
 
     @Autowired
     public AngajatService(AngajatRepository angajatRepository) {
@@ -22,8 +28,8 @@ public class AngajatService {
         return angajatRepository.findAll();
     }
 
-    public Optional<Angajat> getAngajatById(int id) {
-        return angajatRepository.findById(id);
+    public Angajat getAngajatById(int id) {
+        return angajatRepository.findById(id).orElse(null);
     }
 
     public Angajat saveAngajat(Angajat angajat) {
@@ -43,10 +49,10 @@ public class AngajatService {
     }
 
     public Proiect getProiectAngajat(int angajatId) {
-        Optional<Angajat> angajat = getAngajatById(angajatId);
+       Angajat angajat = getAngajatById(angajatId);
 
         if (angajat != null) {
-            return angajat.get().getProiectAsignat();
+            return angajat.getProiectAsignat();
         }
 
         return null;
@@ -54,5 +60,16 @@ public class AngajatService {
 
     public List<Angajat> getAngajatiByEchipaId(int echipaId) {
         return angajatRepository.findByEchipa_Id(echipaId);
+    }
+
+    public void adaugaCerereMarire(int angajatId) {
+        Angajat angajat = angajatRepository.findById(angajatId).orElse(null);;
+
+        if (angajat != null) {
+            CerereMarire cerereMarire = new CerereMarire();
+            cerereMarire.setAngajatId(angajat.getId());
+            cerereMarire.setCerereAprobata(false); // Setează inițial cererea ca neaprobată
+            cerereMarireRepository.save(cerereMarire);
+        }
     }
 }

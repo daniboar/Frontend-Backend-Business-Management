@@ -37,7 +37,6 @@ public class Angajat {
     @JoinColumn(name = "echipa_id")
     private Echipa echipa;
 
-
     public int getId() {
         return id;
     }
