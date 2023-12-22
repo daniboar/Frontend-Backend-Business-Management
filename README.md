@@ -1,3 +1,6 @@
+# Pentru SWAGGER 
+http://localhost:8080/swagger-ui/index.html#/
+
 # PENTRU ERORI LA LANSAREA APLICATIEI 
 
 Rulează comanda următoare pentru a instala pachetul react-router-dom:
