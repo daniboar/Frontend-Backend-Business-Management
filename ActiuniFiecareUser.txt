@@ -3,6 +3,7 @@ Client 	-> vede datele tuturor clientilor
 	-> creaza un proiect
 	-> adauga o cerere pentru proiect
 	-> poate vedea datele unui client
+	-> poate vedea starea proiectului
 	-> poate sterge un client
 
 Angajat -> isi actualizeaza procentul pentru proiect
