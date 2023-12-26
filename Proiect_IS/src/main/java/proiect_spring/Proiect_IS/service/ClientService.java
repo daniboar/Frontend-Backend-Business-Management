@@ -7,7 +7,9 @@ import proiect_spring.Proiect_IS.repository.CerereProiectRepository;
 import proiect_spring.Proiect_IS.repository.ClientRepository;
 import proiect_spring.Proiect_IS.repository.ProiectRepository;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -49,6 +51,12 @@ public class ClientService {
             cerereProiect.setAprobata(false); // Setează inițial cererea ca neaprobată
             cerereProiectRepository.save(cerereProiect);
         }
+    }
+
+    public List<Proiect> vizualizareProiect(int clientId){
+            return proiectRepository.findAll().stream()
+                    .filter(proiect -> proiect.getClientId() == clientId)
+                    .collect(Collectors.toList());
     }
 
 }

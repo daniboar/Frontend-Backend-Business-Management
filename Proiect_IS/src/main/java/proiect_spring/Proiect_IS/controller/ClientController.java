@@ -31,6 +31,12 @@ public class ClientController {
         return clientService.getAllClients();
     }
 
+    @GetMapping("/proiecte/{clientId}")
+    @Operation(summary = "Endpoint pentru a obține toate proiectele unui client.")
+    public List<Proiect> getProiecteClient(@PathVariable int clientId) {
+        return clientService.vizualizareProiect(clientId);
+    }
+
     @GetMapping("/{id}")
     @Operation(summary = "Endpoint pentru a vedea datele unui client.")
     public Client getClientById(@PathVariable int id) {
