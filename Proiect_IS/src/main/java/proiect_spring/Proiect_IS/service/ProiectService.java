@@ -52,6 +52,11 @@ public class ProiectService {
                 .orElseThrow(() -> new IllegalArgumentException("Proiectul nu a fost găsit!"));
 
         existingProiect.setProcentaj(procentaj);
+        if(existingProiect.getProcentaj() >= 100){
+            existingProiect.setStareProiect("finalizat");
+        }else{
+            existingProiect.setStareProiect("nefinalizat");
+        }
         return proiectRepository.save(existingProiect);
     }
 

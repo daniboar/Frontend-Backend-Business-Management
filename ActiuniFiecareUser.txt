@@ -1,46 +1,42 @@
-CEO
-	->creeaza conturi pentru admini
-	->angajeaza admini si concediaza
-	->schimba salariul la admini
-	->verifica profitul
-	->verifica rata de proiecte realizate/neterminate
-	->face promovari bazate pe cerere(aici la cerere vor fi campuri cu salariu, tip user, procentaj proiecte, total proiecte, vechime)
-	->creeaza cont de user
-	->modifica conturi pentru toata lumea
+Client 	-> vede datele tuturor clientilor
+	-> adauga un client
+	-> creaza un proiect
+	-> adauga o cerere pentru proiect
+	-> poate vedea datele unui client
+	-> poate sterge un client
 
-Sef pe sectie
-	->angajeaza plebi
-	->asigneaza proiecte (adica verifica cererea de proiect de la client si il adauga in baza de date
-	->da note la proiecte
-	->schimba salariul in functie de note
-	->asigneaza team leader pe proiecte
-	->trimite proiectul la team leader-ul destinat acestui proiect(adica daca echipa face front => primesc proiect de front)
-	->poate vizualiza toate echipele
-	->vizualizeaza proiectele si stadiul in care sunt(vom da posibilitatea team leader-ului sa schimbe procentajul in care se afla proiectul)
-	->pune un termen limita pe proiect
-	->elimina proiecte nedorite / terminate
-	->verifica daca proiectele sunt terminate(adica daca tema leader-ul le-a pus pe 100%)
-	->poate propune promovari
-	->verifica daca sunt cereri de mariri de la plebi
-	->modifica conturi la plebi
+Angajat -> isi actualizeaza procentul pentru proiect
+	-> adauga un nou angajat
+	-> adauga cerere de marire
+	-> poate vedea toti angajatii
+	-> poate vedea un angajat
+	-> poate vedea proiectul la care este asignat
+	-> poate vedea toti angajatii dintr-o echipa
 
-TeamLeader(este ales dintre plebi)
-	->isi alege echipa
-	->poate elimina si adauga oameni in echipa
-	->poate vizualiza echipa
-	->adauga procentaj la realizare proiect
-	->verifica pentru fiecare daca si-a terminat munca(tot procentaje)
-	->daca toti si-au terminat treaba, pune proiectul pe 100%
+TeamLeader 	-> poate vedea datele tuturor teamleaderilor
+		-> poate vedea datele unui teamleader
+		-> poate vedea proiectul unui teamleader
+		-> poate vedea echiipa unui teamleader
+		-> actualizeaza procentul TeamLeaderului luat de la angajatii din echipa
+		-> adauga un nou teamleader
+		-> adauga un angajat in echipa
+		-> adauga teamleader la echipa
+		-> poate actualiza procentajul total al echipei (PUT)
+		-> sterge un angajat din echipa
+		-> sterge un teamleader
 
-Angajat
-	->scrie cat la suta din proiect a termiat
-	->poate vizualiza proiectul in care este dupa id-ul proiectului
-	->poate vizualiza echipa din care face parte dupa id-ul echipei
-	->i se poate mari salariul
+CEO 	-> vede datele tuturor CEO, angajati, teamleaderi, proiectelor, echipelor, clientilor, cereri de proiect, cereri de marire 
+	-> vede datele unui/unei CEO, angajat, teamleader, proiect, echipe, client, cerere de proiect, cerere de marire
+	-> poate adauga un CEO, teamleader, angajat, echipa
+	-> poate schimba starea cererii de marire angajatului (sa fie aprobata sau nu)
+	-> poate schimba salariul TeamLeaderului si al angajatului (fara a fi nevoie de cerere)
+	-> promoveaza un angajat la TeamLeader
+	-> poate aproba/refuza un proiect
+	-> schimba salariul angajatului daca cererea sa de marire de salariu este aprobata
+	-> poate asigna un proiect unei echipe
+	-> poate asigna un angajat la echipa
+	-> poate adauga un TeamLeader intr-o echipa	
+	-> sterge CEO,  teamleder, echipa, angajat
+	-> poate sterge liderul echipei
 	
-Client
-	-> are proiecte si poate verifica procentul proiectelor
-	
-	
-	
-	
+
