@@ -18,6 +18,10 @@ public class Echipa {
     @OneToMany(mappedBy = "echipa")
     private List<Angajat> angajati = new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name = "team_leader_id")
+    private TeamLeader teamLeader;
+
 
     public int getId() {
         return id;
@@ -41,5 +45,13 @@ public class Echipa {
 
     public void setAngajati(List<Angajat> angajati) {
         this.angajati = angajati;
+    }
+
+    public TeamLeader getTeamLeader() {
+        return teamLeader;
+    }
+
+    public void setTeamLeader(TeamLeader teamLeader) {
+        this.teamLeader = teamLeader;
     }
 }

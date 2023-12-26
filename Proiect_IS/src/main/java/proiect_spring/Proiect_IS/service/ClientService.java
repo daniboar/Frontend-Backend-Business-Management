@@ -2,15 +2,22 @@ package proiect_spring.Proiect_IS.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import proiect_spring.Proiect_IS.model.Client;
-import proiect_spring.Proiect_IS.model.Proiect;
+import proiect_spring.Proiect_IS.model.*;
+import proiect_spring.Proiect_IS.repository.CerereProiectRepository;
 import proiect_spring.Proiect_IS.repository.ClientRepository;
+import proiect_spring.Proiect_IS.repository.ProiectRepository;
 
 import java.util.List;
 
 @Service
 public class ClientService {
     private final ClientRepository clientRepository;
+
+    @Autowired
+    private ProiectRepository proiectRepository;
+
+    @Autowired
+    private CerereProiectRepository cerereProiectRepository;
 
     @Autowired
     public ClientService(ClientRepository clientRepository) {
@@ -32,4 +39,16 @@ public class ClientService {
     public void deleteClient(int id) {
         clientRepository.deleteById(id);
     }
+
+    public void adaugaCerereProiect(int proiectId) {
+        Proiect proiect = proiectRepository.findById(proiectId).orElse(null);
+
+        if (proiect != null) {
+            CerereProiect cerereProiect = new CerereProiect();
+            cerereProiect.setProiect(proiect);
+            cerereProiect.setAprobata(false); // Setează inițial cererea ca neaprobată
+            cerereProiectRepository.save(cerereProiect);
+        }
+    }
+
 }

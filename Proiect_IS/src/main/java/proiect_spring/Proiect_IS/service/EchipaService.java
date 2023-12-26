@@ -2,10 +2,8 @@ package proiect_spring.Proiect_IS.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import proiect_spring.Proiect_IS.model.Angajat;
-import proiect_spring.Proiect_IS.model.Echipa;
-import proiect_spring.Proiect_IS.repository.AngajatRepository;
-import proiect_spring.Proiect_IS.repository.EchipaRepository;
+import proiect_spring.Proiect_IS.model.*;
+import proiect_spring.Proiect_IS.repository.*;
 
 import java.util.List;
 
@@ -15,7 +13,17 @@ public class EchipaService {
     private EchipaRepository echipaRepository;
 
     @Autowired
+    private TeamLeaderRepository teamLeaderRepository;
+
+    @Autowired
+    private CerereProiectRepository cerereProiectRepository;
+
+    @Autowired
+    private ProiectRepository proiectRepository;
+
+    @Autowired
     private AngajatRepository angajatRepository;
+
     public List<Echipa> getAllEchipe() {
         return echipaRepository.findAll();
     }
@@ -48,6 +56,7 @@ public class EchipaService {
 
             // Actualizează echipa la care este asignat angajatul
             angajat.setEchipa(echipa);
+            angajat.setProiectAsignat(echipa.getProiect());
             angajatRepository.save(angajat);
         }
     }
@@ -65,7 +74,58 @@ public class EchipaService {
 
             // Actualizează echipa la care este asignat angajatul
             angajat.setEchipa(null);
+            angajat.setProiectAsignat(null);
             angajatRepository.save(angajat);
+        }
+    }
+
+    public void adaugaTeamleader(int echipaId, int teamleaderId){
+        Echipa echipa = echipaRepository.findById(echipaId).orElse(null);
+        TeamLeader teamLeader = teamLeaderRepository.findById(teamleaderId).orElse(null);
+
+        if (echipa != null && teamLeader != null) {
+            echipa.setTeamLeader(teamLeader);
+            echipaRepository.save(echipa);
+
+            teamLeader.setEchipa(echipa);
+            teamLeader.setProiectAsignat(echipa.getProiect());
+            teamLeaderRepository.save(teamLeader);
+        }
+    }
+
+    public void stergeTeamLEader(int echipaId){
+        Echipa echipa = echipaRepository.findById(echipaId).orElse(null);
+
+        if(echipa != null){
+            TeamLeader teamLeader = echipa.getTeamLeader();
+
+            if(teamLeader != null){
+                echipa.setTeamLeader(null);
+                echipaRepository.save(echipa);
+
+                teamLeader.setEchipa(null);
+                teamLeader.setProiectAsignat(null);
+                teamLeaderRepository.save(teamLeader);
+            }
+        }
+    }
+
+    public void asignareProiectEchipa(int echipaId, int proiectId){
+        Echipa echipa = echipaRepository.findById(echipaId).orElse(null);
+        Proiect proiect = proiectRepository.findById(echipaId).orElse(null);
+        if(echipa != null && proiect != null){
+            //verific daca exista o cerere de proiect aprobata
+            List<CerereProiect> cereriProiect = cerereProiectRepository.findAll();
+            for(CerereProiect cerere: cereriProiect){
+                if(cerere.getProiectId() == proiectId){
+                    if(cerere.isAprobata()){
+                        echipa.setProiect(proiect);
+                        echipaRepository.save(echipa);
+                        cerereProiectRepository.delete(cerere);
+                        break;
+                    }
+                }
+            }
         }
     }
 }

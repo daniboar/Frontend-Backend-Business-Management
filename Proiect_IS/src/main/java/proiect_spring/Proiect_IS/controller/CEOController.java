@@ -3,10 +3,8 @@ package proiect_spring.Proiect_IS.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import proiect_spring.Proiect_IS.model.CEO;
-import proiect_spring.Proiect_IS.model.Echipa;
-import proiect_spring.Proiect_IS.model.Proiect;
-import proiect_spring.Proiect_IS.service.CEOService;
+import proiect_spring.Proiect_IS.model.*;
+import proiect_spring.Proiect_IS.service.*;
 
 import java.util.List;
 
@@ -16,6 +14,27 @@ public class CEOController {
 
     @Autowired
     private CEOService ceoService;
+
+    @Autowired
+    private EchipaService echipaService;
+
+    @Autowired
+    private AngajatService angajatService;
+
+    @Autowired
+    private TeamLeaderService teamLeaderService;
+
+    @Autowired
+    private ProiectService proiectService;
+
+    @Autowired
+    private ClientService clientService;
+
+    @Autowired
+    private CerereMarireService cerereMarireService;
+
+    @Autowired
+    private CerereProiectService cerereProiectService;
 
     @GetMapping
     @Operation(summary = "Endpoint pentru a vedea datele tuturor directorilor generali.")
@@ -35,10 +54,70 @@ public class CEOController {
         return ceoService.getEchipe();
     }
 
+    @GetMapping("/echipe/{id}")
+    @Operation(summary = "Endpoint pentru a vedea o echipa")
+    public Echipa getEchipeById(@PathVariable int id) {
+        return echipaService.getEchipaById(id);
+    }
+
     @GetMapping("/proiecte")
     @Operation(summary = "Endpoint pentru a vedea toate proiectele")
     public List<Proiect> getProiecte(){
         return ceoService.getProiecte();
+    }
+
+    @GetMapping("/proiecte/{id}")
+    @Operation(summary = "Endpoint pentru a vedea un proiect")
+    public Proiect getProiecte(@PathVariable int id){
+        return proiectService.getProjectById(id);
+    }
+
+    @GetMapping("/angajati")
+    @Operation(summary = "Endpoint pentru a vedea toti angajatii")
+    public List<Angajat> getAngajati(){
+        return angajatService.getAllAngajati();
+    }
+
+    @GetMapping("/angajati/{id}")
+    @Operation(summary = "Endpoint pentru a vedea un angajat")
+    public Angajat getAngajati(@PathVariable int id){
+        return angajatService.getAngajatById(id);
+    }
+
+    @GetMapping("/teamleaders")
+    @Operation(summary = "Endpoint pentru a vedea toti teamLeaderii")
+    public List<TeamLeader> getTeamLeaders(){
+        return teamLeaderService.getAllTeamLeaders();
+    }
+
+    @GetMapping("/teamleaders/{id}")
+    @Operation(summary = "Endpoint pentru a vedea un teamLeader")
+    public TeamLeader getTeamLeadersById(@PathVariable int id){
+        return teamLeaderService.getTeamLeaderById(id);
+    }
+
+    @GetMapping("/clienti")
+    @Operation(summary = "Endpoint pentru a vedea toti clienti")
+    public List<Client> getClienti(){
+        return clientService.getAllClients();
+    }
+
+    @GetMapping("/clienti/{id}")
+    @Operation(summary = "Endpoint pentru a vedea un clienti")
+    public Client getClienti(@PathVariable int id){
+        return clientService.getClientById(id);
+    }
+
+    @GetMapping("/cereri_marire")
+    @Operation(summary = "Endpoint pentru a vedea toate cererile de marire de salariu")
+    public List<CerereMarire> getCereriMarire(){
+        return cerereMarireService.getAllCereriMarire();
+    }
+
+    @GetMapping("/cereri_proiect")
+    @Operation(summary = "Endpoint pentru a vedea toate cererile pentru proiect")
+    public List<CerereProiect> getCereriProiect(){
+        return cerereProiectService.getAllCereriProiect();
     }
 
     @PostMapping
@@ -47,7 +126,23 @@ public class CEOController {
         return ceoService.saveCEO(ceo);
     }
 
+    @PostMapping("/angajat")
+    @Operation(summary = "Endpoint pentru a adauga un nou angajat.")
+    public Angajat saveAngajat(@RequestBody Angajat angajat) {
+        return angajatService.saveAngajat(angajat);
+    }
 
+    @PostMapping("/teamleader")
+    @Operation(summary = "Endpoint pentru a adauga un nou Teamleader.")
+    public TeamLeader saveTeamLeader(@RequestBody TeamLeader teamLeader) {
+        return teamLeaderService.saveTeamLeader(teamLeader);
+    }
+
+    @PostMapping("/echipa")
+    @Operation(summary = "Endpoint pentru a forma o noua echipa.")
+    public Echipa saveEchipa(@RequestBody Echipa echipa){
+        return echipaService.saveEchipa(echipa);
+    }
 
     @PostMapping("/schimba-salariu/angajat/{ceoId}/{angajatId}/{salariu_nou}")
     @Operation(summary = "Endpoint pentru a schimba salariul unui angajat.")
@@ -67,10 +162,41 @@ public class CEOController {
         ceoService.gestioneazaCerereMarire(ceoID, angajatID, salariu);
     }
 
+    @PostMapping("/gestioneazaCerereProiect/{ceoID}/{cerereProiectID}/{stare}")
+    @Operation(summary = "Endpoint care se aproba/refuza cererea de proiect.")
+    public void gestioneazaCerereProiect(@PathVariable int ceoID, @PathVariable int cerereProiectID, @PathVariable boolean stare) {
+        ceoService.gestioneazaCerereProiect(ceoID, cerereProiectID, stare);
+    }
+
+    @PostMapping("/asignareProiectEchipa/{echipaID}/{proiectID}")
+    @Operation(summary = "Endpoint pentru a asigna proiectul unei echipe.")
+    public void asignareProiectEchipa(@PathVariable int echipaID, @PathVariable int proiectID) {
+        echipaService.asignareProiectEchipa(echipaID, proiectID);
+    }
+
+
+    @PostMapping("/adauga_teamleader/{ceoId}/{echipaId}/{teamLeaderId}")
+    @Operation(summary = "Endpoint pentru a adauga un TeamLeader intr-o echipa.")
+    public void adaugaTeamLeaderInEchipa(@PathVariable int ceoId, @PathVariable int echipaId, @PathVariable int teamLeaderId) {
+        ceoService.adaugaTeamLeaderInEchipa(ceoId, echipaId, teamLeaderId);
+    }
+
+    @PostMapping("/asignareAngajatLaEchipa/{echipaID}/{angajatID}")
+    @Operation(summary = "Endpoint pentru a asigna angajatul unei echipe.")
+    public void asignareAngajatLaEchipa(@PathVariable int echipaID, @PathVariable int angajatID) {
+        echipaService.asignareAngajatEchipa(echipaID, angajatID);
+    }
+
     @PostMapping("/schimbaStareCerereMarire/{ceoID}/{angajatID}/{nouaStare}")
     @Operation(summary = "Endpoint care imi schimba starea cererii angajatului.")
     public void schimbaStareCerereMarire(@PathVariable int ceoID, @PathVariable int angajatID, @PathVariable boolean nouaStare) {
         ceoService.schimbaStareCerereMarireAngajat(ceoID, angajatID, nouaStare);
+    }
+
+    @PostMapping("/promoveaza/{ceoID}/{angajatID}")
+    @Operation(summary = "Endpoint care imi promoveaza un angajat la statutul de TeamLeader")
+    public void promoveazaAngajat(@PathVariable int ceoID, @PathVariable int angajatID){
+        ceoService.promoveazaAngajat(ceoID, angajatID);
     }
 
     @DeleteMapping("/{id}")
@@ -78,4 +204,29 @@ public class CEOController {
     public void deleteCEO(@PathVariable int id) {
         ceoService.deleteCEO(id);
     }
+
+    @DeleteMapping("/angajat/{id}")
+    @Operation(summary = "Endpoint pentru a sterge un angajat.")
+    public void deleteAngajat(@PathVariable int id) {
+        angajatService.deleteAngajat(id);
+    }
+
+    @DeleteMapping("/teamleader/{id}")
+    @Operation(summary = "Endpoint pentru a sterge un TeamLeader.")
+    public void deleteTeamLeader(@PathVariable int id) {
+        teamLeaderService.deleteTeamLeader(id);
+    }
+
+    @DeleteMapping("/echipa/{id}")
+    @Operation(summary = "Endpoint pentru a sterge o echipa.")
+    public void deleteEchipa(@PathVariable int id) {
+        echipaService.deleteEchipa(id);
+    }
+
+    @DeleteMapping("/sterge_teamleader/{ceoId}/{echipaId}")
+    @Operation(summary = "Endpoint pentru a sterge un TeamLeader dintr-o echipa.")
+    public void stergeTeamLeaderDinEchipa(@PathVariable int ceoId, @PathVariable int echipaId) {
+        ceoService.stergeTeamLeaderDinEchipa(ceoId, echipaId);
+    }
+
 }

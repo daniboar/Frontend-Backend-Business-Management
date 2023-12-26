@@ -22,9 +22,6 @@ public class CEOService {
     private TeamLeaderRepository teamLeaderRepository;
 
     @Autowired
-    private ProiectRepository proiectRepository;
-
-    @Autowired
     private CerereProiectRepository cerereProiectRepository;
 
     @Autowired
@@ -123,6 +120,53 @@ public class CEOService {
                 }
             }
 
+        }
+    }
+
+    public void adaugaTeamLeaderInEchipa(int ceoId, int echipaId, int teamLeaderId) {
+        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
+        if (ceo != null) {
+            // Verificăm dacă team leader-ul există
+            TeamLeader teamLeader = teamLeaderRepository.findById(teamLeaderId).orElse(null);
+            if (teamLeader != null) {
+                // Adăugăm team leader-ul în echipă
+                echipaService.adaugaTeamleader(echipaId, teamLeaderId);
+            }
+        }
+    }
+
+    public void stergeTeamLeaderDinEchipa(int ceoId, int echipaId) {
+        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
+        if (ceo != null) {
+            // Ștergem team leader-ul din echipă
+            echipaService.stergeTeamLEader(echipaId);
+        }
+    }
+
+    public void gestioneazaCerereProiect(int ceoId, int cerereProiectId, boolean stare){
+        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
+        CerereProiect cerereProiect = cerereProiectRepository.findById(cerereProiectId).orElse(null);
+
+        if (ceo != null && cerereProiect != null){
+            cerereProiect.setAprobata(stare);
+            cerereProiectRepository.save(cerereProiect);
+        }
+    }
+
+    public void promoveazaAngajat(int ceoId, int angajatId){
+        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
+        Angajat angajat = angajatRepository.findById(angajatId).orElse(null);
+
+        if(ceo != null && angajat != null){
+            TeamLeader teamLeader = new TeamLeader();
+            teamLeader.setNume(angajat.getNume());
+            teamLeader.setPrenume(angajat.getPrenume());
+            teamLeader.setParola(angajat.getParola());
+            teamLeader.setSalariu(angajat.getSalariu());
+            teamLeader.setEmail(angajat.getEmail());
+
+            teamLeaderRepository.save(teamLeader);
+            angajatRepository.delete(angajat);
         }
     }
 }

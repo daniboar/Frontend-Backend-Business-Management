@@ -42,10 +42,22 @@ public class EchipaController {
         echipaService.asignareAngajatEchipa(echipaId, angajatId);
     }
 
+    @PostMapping("/asignare_teamLeader/{echipaId}/{teamLeaderId}")
+    @Operation(summary = "Endpoint pentru a adauga liderul echipei")
+    public void asignareTeamLeader(@PathVariable int echipaId, @PathVariable int teamLeaderId){
+        echipaService.adaugaTeamleader(echipaId, teamLeaderId);
+    }
+
     @DeleteMapping("/{id}")
     @Operation(summary = "Endpoint pentru a sterge o echipa.")
     public void deleteEchipa(@PathVariable int id) {
         echipaService.deleteEchipa(id);
+    }
+
+    @DeleteMapping("/teamleaders/{echipaId}")
+    @Operation(summary = "Endpoint care imi sterge liderul echipei")
+    public void stergeTeamLeader(@PathVariable int echipaId){
+        echipaService.stergeTeamLEader(echipaId);
     }
 
     @DeleteMapping("/angajati/{echipaId}/{angajatId}")
