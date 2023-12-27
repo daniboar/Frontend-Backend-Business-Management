@@ -1,0 +1,9 @@
+Welcome (facut)
+AboutUs (facut)
+NewUser (facut)
+LogIn :
+	-> butoanele de LogOut
+
+CEO : 
+	-> ManagementProiect (acceptare sau respingere) : mai trebuie facut sa selectezi un element si sa dai pe acela acceptare sau respingere
+	

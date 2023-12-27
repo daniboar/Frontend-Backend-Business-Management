@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Welcome from './Welcome/Welcome.jsx';
-import LoginForm from './LogIn/Login.jsx';
+//import LoginForm from './LogIn/Login.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
 import NewUser from './NewUser/NewUser.jsx';
+import ManagementCereri from './LogIn/CEO/ManagementProiecte/ManagementProiecte.jsx';
 //import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
 //import CV from './CV/CV.jsx';
 //import CEO from './LogIn/CEO/CEO.jsx';
@@ -50,7 +51,7 @@ function App() {
   return (
     <div className="App">
       {showLogin ? (
-        <LoginForm onBackClick={handleBackButtonClick} />
+        <ManagementCereri onBackClick={handleBackButtonClick} />
       ) : showCerereProiect ? (
         <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (
