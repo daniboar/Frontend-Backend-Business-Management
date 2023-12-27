@@ -1,50 +1,50 @@
-/* Numele fișierului: ManagementCereri.module.css */
+/* Numele fișierului: ManagementProiecte.css */
 
 /* Stiluri pentru containerul principal */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Stiluri pentru titlu */
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Stiluri pentru eticheta textArea */
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  /* Stiluri pentru textArea */
-  textarea {
-    width: 100%;
-    height: 100px;
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  /* Stiluri pentru butoane */
-  button {
-    background-color: #4caf50; /* Green */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  /* Stiluri pentru butonul Respingere */
-  button.rej {
-    background-color: #f44336; /* Red */
-  }
-  
-  /* Stiluri pentru butonul Acceptare */
-  button.acc {
-    background-color: #4caf50; /* Green */
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Stiluri pentru titlu */
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Stiluri pentru eticheta textArea */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Stiluri pentru textArea cu scroll */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  margin-bottom: 10px;
+  overflow: auto; /* Adaugă scroll dacă textul depășește înălțimea specificată */
+}
+
+/* Stiluri pentru butoane */
+button {
+  background-color: #4caf50; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Stiluri pentru butonul Respingere */
+button.rej {
+  background-color: #f44336; /* Red */
+}
+
+/* Stiluri pentru butonul Acceptare */
+button.acc {
+  background-color: #4caf50; /* Green */
+}

@@ -53,7 +53,7 @@ const NewUserForm = ({ onBackClick }) => {
           <FormInput
             description="Password"
             placeholder="Enter the password for your account"
-            type="text"
+            type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}

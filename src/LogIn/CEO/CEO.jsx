@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+// Numele fișierului: CEO.jsx
+
+import React from 'react';
 import './CEO.css';
 
 const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
 const FormTitle = (props) => <p id="formTitle">{props.title}</p>;
 
+const CEO = () => {
   return (
     <div className="ceo-page">
       <div className="container">
@@ -20,5 +23,6 @@ const FormTitle = (props) => <p id="formTitle">{props.title}</p>;
       </div>
     </div>
   );
+};
 
 export default CEO;
