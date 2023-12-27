@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 
-const LoginForm = ({ onBackClick}) => {
+const LoginForm = ({ onBackClick }) => {
   return (
     <div id="loginform">
       <FormHeader title="Login" />
@@ -17,6 +17,19 @@ const Form = (props) => (
   <div>
     <FormInput description="Username" placeholder="Enter your username" type="text" />
     <FormInput description="Password" placeholder="Enter your password" type="password" />
+
+    {/* Choice Label */}
+    <div className="row">
+      <label>Choose the type of user:</label>
+      <select defaultValue="">
+        <option value="" disabled hidden>Select the type</option>
+        <option value="option1">CEO</option>
+        <option value="option2">TeamLeader</option>
+        <option value="option3">Angajat</option>
+        <option value="option4">Client</option>
+      </select>
+    </div>
+
     <FormButton title="Log in" />
   </div>
 );
@@ -34,10 +47,10 @@ const FormInput = (props) => (
   </div>
 );
 
-const BackButton = ({onBackClick}) => (
-  <div id = "button" className="row">
+const BackButton = ({ onBackClick }) => (
+  <div id="button" className="row">
     <button onClick={onBackClick}>HomePage</button>
   </div>
-)
+);
 
 export default LoginForm;

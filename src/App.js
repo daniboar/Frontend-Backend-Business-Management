@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Welcome from './Welcome/Welcome.jsx';
 import LoginForm from './LogIn/Login.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
-import CerereProiect from './CerereProiect/CerereProiect.jsx';
+import NewUser from './NewUser/NewUser.jsx';
+//import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
 //import CV from './CV/CV.jsx';
 //import CEO from './LogIn/CEO/CEO.jsx';
 //import Angajat from './LogIn/Angajat/Angajat.jsx';
@@ -51,7 +52,7 @@ function App() {
       {showLogin ? (
         <LoginForm onBackClick={handleBackButtonClick} />
       ) : showCerereProiect ? (
-        <CerereProiect onBackClick={handleBackButtonClick} />
+        <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (
         <AboutUs onBackClick={handleBackButtonClick} />
       ) : (
