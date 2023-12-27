@@ -1,11 +1,12 @@
 import React from 'react';
 import './Login.css';
 
-const LoginForm = ({ onBackClick }) => {
+const LoginForm = ({ onBackClick, onLoginClick }) => {
   return (
     <div id="loginform">
       <FormHeader title="Login" />
       <Form />
+      <FormButton onLoginClick={onLoginClick} />
       <BackButton onBackClick={onBackClick} />
     </div>
   );
@@ -21,22 +22,21 @@ const Form = (props) => (
     {/* Choice Label */}
     <div className="row">
       <label>Choose the type of user:</label>
-      <select defaultValue="">
-        <option value="" disabled hidden>Select the type</option>
-        <option value="option1">CEO</option>
-        <option value="option2">TeamLeader</option>
-        <option value="option3">Angajat</option>
-        <option value="option4">Client</option>
+      <select defaultValue="" id="userType">
+          <option value="" disabled hidden>Select the type</option>
+          <option value="CEO">CEO</option>
+          <option value="TeamLeader">TeamLeader</option>
+          <option value="Angajat">Angajat</option>
+          <option value="Client">Client</option>
       </select>
     </div>
-
-    <FormButton title="Log in" />
-  </div>
+    </div>
 );
 
-const FormButton = (props) => (
+// Corrected FormButton component
+const FormButton = ({ onLoginClick }) => (
   <div id="button" className="row">
-    <button>{props.title}</button>
+    <button onClick={() => onLoginClick(document.getElementById("userType").value)}>Log In</button>
   </div>
 );
 
