@@ -14,10 +14,13 @@ const CEO = () => {
         <FormTitle title="Gestioneaza proiectele si echipele" />
         <div className="button-container-ceo">
           <button>Verificare Proiecte</button>
+          <button>Vizualizare cererei de proiecte</button>
           <button>Promovari</button>
           <button>Modificare salariu</button>
-          <button>Vizualizare cererei de proiecte</button>
-          <button>Asignare Team Leader</button>
+          <button>Asignare TeamLeader</button>
+          <button>Vizualizare Angajati</button>
+          <button>Vizualizare TeamLeaderi</button>
+          <button>VizualizareClienti</button>
           <button>Logout</button>
         </div>
       </div>

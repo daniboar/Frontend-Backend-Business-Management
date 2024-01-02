@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Welcome from './Welcome/Welcome.jsx';
-//import LoginForm from './LogIn/Login.jsx';
+import LoginForm from './LogIn/Login.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
 import NewUser from './NewUser/NewUser.jsx';
 //import ManagementCereri from './LogIn/CEO/ManagementProiecte/ManagementProiecte.jsx';
 //import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
 //import CV from './CV/CV.jsx';
 //import CEO from './LogIn/CEO/CEO.jsx';
-import Angajat from './LogIn/Angajat/Angajat.jsx';
+//import VizualizareA from './LogIn/CEO/VizualizareAngajati/VizualizareA.jsx';
+//import VizualizareT from './LogIn/CEO/VizualizareTeamLeaderi/VizualizareT.jsx';
+//import VizualizareC from './LogIn/CEO/VizualizareClienti/VizualizareC.jsx';
+//import Angajat from './LogIn/Angajat/Angajat.jsx';
 //import TeamLeader from './LogIn/TeamLeader/TeamLeader.jsx';
 //import Client from './LogIn/Client/Client.jsx';
 //import GestiuneEchipa from './LogIn/TeamLeader/GestiuneEchipa/GestiuneEchipa.jsx';
@@ -51,7 +54,7 @@ function App() {
   return (
     <div className="App">
       {showLogin ? (
-        <Angajat onBackClick={handleBackButtonClick} />
+        <LoginForm onBackClick={handleBackButtonClick} />
       ) : showCerereProiect ? (
         <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (

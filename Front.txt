@@ -5,5 +5,10 @@ LogIn :
 	-> butoanele de LogOut
 
 CEO : 
-	-> ManagementProiect (acceptare sau respingere) : mai trebuie facut sa selectezi un element si sa dai pe acela acceptare sau respingere
+	-> ManagementProiect (acceptare sau respingere) (facut)
+	-> Vizualizare Clienti  (facut)
+	-> Vizualizare Angajati (facut)
+	-> Vizualizare TeamLideri (facut)
+	-> Modifica Salariul 
+	-> 
 	
