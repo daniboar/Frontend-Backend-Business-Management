@@ -1,22 +1,20 @@
-// VizualizareA.jsx
-
 import React, { useState } from 'react';
-import './VizualizareT.css';
+import './VerifProiecte.css';
 
-const VizualizareT = () => {
+const VerifProiecte = () => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
     // Logica pentru acțiunea de afișare
-    console.log('Afișare TeamLeaderi!');
+    console.log('Afișare proiecte!');
   };
 
   return (
     <div className="vizualizare-container">
-      <h1>Vizualizare TeamLeaderi</h1>
+      <h1>Vizualizare proiecte</h1>
 
       <label>
-        TeamLeaderii din firma:
+        Proiectele firmei:
         <textarea
           value={comentariu}
           onChange={(e) => setComentariu(e.target.value)}
@@ -32,4 +30,4 @@ const VizualizareT = () => {
   );
 };
 
-export default VizualizareT;
+export default VerifProiecte;

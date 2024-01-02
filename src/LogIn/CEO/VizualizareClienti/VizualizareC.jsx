@@ -25,6 +25,9 @@ const VizualizareC = () => {
       <br />
 
       <button onClick={handleAfisare}>Afișare</button>
+      <button className="backButton">
+        Back
+      </button>
     </div>
   );
 };

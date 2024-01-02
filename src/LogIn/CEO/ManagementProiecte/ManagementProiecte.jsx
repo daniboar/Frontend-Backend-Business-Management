@@ -59,6 +59,9 @@ const ManagementCereri = () => {
 
       {/* Buton pentru respingere */}
       <button onClick={handleRespingere}>Respingere</button>
+      <button className="backButton">
+        Back
+      </button>
     </div>
   );
 };

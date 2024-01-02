@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+//Importuri pentru prima pagina
 import Welcome from './Welcome/Welcome.jsx';
 import LoginForm from './LogIn/Login.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
 import NewUser from './NewUser/NewUser.jsx';
-//import ManagementCereri from './LogIn/CEO/ManagementProiecte/ManagementProiecte.jsx';
 //import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
 //import CV from './CV/CV.jsx';
+//Importuri pentru deciderea user-ului
 import CEO from './LogIn/CEO/CEO.jsx';
 import Angajat from './LogIn/Angajat/Angajat.jsx';
 import TeamLeader from './LogIn/TeamLeader/TeamLeader.jsx';
@@ -13,6 +14,15 @@ import Client from './LogIn/Client/Client.jsx';
 //import GestiuneEchipa from './LogIn/TeamLeader/GestiuneEchipa/GestiuneEchipa.jsx';
 //import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMembrii/VizualizareEchipa.jsx'
 
+//Importuri pentru actiuniile CEO
+//import SchimbareSalariu from './LogIn/CEO/SchimbaSalariu/SchimbaSalariu.jsx';
+//import VerifProiecte from './LogIn/CEO/VerifProiecte/VerifProiecte.jsx'
+//import AlegeTL from './LogIn/CEO/AlegeTeamLeader/AlegeTL.jsx';
+//import ManagementCereri from './LogIn/CEO/ManagementProiecte/ManagementProiecte.jsx';
+//import VizualizareA from './LogIn/CEO/VizualizareAngajati/VizualizareA.jsx';
+//import VizualizareC from './LogIn/CEO/VizualizareClienti/VizualizareC.jsx';
+//import VizualizareT from './LogIn/CEO/VizualizareTeamLeaderi/VizualizareT.jsx';
+//import Promovari from './LogIn/CEO/Promovari/Promovari.jsx'
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);

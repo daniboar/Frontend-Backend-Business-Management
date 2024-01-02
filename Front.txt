@@ -9,6 +9,8 @@ CEO :
 	-> Vizualizare Clienti  (facut)
 	-> Vizualizare Angajati (facut)
 	-> Vizualizare TeamLideri (facut)
-	-> Modifica Salariul 
-	-> 
+	-> Modifica Salariul (facut)
+	-> Vizualizare Proiecte (facut)
+	-> Alege TeamLeader (facut)
+	-> Promovare (facut)
 	
