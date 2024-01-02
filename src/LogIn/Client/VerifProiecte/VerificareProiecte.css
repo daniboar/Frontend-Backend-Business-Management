@@ -1,6 +1,6 @@
 .customTextArea {
     width: 100%;
-    height: 100px; /* sau orice înălțime dorită pentru 7 linii */
+    height: 400px; /* sau orice înălțime dorită pentru 7 linii */
     resize: none;
   }
   
@@ -14,9 +14,3 @@
     border: none;
     cursor: pointer;
   }
-
-  .inputLabel {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  

@@ -14,3 +14,13 @@ CEO :
 	-> Alege TeamLeader (facut)
 	-> Promovare (facut)
 	
+Client :
+	-> Afisare Date Personale (facut)
+	-> Vizualizare Proiecte (facut)
+	-> Cerere Proiect  (nu stiu exact ce cere aici pentru a crea un proiect)
+
+Angajat :
+	-> Afisare Date Personale (facut)
+	-> Modificare Procentaj (facut)
+	-> Cerere de marire (acelasi lucru ca la cererea de proiect)
+	-> Vizualizare Proiect (facut)

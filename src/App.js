@@ -15,6 +15,7 @@ import Client from './LogIn/Client/Client.jsx';
 //import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMembrii/VizualizareEchipa.jsx'
 
 //Importuri pentru actiuniile CEO
+//-------------------------------------------------------------
 //import SchimbareSalariu from './LogIn/CEO/SchimbaSalariu/SchimbaSalariu.jsx';
 //import VerifProiecte from './LogIn/CEO/VerifProiecte/VerifProiecte.jsx'
 //import AlegeTL from './LogIn/CEO/AlegeTeamLeader/AlegeTL.jsx';
@@ -23,6 +24,24 @@ import Client from './LogIn/Client/Client.jsx';
 //import VizualizareC from './LogIn/CEO/VizualizareClienti/VizualizareC.jsx';
 //import VizualizareT from './LogIn/CEO/VizualizareTeamLeaderi/VizualizareT.jsx';
 //import Promovari from './LogIn/CEO/Promovari/Promovari.jsx'
+
+//Importuri pentru Client
+//----------------------------------------------------------------
+//import DatePersonale from './LogIn/Client/DatePersonale/DatePersonale.jsx';
+//import VerificareProiecte from './LogIn/Client/VerifProiecte/VerificareProiecte.jsx';
+
+
+//Importuri pentru Angajat
+//-----------------------------------------------------------------
+//import DatePersonaleA from './LogIn/Angajat/DatePersonaleA/DatePersonaleA.jsx';
+import Procentaj from './LogIn/Angajat/Procentaj/Procentaj.jsx';
+import VizProiect from './LogIn/Angajat/VizProiect/VizProiect.jsx';
+
+//Importuri pentru TeamLeader
+//----------------------------------------------------------------
+//import DatePersonaleT from './LogIn/TeamLeader/DatePersonaleT/DatePersonaleT.jsx';
+
+
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -118,7 +137,7 @@ function App() {
       ) : showNewUser ? (
         <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (
-        <AboutUs onBackClick={handleBackButtonClick} />
+        <VizProiect onBackClick={handleBackButtonClick} />
       ) : (
         <Welcome
           onLoginClick={handleLoginPageButtonClick}

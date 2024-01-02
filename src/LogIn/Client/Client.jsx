@@ -13,6 +13,8 @@ const Client = ({ onLogoutClick }) => {
         <FormTitle title="Verifica proiectul/proiectele tale" />
         <div className="button-container-client">
           <button>Verificare Proiecte</button>
+          <button>Cerere Proiect</button>
+          <button>Vizualizare date personale</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>

@@ -17,6 +17,7 @@ const TeamLeader = ({ onLogoutClick }) => {
           <button>Gestiune Proiect</button>
           <button>Propunere Marire</button>
           <button>Modificare Procentaj proiect</button>
+          <button>Vizualizare date personale</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>
