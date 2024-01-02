@@ -1,20 +1,4 @@
-/* VizualizareEchipa.css */
-
-.echipa-title {
-    font-size: 1.8em;
-    color: #333; /* culoarea textului poate fi modificată după preferință */
-    margin-bottom: 10px;
-  }
-  
-  .container {
-    margin-top: 10px;
-  }
-  
-  .text {
-    font-size: 1.5em;
-  }
-
-  .backButton {
+.backButton {
     position: absolute;
     bottom: 10px;
     right: 10px; /* Modificat pentru a plasa butonul în partea dreaptă jos */
@@ -24,4 +8,3 @@
     border: none;
     cursor: pointer;
   }
-  

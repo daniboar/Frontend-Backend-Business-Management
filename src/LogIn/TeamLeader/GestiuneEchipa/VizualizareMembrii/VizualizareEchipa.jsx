@@ -12,11 +12,16 @@ const VizualizareEchipa = () => {
 
   return (
     <div>
-      <h2 className="echipa-title">Aceasta este echipa ta</h2>
+      <h2 className="echipa-title">Aceasta este echipa pe care o conduci</h2>
       <button onClick={handleShowButtonClick}>SHOW</button>
       {showText && (
         <div className="container text">Text destul de maricel!</div>
       )}
+
+      <button className="backButton">
+        Back
+      </button>
+      
     </div>
   );
 };

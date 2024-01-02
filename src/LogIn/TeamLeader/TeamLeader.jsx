@@ -14,10 +14,10 @@ const TeamLeader = ({ onLogoutClick }) => {
         <FormTitle title="Gestioneaza echipa si proiectul" />
         <div className="button-container-teamLeader">
           <button>Gestiune Echipa</button>
-          <button>Gestiune Proiect</button>
           <button>Propunere Marire</button>
-          <button>Modificare Procentaj proiect</button>
-          <button>Vizualizare date personale</button>
+          <button>Procentaje Proiect</button>
+          <button>Vizualizare Detalii Proiect</button>
+          <button>Vizualizare Date Personale</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>

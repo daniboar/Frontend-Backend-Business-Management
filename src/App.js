@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+//import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
+//import CV from './CV/CV.jsx';
 //Importuri pentru prima pagina
+//---------------------------------------------------------
 import Welcome from './Welcome/Welcome.jsx';
 import LoginForm from './LogIn/Login.jsx';
 import AboutUs from './AboutUs/AboutUs.jsx';
 import NewUser from './NewUser/NewUser.jsx';
-//import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
-//import CV from './CV/CV.jsx';
+
 //Importuri pentru deciderea user-ului
+//---------------------------------------------------------
 import CEO from './LogIn/CEO/CEO.jsx';
 import Angajat from './LogIn/Angajat/Angajat.jsx';
 import TeamLeader from './LogIn/TeamLeader/TeamLeader.jsx';
@@ -34,14 +37,19 @@ import Client from './LogIn/Client/Client.jsx';
 //Importuri pentru Angajat
 //-----------------------------------------------------------------
 //import DatePersonaleA from './LogIn/Angajat/DatePersonaleA/DatePersonaleA.jsx';
-import Procentaj from './LogIn/Angajat/Procentaj/Procentaj.jsx';
-import VizProiect from './LogIn/Angajat/VizProiect/VizProiect.jsx';
+//import Procentaj from './LogIn/Angajat/Procentaj/Procentaj.jsx';
+//import VizProiect from './LogIn/Angajat/VizProiect/VizProiect.jsx';
 
 //Importuri pentru TeamLeader
 //----------------------------------------------------------------
 //import DatePersonaleT from './LogIn/TeamLeader/DatePersonaleT/DatePersonaleT.jsx';
-
-
+//import GestiuneEchipa from './LogIn/TeamLeader/GestiuneEchipa/GestiuneEchipa.jsx';
+//import AdaugareMembru from './LogIn/TeamLeader/GestiuneEchipa/AdaugaMembru/AdaugareMembru.jsx';
+//import StergereMembru from './LogIn/TeamLeader/GestiuneEchipa/StergereMembru/StergereMembru.jsx';
+//import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMembrii/VizualizareEchipa.jsx';
+//import Procentaje from './LogIn/TeamLeader/Procentaje/Procentaje.jsx';
+//import ProcentajPropriu from './LogIn/TeamLeader/Procentaje/ProcentajPropriu/ProcentajPropriu.jsx';
+//import ProcentajTotal from './LogIn/TeamLeader/Procentaje/ProcentajTotal/ProcentajTotal.jsx';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -137,7 +145,7 @@ function App() {
       ) : showNewUser ? (
         <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (
-        <VizProiect onBackClick={handleBackButtonClick} />
+        <AboutUs onBackClick={handleBackButtonClick} />
       ) : (
         <Welcome
           onLoginClick={handleLoginPageButtonClick}

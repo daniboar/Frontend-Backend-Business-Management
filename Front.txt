@@ -24,3 +24,12 @@ Angajat :
 	-> Modificare Procentaj (facut)
 	-> Cerere de marire (acelasi lucru ca la cererea de proiect)
 	-> Vizualizare Proiect (facut)
+
+TeamLeader :
+	-> GestiuneEchipa (facut)
+			-> AdaugareMembru (facut)
+			-> StergereMembru (facut)
+			-> VizualizareEchipa (facut)
+	-> Procentaje (facut)
+			-> Modificare Procentaj Propriu (facut)
+			-> Actualizare Procentaj Total (facut)
