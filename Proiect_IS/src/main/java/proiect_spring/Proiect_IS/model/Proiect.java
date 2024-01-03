@@ -104,4 +104,5 @@ public class Proiect {
     public void setEchipe(List<Echipa> echipe) {
         this.echipe = echipe;
     }
+
 }

@@ -8,14 +8,13 @@ const BackButton = ({ onBackClick }) => (
     <button onClick={onBackClick}>Back to Homepage</button>
   </div>
 );
-
 const AboutUs = ({ onBackClick }) => {
   return (
     <>
       <h2>About us and our app</h2>
 
       <Title2>Who are we?</Title2>
-      <p>We are 3 students who wanted to make the CEO's life easier. Our names are Boar Daniel-Ioan, Elecfi Sergiu-Andrei, and Maghiar Antoniu Cionca.</p>
+      <p>We are 3 students who wanted to make the CEO's life easier. Our names are Boar Daniel-Ioan, Elecfi Sergiu-Andrei, and Maghiar-Cionca Antoniu.</p>
 
       <Title2>What we are trying to do?</Title2>
       <p>We created the Business Management, an app for small businesses.</p>
