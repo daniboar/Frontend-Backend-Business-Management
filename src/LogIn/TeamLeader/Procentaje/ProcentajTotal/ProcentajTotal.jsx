@@ -1,22 +1,20 @@
-// AlegeTL.jsx
+// ProcentajTotal.jsx
 
 import React, { useState } from 'react';
-import './AlegeTL.css';
+import './ProcentajTotal.css';
 
-const AlegeTL = () => {
+const ProcentajTotal= () => {
   const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
-  const [title3, setTitle3] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
   const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2 || !title3) {
+    if (!title1) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
     // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2, title3});
+    console.log('Form submitted:', { title1});
 
     // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
     setIsSubmissionSuccessful(true);
@@ -24,10 +22,10 @@ const AlegeTL = () => {
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Atribuie TeamLeader unei echipe</h1>
+      <h1 className="pageTitle">Actualizeaza procentajul total al proiectului </h1>
 
       <label className="inputLabel">
-        CEO ID:
+        ID TeamLeader:
         <input
           type="text"
           className="textInput"
@@ -35,34 +33,14 @@ const AlegeTL = () => {
           onChange={(e) => setTitle1(e.target.value)}
         />
       </label>
-
-      <label className="inputLabel">
-        Echipa ID:
-        <input
-          type="text"
-          className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
-        />
-      </label>
-
-      <label className="inputLabel">
-        TeamLeader ID:
-        <input
-          type="text"
-          className="textInput"
-          value={title3}
-          onChange={(e) => setTitle3(e.target.value)}
-        />
-      </label>
-
+            
       <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Atribuie
+          Actualizare Procentaj
         </button>
 
         {isSubmissionSuccessful && (
           <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Atribuirea la echipa a avut succes.
+            Procentajul total al proiectului a fost actualizat.
           </p>
         )}
     
@@ -73,4 +51,4 @@ const AlegeTL = () => {
   );
 };
 
-export default AlegeTL;
+export default ProcentajTotal;

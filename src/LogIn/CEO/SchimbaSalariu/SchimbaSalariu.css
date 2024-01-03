@@ -1,0 +1,55 @@
+/* SchimbaSalariu.css */
+
+.pageContainer {
+    text-align: center;
+  }
+  
+  .pageTitle {
+    color: #020202;
+    text-decoration: underline;
+    margin-top: 20px;
+  }
+  
+  .inputLabel {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .textInput {
+    margin-left: 10px;
+  }
+  
+  .selectContainer {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .selectLabel {
+    margin-left: 10px;
+  }
+  
+  .selectInput {
+    margin-left: 10px;
+  }
+  
+  .schimbaButton {
+    margin-top: 10px;
+    margin-right: 10px; /* Adăugat pentru a separa butoanele */
+    padding: 10px 20px; /* Modificat pentru a mări dimensiunile butonului */
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .backButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Modificat pentru a plasa butonul în partea dreaptă jos */
+    padding: 15px 25px; /* Modificat pentru a mări dimensiunile butonului */
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  

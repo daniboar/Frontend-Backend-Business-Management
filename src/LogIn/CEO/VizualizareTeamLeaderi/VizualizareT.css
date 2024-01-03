@@ -1,0 +1,70 @@
+/* Numele fișierului: VizualizareAngajati.css */
+
+/* Stiluri pentru containerul principal */
+.vizualizare-angajati-page {
+    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Stiluri pentru eticheta textArea */
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Stiluri pentru structura flexibilă */
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Stiluri pentru containerul textArea */
+  .text-area-container {
+    margin-bottom: 10px;
+  }
+  /* Stiluri pentru textArea */
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Stiluri pentru buton specific acestei pagini */
+  .buton-vizualizare-angajati {
+    background-color: white;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+  /* Stiluri pentru buton specific acestei pagini la hover */
+  .buton-vizualizare-angajati:hover {
+    background-color: #ddd;
+  }
+
+  .backButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Modificat pentru a plasa butonul în partea dreaptă jos */
+    padding: 15px 25px; /* Modificat pentru a mări dimensiunile butonului */
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  

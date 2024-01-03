@@ -5,5 +5,31 @@ LogIn :
 	-> butoanele de LogOut
 
 CEO : 
-	-> ManagementProiect (acceptare sau respingere) : mai trebuie facut sa selectezi un element si sa dai pe acela acceptare sau respingere
+	-> ManagementProiect (acceptare sau respingere) (facut)
+	-> Vizualizare Clienti  (facut)
+	-> Vizualizare Angajati (facut)
+	-> Vizualizare TeamLideri (facut)
+	-> Modifica Salariul (facut)
+	-> Vizualizare Proiecte (facut)
+	-> Alege TeamLeader (facut)
+	-> Promovare (facut)
 	
+Client :
+	-> Afisare Date Personale (facut)
+	-> Vizualizare Proiecte (facut)
+	-> Cerere Proiect  (nu stiu exact ce cere aici pentru a crea un proiect)
+
+Angajat :
+	-> Afisare Date Personale (facut)
+	-> Modificare Procentaj (facut)
+	-> Cerere de marire (acelasi lucru ca la cererea de proiect)
+	-> Vizualizare Proiect (facut)
+
+TeamLeader :
+	-> GestiuneEchipa (facut)
+			-> AdaugareMembru (facut)
+			-> StergereMembru (facut)
+			-> VizualizareEchipa (facut)
+	-> Procentaje (facut)
+			-> Modificare Procentaj Propriu (facut)
+			-> Actualizare Procentaj Total (facut)

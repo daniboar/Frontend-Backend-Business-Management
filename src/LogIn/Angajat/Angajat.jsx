@@ -12,9 +12,10 @@ const Angajat = ({ onLogoutClick }) => {
         <FormHeader title="Bun venit, angajatule!" />
         <FormTitle title="Exploreaza munca si oportunitatile" />
         <div className="button-container">
-          <button>Cerere Marire</button>
-          <button>Procentaj Proiect</button>
-          <button>Vizualizare Proiect</button>
+          <button>Cerere marire</button>
+          <button>Procentaj proiect</button>
+          <button>Vizualizare proiect</button>
+          <button>Vizualizare date personale</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>

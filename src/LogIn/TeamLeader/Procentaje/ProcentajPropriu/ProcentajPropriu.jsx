@@ -1,9 +1,9 @@
-// AlegeTL.jsx
+// ProentajPropriu.jsx
 
 import React, { useState } from 'react';
-import './AlegeTL.css';
+import './ProcentajPropriu.css';
 
-const AlegeTL = () => {
+const ProcentajPropriu = () => {
   const [title1, setTitle1] = useState('');
   const [title2, setTitle2] = useState('');
   const [title3, setTitle3] = useState('');
@@ -24,10 +24,10 @@ const AlegeTL = () => {
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Atribuie TeamLeader unei echipe</h1>
+      <h1 className="pageTitle">Modifica proncentajul propriu la proiect</h1>
 
       <label className="inputLabel">
-        CEO ID:
+        ID:
         <input
           type="text"
           className="textInput"
@@ -37,7 +37,7 @@ const AlegeTL = () => {
       </label>
 
       <label className="inputLabel">
-        Echipa ID:
+        ID Proiect:
         <input
           type="text"
           className="textInput"
@@ -47,22 +47,23 @@ const AlegeTL = () => {
       </label>
 
       <label className="inputLabel">
-        TeamLeader ID:
+        Procentaj:
         <input
           type="text"
           className="textInput"
-          value={title3}
+          value={title2}
           onChange={(e) => setTitle3(e.target.value)}
         />
       </label>
+            
 
       <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Atribuie
+          Modifica Procentaj
         </button>
 
         {isSubmissionSuccessful && (
           <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Atribuirea la echipa a avut succes.
+            Modificarea procentajului a fost realizata cu succes.
           </p>
         )}
     
@@ -73,4 +74,4 @@ const AlegeTL = () => {
   );
 };
 
-export default AlegeTL;
+export default ProcentajPropriu;
