@@ -3,15 +3,15 @@ import './GestiuneEchipa.css';
 
 const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
 
-const GestiuneEchipa = ({ onBackClick }) => {
+const GestiuneEchipa = ({ onBackClick, onVizualizareEchipa, onStergereMembru, onAdaugareMembru }) => {
   return (
     <div className="gestiuneEchipa-page">
       <div className="container-echipa">
         <FormHeader title="Gestiunea echipei"/>
         <div className="button-container-echipa">
-          <button>Adaugare Membru</button>
-          <button>Stergere Membru</button>
-          <button>Vizualizare Echipa</button>
+          <button onClick={onAdaugareMembru}>Adaugare Membru</button>
+          <button onClick={onStergereMembru}>Stergere Membru</button>
+          <button onClick={onVizualizareEchipa}>Vizualizare Echipa</button>
           <button onClick={onBackClick}>Back</button>
         </div>
       </div>
