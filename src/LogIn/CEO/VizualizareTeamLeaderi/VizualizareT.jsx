@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './VizualizareT.css';
 
-const VizualizareT = () => {
+const VizualizareT = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
@@ -40,9 +40,7 @@ const VizualizareT = () => {
       <br />
 
       <button onClick={handleAfisare}>Afișare</button>
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

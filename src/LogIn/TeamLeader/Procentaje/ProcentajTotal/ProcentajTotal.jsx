@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './ProcentajTotal.css';
 
-const ProcentajTotal= () => {
+const ProcentajTotal= ({onBackClick}) => {
   const [title1, setTitle1] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
@@ -44,9 +44,7 @@ const ProcentajTotal= () => {
           </p>
         )}
     
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

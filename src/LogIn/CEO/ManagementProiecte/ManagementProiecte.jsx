@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './ManagementProiecte.css';
 
-const ManagementCereri = () => {
+const ManagementCereri = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
   const [titluCerere, setTitluCerere] = useState('');
   const [numeProiect, setNumeProiect] = useState('');
@@ -59,9 +59,7 @@ const ManagementCereri = () => {
 
       {/* Buton pentru respingere */}
       <button onClick={handleRespingere}>Respingere</button>
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

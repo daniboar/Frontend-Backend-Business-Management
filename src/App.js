@@ -921,7 +921,7 @@ const handleModificareProcentajTotal = () => {
 };
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Actiuni Angajat
-const handleCerereMarireClick = () => {
+const handleVizualizareDatePersonaleAClick = () => {
   setShowLogin(false);
    //CEO
    setShowCEO(false);
@@ -1071,7 +1071,7 @@ const handleVerificareProiectClick = () => {
    setShowInfo(false);
    setShowNewUser(false);
 };
-const handleCerereProiectClick = () => {
+const handleVizualizareDatePersonaleCClick = () => {
   setShowLogin(false);
    //CEO
    setShowCEO(false);
@@ -1132,6 +1132,13 @@ const handleCerereProiectClick = () => {
     setVizualizareEchipa(false);
     setProcentajPropriu(false);
     setProcentajTotal(false);
+    //Angajat
+    setDatePersonaleA(false);
+    setProcentaj(false);
+    setVizProiect(false);
+    //Client
+    setDatePersonale(false);
+    setVerificareProiecte(false);
     //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1140,8 +1147,45 @@ const handleCerereProiectClick = () => {
      setShowNewUser(false);
   };
 
-  const handleLogoutClick = () => {
-    setShowLogin(true);
+  const handleCEOBackButtonClick = () => {
+    
+     setShowCEO(true);
+     setVizualizareCerereProiect(false);
+     setManageriazaProiectele(false);
+     setShowPromovari(false);
+     setModificareSalariu(false);
+     setAsignareTeamLeader(false);
+     setVizualizareAngajat(false);
+     setVizualizareTeamLeader(false);
+     setVizualizareClienti(false);
+     //TL
+    setGestiuneEchipa(false);
+    setPropunereMarire(false);
+    setProcentajeProiect(false);
+    setVizualizareDetaliiProiect(false);
+    setVizualizareDatePersonale(false);
+    setAdaugareMembru(false);
+    setStergereMembru(false);
+    setVizualizareEchipa(false);
+    setProcentajPropriu(false);
+    setProcentajTotal(false);
+    //Angajat
+    setDatePersonaleA(false);
+    setProcentaj(false);
+    setVizProiect(false);
+    //Client
+    setDatePersonale(false);
+    setVerificareProiecte(false);
+    //     
+    setShowTeamLeader(false);
+     setShowAngajat(false);
+     setShowClient(false);
+     setShowInfo(false);
+     setShowNewUser(false);
+  };
+
+  const handleTLBackButtonClick = () => {
+    setShowLogin(false);
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
@@ -1163,13 +1207,206 @@ const handleCerereProiectClick = () => {
     setVizualizareEchipa(false);
     setProcentajPropriu(false);
     setProcentajTotal(false);
-    //
+     //Angajat
+     setDatePersonaleA(false);
+     setProcentaj(false);
+     setVizProiect(false);
+     //Client
+     setDatePersonale(false);
+     setVerificareProiecte(false);
+     //
+     setShowTeamLeader(true);
+     setShowAngajat(false);
+     setShowClient(false);
+     setShowInfo(false);
+     setShowNewUser(false);
+  };
+  const handleTLGestiuneBackButtonClick = () => {
+    setShowLogin(false);
+     //CEO
+     setShowCEO(false);
+     setVizualizareCerereProiect(false);
+     setManageriazaProiectele(false);
+     setShowPromovari(false);
+     setModificareSalariu(false);
+     setAsignareTeamLeader(false);
+     setVizualizareAngajat(false);
+     setVizualizareTeamLeader(false);
+     setVizualizareClienti(false);
+     //TL
+    setGestiuneEchipa(true);
+    setPropunereMarire(false);
+    setProcentajeProiect(false);
+    setVizualizareDetaliiProiect(false);
+    setVizualizareDatePersonale(false);
+    setAdaugareMembru(false);
+    setStergereMembru(false);
+    setVizualizareEchipa(false);
+    setProcentajPropriu(false);
+    setProcentajTotal(false);
+     //Angajat
+     setDatePersonaleA(false);
+     setProcentaj(false);
+     setVizProiect(false);
+     //Client
+     setDatePersonale(false);
+     setVerificareProiecte(false);
+     //
      setShowTeamLeader(false);
      setShowAngajat(false);
      setShowClient(false);
      setShowInfo(false);
      setShowNewUser(false);
   };
+  const handleTLProcentajeBackButtonClick = () => {
+    setShowLogin(false);
+     //CEO
+     setShowCEO(false);
+     setVizualizareCerereProiect(false);
+     setManageriazaProiectele(false);
+     setShowPromovari(false);
+     setModificareSalariu(false);
+     setAsignareTeamLeader(false);
+     setVizualizareAngajat(false);
+     setVizualizareTeamLeader(false);
+     setVizualizareClienti(false);
+     //TL
+    setGestiuneEchipa(false);
+    setPropunereMarire(false);
+    setProcentajeProiect(true);
+    setVizualizareDetaliiProiect(false);
+    setVizualizareDatePersonale(false);
+    setAdaugareMembru(false);
+    setStergereMembru(false);
+    setVizualizareEchipa(false);
+    setProcentajPropriu(false);
+    setProcentajTotal(false);
+     //Angajat
+     setDatePersonaleA(false);
+     setProcentaj(false);
+     setVizProiect(false);
+     //Client
+     setDatePersonale(false);
+     setVerificareProiecte(false);
+     //
+     setShowTeamLeader(false);
+     setShowAngajat(false);
+     setShowClient(false);
+     setShowInfo(false);
+     setShowNewUser(false);
+  };
+  const handleAngajatBackButtonClick = () => {
+    setShowLogin(false);
+     //CEO
+     setShowCEO(false);
+     setVizualizareCerereProiect(false);
+     setManageriazaProiectele(false);
+     setShowPromovari(false);
+     setModificareSalariu(false);
+     setAsignareTeamLeader(false);
+     setVizualizareAngajat(false);
+     setVizualizareTeamLeader(false);
+     setVizualizareClienti(false);
+     //TL
+    setGestiuneEchipa(false);
+    setPropunereMarire(false);
+    setProcentajeProiect(false);
+    setVizualizareDetaliiProiect(false);
+    setVizualizareDatePersonale(false);
+    setAdaugareMembru(false);
+    setStergereMembru(false);
+    setVizualizareEchipa(false);
+    setProcentajPropriu(false);
+    setProcentajTotal(false);
+     //Angajat
+     setDatePersonaleA(false);
+     setProcentaj(false);
+     setVizProiect(false);
+     //Client
+     setDatePersonale(false);
+     setVerificareProiecte(false);
+     //
+     setShowTeamLeader(false);
+     setShowAngajat(true);
+     setShowClient(false);
+     setShowInfo(false);
+     setShowNewUser(false);
+  };
+  const handleClientBackButtonClick = () => {
+    setShowLogin(false);
+     //CEO
+     setShowCEO(false);
+     setVizualizareCerereProiect(false);
+     setManageriazaProiectele(false);
+     setShowPromovari(false);
+     setModificareSalariu(false);
+     setAsignareTeamLeader(false);
+     setVizualizareAngajat(false);
+     setVizualizareTeamLeader(false);
+     setVizualizareClienti(false);
+     //TL
+    setGestiuneEchipa(false);
+    setPropunereMarire(false);
+    setProcentajeProiect(false);
+    setVizualizareDetaliiProiect(false);
+    setVizualizareDatePersonale(false);
+    setAdaugareMembru(false);
+    setStergereMembru(false);
+    setVizualizareEchipa(false);
+    setProcentajPropriu(false);
+    setProcentajTotal(false);
+     //Angajat
+     setDatePersonaleA(false);
+     setProcentaj(false);
+     setVizProiect(false);
+     //Client
+     setDatePersonale(false);
+     setVerificareProiecte(false);
+     //
+     setShowTeamLeader(false);
+     setShowAngajat(false);
+     setShowClient(true);
+     setShowInfo(false);
+     setShowNewUser(false);
+  };
+
+  const handleLogoutClick = () => {
+      setShowLogin(false);
+       //CEO
+       setShowCEO(false);
+       setVizualizareCerereProiect(false);
+       setManageriazaProiectele(false);
+       setShowPromovari(false);
+       setModificareSalariu(false);
+       setAsignareTeamLeader(false);
+       setVizualizareAngajat(false);
+       setVizualizareTeamLeader(false);
+       setVizualizareClienti(false);
+       //TL
+      setGestiuneEchipa(false);
+      setPropunereMarire(false);
+      setProcentajeProiect(false);
+      setVizualizareDetaliiProiect(false);
+      setVizualizareDatePersonale(false);
+      setAdaugareMembru(false);
+      setStergereMembru(false);
+      setVizualizareEchipa(false);
+      setProcentajPropriu(false);
+      setProcentajTotal(false);
+       //Angajat
+       setDatePersonaleA(false);
+       setProcentaj(false);
+       setVizProiect(false);
+       //Client
+       setDatePersonale(false);
+       setVerificareProiecte(false);
+       //
+       setShowTeamLeader(false);
+       setShowAngajat(false);
+       setShowClient(false);
+       setShowInfo(false);
+       setShowNewUser(false);
+    };
   
   return (
     <div className="App">
@@ -1192,35 +1429,35 @@ const handleCerereProiectClick = () => {
           onLogoutClick={handleLogoutClick} />
       ) : showPromovari ? (
         <Promovari
-           onBackClick={handleBackButtonClick}
+           onBackClick={handleCEOBackButtonClick}
         />
       ) : showModificareSalariu ? (
         <SchimbareSalariu 
-           onBackClick={handleBackButtonClick}
+           onBackClick={handleCEOBackButtonClick}
             />
       ) : showAsignareTeamLeader ? (
         <AlegeTL
-          onBackClick={handleBackButtonClick}
+          onBackClick={handleCEOBackButtonClick}
          />
       ) : showVizualizareCerereProiect ? (
         <VerifProiecte
-          onBackClick={handleBackButtonClick}
+          onBackClick={handleCEOBackButtonClick}
         />
       ) : showManageriazaProiectele ? (
         <ManagementCereri
-        onBackClick={handleBackButtonClick}
+        onBackClick={handleCEOBackButtonClick}
       />
       ) : showVizualizareTeamLeader ? (
         <VizualizareT
-          onBackClick={handleBackButtonClick}
+          onBackClick={handleCEOBackButtonClick}
         />
       ) : showVizualizareAngajat ? (
         <VizualizareA
-          onBackClick={handleBackButtonClick}
+          onBackClick={handleCEOBackButtonClick}
         />
       ) : showVizualizareClienti ? (
         <VizualizareC
-          onBackClick={handleBackButtonClick}
+          onBackClick={handleCEOBackButtonClick}
         />
 //////////////////////////////////////////////////////////////////////////////////
 //TeamLeader
@@ -1237,69 +1474,69 @@ const handleCerereProiectClick = () => {
               onAdaugareMembru={handleAdaugareMembruClick}
               onStergereMembru={handleStergereMembruClick}
               onVizualizareEchipa={handleVizualizareEchipaClick}
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleTLBackButtonClick}
             />
             ) : showAdaugareMembru ? (
               <AdaugareMembru
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleTLGestiuneBackButtonClick}
             />
             ) : showStergereMembru ? (
               <StergereMembru
-                onBackClick={handleBackButtonClick}
+                onBackClick={handleTLGestiuneBackButtonClick}
               />
             ) : showVizualizareEchipa ? (
               <VizualizareEchipa
-                onVizualizareEchipa={handleBackButtonClick}
+                onVizualizareEchipa={handleTLGestiuneBackButtonClick}
               />
           ) : showPropunereMarire ? (
             //TODO
             <ManagementCereri
-            onBackClick={handleBackButtonClick}
+            onBackClick={handleTLBackButtonClick}
           />
           ) : showProcentajeProiect ? (
             <Procentaje
               onModificareProcentajPropriu={handleModificareProcentajPropriu}
               onModificareProcentajTotal={handleModificareProcentajTotal}
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleTLBackButtonClick}
             />
             ) : showProcentajPropriu ? (
               <ProcentajPropriu
-                onBackClick={handleBackButtonClick}
+                onBackClick={handleTLProcentajeBackButtonClick}
               />
             ) : showProcentajTotal ? (
               <ProcentajTotal
-                onBackClick={handleBackButtonClick}
+                onBackClick={handleTLProcentajeBackButtonClick}
               />
           ) : showVizualizareDetaliiProiect ? (
             //TODO
             <VizualizareA
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleTLBackButtonClick}
             />
           ) : showVizualizareDatePersonale ? (
             <DatePersonaleT
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleTLBackButtonClick}
             />
 //////////////////////////////////////////////////////////////////////////////////
 //Angajat
       ) : showAngajat ? (
         <Angajat 
-          onCerereMarire={handleCerereMarireClick}
+          //onCerereMarire={handleCerereMarireClick}
           onProcentajProiect={handleProcentajProiectClick}
           onVizualizareProiect={handleVizualizareProiectClick}
-          onVizualizareDatePersonale={handleVizualizareDatePersonaleClick}
+          onVizualizareDatePersonale={handleVizualizareDatePersonaleAClick}
           onLogoutClick={handleLogoutClick}
         />
         ) : showDatePersonaleA ? (
           <DatePersonaleA
-            onBackClick={handleBackButtonClick}
+            onBackClick={handleAngajatBackButtonClick}
           />
         ) : showProcentaj ? (
           <Procentaj
-            onBackClick={handleBackButtonClick}
+            onBackClick={handleAngajatBackButtonClick}
           />
           ) : showVizProiect ? (
             <VizProiect
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleAngajatBackButtonClick}
             />
        
 //////////////////////////////////////////////////////////////////////////////////
@@ -1307,16 +1544,16 @@ const handleCerereProiectClick = () => {
       ) : showClient ? (
         <Client 
           onVerificareProiect={handleVerificareProiectClick}
-          onCerereProiect={handleCerereProiectClick}
-          onVizualizareDatePersonale={handleVizualizareDatePersonaleClick}
+          //onCerereProiect={handleCerereProiectClick}
+          onVizualizareDatePersonale={handleVizualizareDatePersonaleCClick}
           onLogoutClick={handleLogoutClick} />
           ) : showDatePersonale ? (
             <DatePersonale
-              onBackClick={handleBackButtonClick}
+              onBackClick={handleClientBackButtonClick}
             />
             ) : showVerificareProiecte ? (
               <VerificareProiecte
-                onBackClick={handleBackButtonClick}
+                onBackClick={handleClientBackButtonClick}
               />
 //////////////////////////////////////////////////////////////////////////////////
 //WelcomePage

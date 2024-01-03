@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './VizualizareA.css';
 
-const VizualizareA = () => {
+const VizualizareA = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
@@ -27,7 +27,6 @@ const VizualizareA = () => {
     console.error('Eroare în timpul cererii:', error);
   });
 };
-
   return (
     <div className="vizualizare-container">
       <h1>Vizualizare Angajati</h1>
@@ -42,11 +41,10 @@ const VizualizareA = () => {
       <br />
 
       <button onClick={handleAfisare}>Afișare</button>
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };
+
 
 export default VizualizareA;

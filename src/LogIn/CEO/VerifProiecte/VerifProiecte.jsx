@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './VerifProiecte.css';
 
-const VerifProiecte = () => {
+const VerifProiecte = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
@@ -23,9 +23,7 @@ const VerifProiecte = () => {
       <br />
 
       <button onClick={handleAfisare}>Afișare</button>
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './VizProiect.css';
 
-const VizProiect = () => {
+const VizProiect = ({onBackClick}) => {
   const [id, setId] = useState('');
   const [isReadOnly, setIsReadOnly] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -51,9 +51,7 @@ const VizProiect = () => {
         </p>
       )}
 
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

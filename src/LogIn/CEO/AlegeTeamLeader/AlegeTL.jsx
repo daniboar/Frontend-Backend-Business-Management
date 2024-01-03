@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './AlegeTL.css';
 
-const AlegeTL = () => {
+const AlegeTL = ({ onBackClick }) => {
   const [title1, setTitle1] = useState('');
   const [title2, setTitle2] = useState('');
   const [title3, setTitle3] = useState('');
@@ -66,9 +66,7 @@ const AlegeTL = () => {
           </p>
         )}
     
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

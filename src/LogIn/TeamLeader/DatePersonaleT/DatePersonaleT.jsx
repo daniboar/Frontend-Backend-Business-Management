@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DatePersonaleT.css';
 
-const DatePersonaleT = () => {
+const DatePersonaleT = ({onBackClick}) => {
   const [text, setText] = useState('');
   const [isReadOnly, setIsReadOnly] = useState(true);
   const [successMessage, setSuccessMessage] = useState('');
@@ -29,9 +29,7 @@ const DatePersonaleT = () => {
         Afisare
       </button>
 
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

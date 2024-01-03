@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './VizualizareC.css';
 
 
-const VizualizareC = () => {
+const VizualizareC = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
@@ -41,9 +41,7 @@ const VizualizareC = () => {
       <br />
 
       <button onClick={handleAfisare}>Afișare</button>
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };

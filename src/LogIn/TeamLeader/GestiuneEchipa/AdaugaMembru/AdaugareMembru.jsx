@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './AdaugareMembru.css';
 
-const AdaugareMembru = () => {
+const AdaugareMembru = ({onBackClick}) => {
     const [title1, setTitle1] = useState('');
     const [title2, setTitle2] = useState('');
     const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
@@ -55,7 +55,7 @@ const AdaugareMembru = () => {
           </p>
         )}
   
-        <button className="backButton">Back</button>
+        <button onClick={onBackClick}>Back</button>
       </div>
     );
   };

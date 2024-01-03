@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './VizualizareEchipa.css'; // Importă fișierul CSS
 
-const VizualizareEchipa = () => {
+const VizualizareEchipa = ({onBackClick}) => {
   const [showText, setShowText] = useState(false);
 
   const handleShowButtonClick = () => {
@@ -18,9 +18,7 @@ const VizualizareEchipa = () => {
         <div className="container text">Text destul de maricel!</div>
       )}
 
-      <button className="backButton">
-        Back
-      </button>
+      <button onClick={onBackClick}>Back</button>
       
     </div>
   );

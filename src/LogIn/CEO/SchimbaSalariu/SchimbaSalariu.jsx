@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './SchimbaSalariu.css';
 
-const SchimbaSalariu = () => {
+const SchimbaSalariu = ({ onBackClick }) => {
   const [selectedRole, setSelectedRole] = useState('');
   const [title1, setTitle1] = useState('');
   const [title2, setTitle2] = useState('');
@@ -82,9 +82,7 @@ const SchimbaSalariu = () => {
         )}
       </div>
 
-      <button className="backButton">
-        Back
-      </button>
+      <button  onClick={onBackClick}>Back</button>
     </div>
   );
 };
