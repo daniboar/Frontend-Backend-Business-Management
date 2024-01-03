@@ -9,7 +9,22 @@ const VizualizareT = () => {
   const handleAfisare = () => {
     // Logica pentru acțiunea de afișare
     console.log('Afișare TeamLeaderi!');
-  };
+    fetch('http://localhost:8080/ceos/teamleaders', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    const teamLeaderAtributeReduse = data.map(TeamLeader => `${TeamLeader.id}: ${TeamLeader.nume} ${TeamLeader.prenume}, salariu = ${TeamLeader.salariu} RON, email = ${TeamLeader.email}`).join('\n');
+
+    setComentariu(teamLeaderAtributeReduse);
+  })
+  .catch(error => {
+    console.error('Eroare în timpul cererii:', error);
+  });
+};
 
   return (
     <div className="vizualizare-container">

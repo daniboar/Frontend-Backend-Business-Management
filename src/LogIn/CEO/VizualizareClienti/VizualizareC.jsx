@@ -3,12 +3,28 @@
 import React, { useState } from 'react';
 import './VizualizareC.css';
 
+
 const VizualizareC = () => {
   const [comentariu, setComentariu] = useState('');
 
   const handleAfisare = () => {
     // Logica pentru acțiunea de afișare
     console.log('Afișare clienti!');
+    fetch('http://localhost:8080/ceos/clienti', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    const clientAtributeReduse = data.map(Client => `${Client.id}: ${Client.nume} ${Client.prenume}, email = ${Client.email}`).join('\n');
+
+    setComentariu(clientAtributeReduse);
+  })
+  .catch(error => {
+    console.error('Eroare în timpul cererii:', error);
+  });
   };
 
   return (
