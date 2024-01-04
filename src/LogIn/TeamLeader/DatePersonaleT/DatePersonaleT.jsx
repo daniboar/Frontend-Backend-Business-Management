@@ -55,7 +55,6 @@ const DatePersonaleT = ({ onBackClick }) => {
           className="textInput"
           value={teamLeaderId}
           onChange={(e) => setTeamLeaderId(e.target.value)}
-          readOnly={isReadOnly}
         />
       </label>
 

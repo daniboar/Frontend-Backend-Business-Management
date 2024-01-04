@@ -26,11 +26,7 @@ public class Client {
 
     @Column
     private String password;
-
-    @OneToMany(mappedBy = "client")
-    private List<Proiect> proiecte;
-
-
+    
     public int getId() {
         return id;
     }
@@ -69,14 +65,6 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Proiect> getProiecte() {
-        return proiecte;
-    }
-
-    public void setProiecte(List<Proiect> proiecte) {
-        this.proiecte = proiecte;
     }
 
 }

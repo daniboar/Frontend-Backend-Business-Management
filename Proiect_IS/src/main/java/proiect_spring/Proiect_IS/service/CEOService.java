@@ -169,4 +169,8 @@ public class CEOService {
             angajatRepository.delete(angajat);
         }
     }
+
+//    public CEO getLogin(String email, String parola){
+//        return
+//    }
 }

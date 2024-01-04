@@ -3,9 +3,11 @@ package proiect_spring.Proiect_IS.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proiect_spring.Proiect_IS.model.Angajat;
+import proiect_spring.Proiect_IS.model.Client;
 import proiect_spring.Proiect_IS.model.Echipa;
 import proiect_spring.Proiect_IS.model.Proiect;
 import proiect_spring.Proiect_IS.repository.AngajatRepository;
+import proiect_spring.Proiect_IS.repository.ClientRepository;
 import proiect_spring.Proiect_IS.repository.EchipaRepository;
 import proiect_spring.Proiect_IS.repository.ProiectRepository;
 import org.slf4j.Logger;
@@ -18,6 +20,9 @@ import java.util.List;
 public class ProiectService {
     @Autowired
     private ProiectRepository proiectRepository;
+
+    @Autowired
+    private ClientRepository clientRepository;
 
     @Autowired
     private AngajatRepository angajatRepository;
@@ -40,7 +45,11 @@ public class ProiectService {
     }
 
     public Proiect saveProject(Proiect proiect) {
-        return proiectRepository.save(proiect);
+        proiect.setStareProiect("nefinalizat");
+        proiect.setProcentaj(0);
+        Client client = clientRepository.findById(proiect.getClientId()).orElse(null);
+            proiect.setClient(client);
+            return proiectRepository.save(proiect);
     }
 
     public void deleteProject(int id) {

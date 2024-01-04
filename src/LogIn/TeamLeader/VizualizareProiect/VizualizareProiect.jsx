@@ -25,7 +25,7 @@ const VizualizareDetaliiProiect = ({ onBackClick }) => {
         const data = await response.json();
 
         // Formatăm detaliile proiectului pentru a le afișa în textarea
-        const detaliiProiect = `ID Proiect: ${data.id}\nNume Proiect: ${data.nume}\nData început: ${data.dataInceput}\nData sfârșit: ${data.dataSfarsit}\n`;
+        const detaliiProiect = `ID Proiect: ${data.id}\nNume Proiect: ${data.numeProiect}\nProcentaj: ${data.procentaj}\nStare proiect: ${data.stareProiect}\n`;
         setProiectDetails(detaliiProiect);
 
         // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare

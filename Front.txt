@@ -15,23 +15,11 @@ CEO :
 	-> Promovare (facut)
 	
 Client :
-	-> Afisare Date Personale (facut)
-	-> Vizualizare Proiecte (facut)
-	-> Cerere Proiect  (facut)
-	-> Creare Proiect (facut)
+	-> Creare Proiect 
 
 Angajat :
-	-> Afisare Date Personale (facut)
-	-> Modificare Procentaj (facut)
-	-> Cerere de marire salariu (facut)
-	-> Vizualizare Proiect (facut)
+	
 
 TeamLeader :
-	-> GestiuneEchipa (facut)
-			-> AdaugareMembru (facut)
-			-> StergereMembru (facut)
-			-> VizualizareEchipa (facut)
 	-> Procentaje (facut)
-			-> Modificare Procentaj Propriu (facut)
-			-> Actualizare Procentaj Total (facut)
-	-> Vizualizare Date Personale (Facut)
+			-> Actualizare Procentaj Total (facut) DOAR ASTA SA FIE 

@@ -57,7 +57,7 @@ const VizualizareEchipa = ({ onBackClick }) => {
         <div className="container text">
           {echipa.map((angajat) => (
             <div key={angajat.id}>
-              ID: {angajat.id}, Name: {angajat.name}, Role: {angajat.role}
+              ID: {angajat.id}, Nume: {angajat.nume}, Prenume: {angajat.prenume}, Procentaj : {angajat.procentajProiect}
             </div>
           ))}
         </div>

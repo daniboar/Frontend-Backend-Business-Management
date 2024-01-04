@@ -37,7 +37,7 @@ const Procentaj = ({ onBackClick }) => {
       <h1 className="pageTitle">Actualizare procentaj propriu la proiect</h1>
 
       <label className="inputLabel">
-        ID Proiect:
+        ID Angajat:
         <input
           type="text"
           className="textInput"

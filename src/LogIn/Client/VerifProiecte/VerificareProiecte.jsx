@@ -20,7 +20,7 @@ const VerificareProiecte = ({ onBackClick }) => {
       if (data && data.length > 0) {
         // Formatăm detaliile proiectelor pentru a le afișa în textarea
         const proiecteDetails = data.map((proiect) => (
-          `ID Proiect: ${proiect.id}\nNume Proiect: ${proiect.nume}\nData început: ${proiect.dataInceput}\nData sfârșit: ${proiect.dataSfarsit}\n\n`
+          `ID Proiect: ${proiect.id}\nNume Proiect: ${proiect.numeProiect}\nProcentaj: ${proiect.procentaj}\nStare proiect: ${proiect.stareProiect}\n\n`
         )).join('');
         
         setText(proiecteDetails);

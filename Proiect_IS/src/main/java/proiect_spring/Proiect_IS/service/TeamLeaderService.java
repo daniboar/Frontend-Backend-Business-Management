@@ -106,6 +106,8 @@ public class TeamLeaderService {
 
             // Actualizează echipa la care este asignat angajatul
             angajat.setEchipa(null);
+            angajat.setProcentajProiect(0);
+            angajat.setProiectAsignat(null);
             angajatRepository.save(angajat);
         }
     }

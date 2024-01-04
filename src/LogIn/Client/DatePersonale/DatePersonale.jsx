@@ -19,7 +19,7 @@ const DatePersonale = ({ onBackClick }) => {
 
       if (data && data.nume) {
         // Formatăm detaliile clientului pentru a le afișa în textarea
-        const clientDetails = `ID Client: ${data.id}\nNume: ${data.nume}\nPrenume: ${data.prenume}\nEmail: ${data.email}\nAdresă: ${data.adresa}`;
+        const clientDetails = `ID Client: ${data.id}\nNume: ${data.nume}\nPrenume: ${data.prenume}\nEmail: ${data.email}\n`;
         setText(clientDetails);
         setIsReadOnly(true);
         setSuccessMessage('Informațiile au fost afișate cu succes!');
