@@ -798,7 +798,7 @@ const handleStergereMembruClick = () => {
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
    setAdaugareMembru(false);
-   setStergereMembru(true);
+   setStergereMembru(false);
    setVizualizareEchipa(false);
    setProcentajPropriu(false);
    setProcentajTotal(false);
@@ -808,8 +808,8 @@ const handleStergereMembruClick = () => {
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
-  setAdaugareMembru(true);
-  setStergereMembru(false);
+  setAdaugareMembru(false);
+  setStergereMembru(true);
   setVizualizareEchipa(false);
   setProcentajPropriu(false);
   setProcentajTotal(false);
@@ -1407,7 +1407,7 @@ const handleVizualizareDatePersonaleCClick = () => {
   };
 
   const handleLogoutClick = () => {
-      setShowLogin(false);
+      setShowLogin(true);
        //CEO
        setShowCEO(false);
        setVizualizareCerereProiect(false);
@@ -1494,8 +1494,8 @@ const handleVizualizareDatePersonaleCClick = () => {
 //CEO
       ) : showCEO ? (
         <CEO 
-          onVizualizareCerereProiect={handleVizualizareCerereProiectClick}
-          onManageriazaProiectele={handleManageriazaProiecteleClick}
+          onVizualizareCerereProiect={handleManageriazaProiecteleClick}
+          onManageriazaProiectele={handleVizualizareCerereProiectClick}
           onPromovari={handlePromovariClick}
           onModificareSalariu={handleModificareSalariuClick}
           onAsignareTeamLeader={handleAsignareTeamLeaderClick}
@@ -1562,7 +1562,7 @@ const handleVizualizareDatePersonaleCClick = () => {
               />
             ) : showVizualizareEchipa ? (
               <VizualizareEchipa
-                onVizualizareEchipa={handleTLGestiuneBackButtonClick}
+                onBackClick={handleTLGestiuneBackButtonClick}
               />
           ) : showPropunereMarire ? (
             //TODO
