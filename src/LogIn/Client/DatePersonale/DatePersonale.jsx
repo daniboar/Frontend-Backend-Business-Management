@@ -1,20 +1,52 @@
 import React, { useState } from 'react';
 import './DatePersonale.css';
 
-const DatePersonale = ({onBackClick}) => {
+const DatePersonale = ({ onBackClick }) => {
+  const [id, setId] = useState('');
   const [text, setText] = useState('');
   const [isReadOnly, setIsReadOnly] = useState(true);
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleAfisareClick = () => {
-    setIsReadOnly(true);
-    setText('Aici apare conținutul dorit.');
-    setSuccessMessage('Informatiile au fost afisate cu succes!');
+  const handleAfisareClick = async () => {
+    if (!id) {
+      alert('Vă rugăm să completați ID-ul înainte de a trimite.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:8080/clienti/${id}`);
+      const data = await response.json();
+
+      if (data && data.nume) {
+        // Formatăm detaliile clientului pentru a le afișa în textarea
+        const clientDetails = `ID Client: ${data.id}\nNume: ${data.nume}\nPrenume: ${data.prenume}\nEmail: ${data.email}\nAdresă: ${data.adresa}`;
+        setText(clientDetails);
+        setIsReadOnly(true);
+        setSuccessMessage('Informațiile au fost afișate cu succes!');
+      } else {
+        setText('Nu s-au găsit detalii despre client.');
+        setSuccessMessage('');
+      }
+    } catch (error) {
+      console.error('Eroare în timpul cererii:', error);
+      setText('Eroare la preluarea datelor despre client.');
+      setSuccessMessage('');
+    }
   };
 
   return (
     <div className="pageContainer">
       <h1 className="pageTitle">Vizualizare Date Personale</h1>
+
+      <label className="inputLabel">
+        ID Client:
+        <input
+          type="text"
+          className="textInput"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+      </label>
 
       <textarea
         className="customTextArea"
@@ -26,7 +58,7 @@ const DatePersonale = ({onBackClick}) => {
       {successMessage && <p className="successMessage">{successMessage}</p>}
 
       <button className="atribuieButton" onClick={handleAfisareClick}>
-        Afisare
+        Afișare
       </button>
 
       <button onClick={onBackClick}>Back</button>

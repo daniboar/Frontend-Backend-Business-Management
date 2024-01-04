@@ -1,38 +1,49 @@
-// ProentajPropriu.jsx
-
 import React, { useState } from 'react';
 import './ProcentajPropriu.css';
 
-const ProcentajPropriu = ({onBackClick}) => {
-  const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
-  const [title3, setTitle3] = useState('');
+const ProcentajPropriu = ({ onBackClick }) => {
+  const [teamLeaderId, setTeamLeaderId] = useState('');
+  const [proiectId, setProiectId] = useState('');
+  const [procentaj, setProcentaj] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2 || !title3) {
+  const handleSchimbaButtonClick = async () => {
+    if (!teamLeaderId || !proiectId || !procentaj) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2, title3});
+    try {
+      const response = await fetch(`http://localhost:8080/proiect/procentaj/${teamLeaderId}/${proiectId}/${procentaj}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
+        setIsSubmissionSuccessful(true);
+      } else {
+        alert('Error updating percentage. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating percentage:', error);
+      alert('Error updating percentage. Please try again.');
+    }
   };
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Modifica proncentajul propriu la proiect</h1>
+      <h1 className="pageTitle">Modifică procentajul propriu la proiect</h1>
 
       <label className="inputLabel">
-        ID:
+        ID Team Leader:
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={teamLeaderId}
+          onChange={(e) => setTeamLeaderId(e.target.value)}
         />
       </label>
 
@@ -41,8 +52,8 @@ const ProcentajPropriu = ({onBackClick}) => {
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
+          value={proiectId}
+          onChange={(e) => setProiectId(e.target.value)}
         />
       </label>
 
@@ -51,22 +62,21 @@ const ProcentajPropriu = ({onBackClick}) => {
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle3(e.target.value)}
+          value={procentaj}
+          onChange={(e) => setProcentaj(e.target.value)}
         />
       </label>
-            
 
       <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Modifica Procentaj
-        </button>
+        Modifică Procentaj
+      </button>
 
-        {isSubmissionSuccessful && (
-          <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Modificarea procentajului a fost realizata cu succes.
-          </p>
-        )}
-    
+      {isSubmissionSuccessful && (
+        <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
+          Modificarea procentajului a fost realizată cu succes.
+        </p>
+      )}
+
       <button onClick={onBackClick}>Back</button>
     </div>
   );

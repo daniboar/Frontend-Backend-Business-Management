@@ -6,17 +6,31 @@ const CreareProiectForm = ({ onBackClick }) => {
   const [idClient, setIdClient] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!projectName || !idClient) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { projectName, idClient });
+    try {
+      const response = await fetch('http://localhost:8080/clienti/proiect', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ projectName, idClient }),
+      });
 
-    // Setează starea pentru afișarea mesajului de succes
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        // Setează starea pentru afișarea mesajului de succes
+        setIsSubmissionSuccessful(true);
+      } else {
+        alert('Error submitting project. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting project:', error);
+      alert('Error submitting project. Please try again.');
+    }
   };
 
   return (
