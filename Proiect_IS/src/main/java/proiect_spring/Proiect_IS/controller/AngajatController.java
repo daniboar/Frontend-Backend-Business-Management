@@ -2,6 +2,8 @@ package proiect_spring.Proiect_IS.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import proiect_spring.Proiect_IS.model.Angajat;
 import proiect_spring.Proiect_IS.model.Proiect;
@@ -66,6 +68,16 @@ public class AngajatController {
     @Operation(summary = "Endpoint care adauga o cerere de marire pentru un angajat.")
     public void adaugaCerereMarire(@PathVariable int angajatId) {
         angajatService.adaugaCerereMarire(angajatId);
+    }
+
+    @PostMapping("/login")
+    @Operation(summary = "Endpoint pentru login Angajat")
+    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+        if (angajatService.login(email, password)) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
     }
 
     @DeleteMapping("/{id}")

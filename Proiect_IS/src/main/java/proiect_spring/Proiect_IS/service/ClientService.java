@@ -59,4 +59,9 @@ public class ClientService {
                     .collect(Collectors.toList());
     }
 
+    public boolean login(String email, String password) {
+        Client client = clientRepository.findByEmailAndPassword(email, password);
+        return client != null;
+    }
+
 }

@@ -2,6 +2,8 @@ package proiect_spring.Proiect_IS.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import proiect_spring.Proiect_IS.model.*;
 import proiect_spring.Proiect_IS.service.*;
@@ -197,6 +199,16 @@ public class CEOController {
     @Operation(summary = "Endpoint care imi promoveaza un angajat la statutul de TeamLeader")
     public void promoveazaAngajat(@PathVariable int ceoID, @PathVariable int angajatID){
         ceoService.promoveazaAngajat(ceoID, angajatID);
+    }
+
+    @PostMapping("/login")
+    @Operation(summary = "Endpoint pentru login CEO")
+    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+        if (ceoService.login(email, password)) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
     }
 
     @DeleteMapping("/{id}")

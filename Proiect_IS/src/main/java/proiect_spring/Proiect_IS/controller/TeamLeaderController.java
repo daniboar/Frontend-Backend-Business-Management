@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import proiect_spring.Proiect_IS.model.Angajat;
 import proiect_spring.Proiect_IS.model.Proiect;
@@ -82,6 +84,16 @@ public class TeamLeaderController {
     @Operation(summary = "Endpoint pentru a actualiza automat procentajul proiectului la care lucreaza si TeamLeaderul.", description = "Liderul preia procentajele venite de la angajati, le face suma, iar aceasta suma va fi noul procent actualizat al proiectului echipei")
     public void actualizeazaProcentajTeamLeader(@PathVariable int teamLeaderId) {
         teamLeaderService.actualizeazaProcentajTeamLeader(teamLeaderId);
+    }
+
+    @PostMapping("/login")
+    @Operation(summary = "Endpoint pentru login TeamLeader")
+    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+        if (teamLeaderService.login(email, password)) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
     }
 
     @PutMapping("/proiect/procentaj/{teamLeaderId}/{proiectId}/{procentaj}")

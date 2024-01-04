@@ -170,7 +170,8 @@ public class CEOService {
         }
     }
 
-//    public CEO getLogin(String email, String parola){
-//        return
-//    }
+    public boolean login(String email, String password) {
+        CEO ceo = ceoRepository.findByEmailAndParola(email, password);
+        return ceo != null;
+    }
 }

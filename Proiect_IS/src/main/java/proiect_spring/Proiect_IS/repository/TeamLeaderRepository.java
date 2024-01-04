@@ -6,5 +6,5 @@ import proiect_spring.Proiect_IS.model.TeamLeader;
 
 @Repository
 public interface TeamLeaderRepository extends JpaRepository<TeamLeader, Integer> {
-    // Alte metode specifice pentru interacțiunea cu baza de date
+    TeamLeader findByEmailAndParola(String email, String password);
 }

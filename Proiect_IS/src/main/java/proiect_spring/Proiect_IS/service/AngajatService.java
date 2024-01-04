@@ -3,6 +3,7 @@ package proiect_spring.Proiect_IS.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proiect_spring.Proiect_IS.model.Angajat;
+import proiect_spring.Proiect_IS.model.CEO;
 import proiect_spring.Proiect_IS.model.CerereMarire;
 import proiect_spring.Proiect_IS.model.Proiect;
 import proiect_spring.Proiect_IS.repository.AngajatRepository;
@@ -71,5 +72,10 @@ public class AngajatService {
             cerereMarire.setCerereAprobata(false); // Setează inițial cererea ca neaprobată
             cerereMarireRepository.save(cerereMarire);
         }
+    }
+
+    public boolean login(String email, String password) {
+        Angajat angajat = angajatRepository.findByEmailAndParola(email, password);
+        return angajat != null;
     }
 }

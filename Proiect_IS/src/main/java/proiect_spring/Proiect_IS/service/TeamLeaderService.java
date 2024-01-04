@@ -2,10 +2,7 @@ package proiect_spring.Proiect_IS.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import proiect_spring.Proiect_IS.model.Angajat;
-import proiect_spring.Proiect_IS.model.Echipa;
-import proiect_spring.Proiect_IS.model.Proiect;
-import proiect_spring.Proiect_IS.model.TeamLeader;
+import proiect_spring.Proiect_IS.model.*;
 import proiect_spring.Proiect_IS.repository.AngajatRepository;
 import proiect_spring.Proiect_IS.repository.EchipaRepository;
 import proiect_spring.Proiect_IS.repository.ProiectRepository;
@@ -144,5 +141,10 @@ public class TeamLeaderService {
             if(proiectEchipa != null)
                 proiectService.updateProcentaj(teamLeader.getProiectId(), sumaProcentaje);
         }
+    }
+
+    public boolean login(String email, String password) {
+        TeamLeader teamLeader = teamLeaderRepository.findByEmailAndParola(email, password);
+        return teamLeader != null;
     }
 }

@@ -6,4 +6,5 @@ import proiect_spring.Proiect_IS.model.CEO;
 
 @Repository
 public interface CEORepository extends JpaRepository<CEO, Integer> {
+    CEO findByEmailAndParola(String email, String password);
 }

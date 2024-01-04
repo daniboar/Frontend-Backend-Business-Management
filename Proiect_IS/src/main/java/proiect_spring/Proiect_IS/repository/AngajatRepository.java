@@ -11,4 +11,5 @@ import java.util.Optional;
 @Repository
 public interface AngajatRepository extends JpaRepository<Angajat, Integer> {
     List<Angajat> findByEchipa_Id(int echipaId);
+    Angajat findByEmailAndParola(String email, String password);
 }

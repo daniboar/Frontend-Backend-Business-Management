@@ -6,5 +6,5 @@ import proiect_spring.Proiect_IS.model.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Integer> {
-
+    Client findByEmailAndPassword(String email, String password);
 }
