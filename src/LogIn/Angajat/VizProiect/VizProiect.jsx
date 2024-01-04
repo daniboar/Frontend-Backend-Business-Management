@@ -7,30 +7,33 @@ const VizProiect = ({ onBackClick }) => {
   const [successMessage, setSuccessMessage] = useState('');
   const [comentariu, setComentariu] = useState('');
 
-  const handleAfisare = () => {
-    // Logica pentru acțiunea de afișare
-    console.log('Afișare Proiecte!');
-    fetch(`http://localhost:8080/angajati/proiect/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
+  // ...
+const handleAfisare = () => {
+  // Logica pentru acțiunea de afișare
+  console.log('Afișare Proiecte!');
+  fetch(`http://localhost:8080/angajati/proiect/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.numeProiect) {
+        // Formatăm detaliile proiectului pentru a le afișa în textarea
+        const proiectDetails = `ID Proiect: ${data.id}\nNume Proiect: ${data.numeProiect}\nProcentaj: ${data.procentaj}%\nStare Proiect: ${data.stareProiect}\nClient ID: ${data.clientId}`;
+        setComentariu(proiectDetails);
+      } else {
+        setComentariu('Nu s-au găsit detalii despre proiect.');
       }
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.numeProiect) {
-          // Formatăm detaliile proiectului pentru a le afișa în textarea
-          const proiectDetails = `ID Proiect: ${data.id}\nNume Proiect: ${data.numeProiect}\nProcentaj: ${data.procentaj}%\nStare Proiect: ${data.stareProiect}\nClient ID: ${data.clientId}`;
-          setComentariu(proiectDetails);
-        } else {
-          setComentariu('Nu s-au găsit detalii despre proiect.');
-        }
-      })
-      .catch(error => {
-        console.error('Eroare în timpul cererii:', error);
-        setComentariu('Eroare la preluarea datelor despre proiect.');
-      });
-  };
+    .catch(error => {
+      console.error('Eroare în timpul cererii:', error);
+      setComentariu('Eroare la preluarea datelor despre proiect.');
+    });
+};
+// ...
+
 
   const handleAfisareButtonClick = () => {
     if (!id) {
