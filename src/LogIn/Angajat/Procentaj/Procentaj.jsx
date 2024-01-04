@@ -13,7 +13,7 @@ const Procentaj = ({ onBackClick }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/angajati/procentaj/${id}/${procentaj}`, {
+      const response = await fetch(`/angajati/procentaj/${id}/${procentaj}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
