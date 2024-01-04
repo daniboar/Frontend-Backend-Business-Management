@@ -49,6 +49,7 @@ import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMemb
 import Procentaje from './LogIn/TeamLeader/Procentaje/Procentaje.jsx';
 import ProcentajPropriu from './LogIn/TeamLeader/Procentaje/ProcentajPropriu/ProcentajPropriu.jsx';
 import ProcentajTotal from './LogIn/TeamLeader/Procentaje/ProcentajTotal/ProcentajTotal.jsx';
+import VizualizareDetaliiProiect from './LogIn/TeamLeader/VizualizareProiect/VizualizareProiect.jsx';
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
