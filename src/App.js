@@ -1585,8 +1585,7 @@ const handleVizualizareDatePersonaleCClick = () => {
                 onBackClick={handleTLProcentajeBackButtonClick}
               />
           ) : showVizualizareDetaliiProiect ? (
-            //TODO
-            <VizualizareA
+            <VizualizareDetaliiProiect
               onBackClick={handleTLBackButtonClick}
             />
           ) : showVizualizareDatePersonale ? (
