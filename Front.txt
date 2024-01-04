@@ -22,7 +22,7 @@ Client :
 Angajat :
 	-> Afisare Date Personale (facut)
 	-> Modificare Procentaj (facut)
-	-> Cerere de marire (acelasi lucru ca la cererea de proiect)
+	-> Cerere de marire salariu (facut)
 	-> Vizualizare Proiect (facut)
 
 TeamLeader :
@@ -33,3 +33,4 @@ TeamLeader :
 	-> Procentaje (facut)
 			-> Modificare Procentaj Propriu (facut)
 			-> Actualizare Procentaj Total (facut)
+	-> Vizualizare Date Personale (Facut)

@@ -1,0 +1,25 @@
+.backButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; /* Modificat pentru a plasa butonul în partea dreaptă jos */
+    padding: 15px 25px; /* Modificat pentru a mări dimensiunile butonului */
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Alte stiluri existente ... */
+
+  .colt-stanga-jos {
+    position: absolute;
+    bottom: -230px;
+    left: 100px;
+    font-size: 20px;
+    color: red;
+    max-width: 200px; /* Limitază lățimea pentru a evita suprapunerea */
+    overflow: visible; /* Permite textului să iasă în afara containerului */
+  }
+  
+  /* Restul stilurilor existente ... */
+  
