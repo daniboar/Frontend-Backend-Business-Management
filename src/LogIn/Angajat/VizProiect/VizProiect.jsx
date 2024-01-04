@@ -7,7 +7,6 @@ const VizProiect = ({ onBackClick }) => {
   const [successMessage] = useState('');
   const [comentariu, setComentariu] = useState('');
 
-  // ...
 const handleAfisare = () => {
   // Logica pentru acțiunea de afișare
   console.log('Afișare Proiecte!');
@@ -32,7 +31,10 @@ const handleAfisare = () => {
       setComentariu('Eroare la preluarea datelor despre proiect.');
     });
 };
+<<<<<<< HEAD
 // ...
+=======
+>>>>>>> 5516764df5067c8a11ab6b7e877322e649d7831d
 
   return (
     <div className="pageContainer">
