@@ -8,18 +8,41 @@ const NewUserForm = ({ onBackClick }) => {
   const [password, setPassword] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!lastName || !firstName || !email || !password) {
-      alert('Please fill in all fields before creating account.');
+      alert('Please fill in all fields before creating an account.');
       return;
     }
-
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { lastName, firstName, email, password });
-
-    // Setează starea pentru afișarea mesajului de succes
-    setIsSubmissionSuccessful(true);
+  
+    const userData = {
+      nume: lastName,
+      prenume: firstName,
+      email: email,
+      password: password
+    };
+  
+    try {
+      const response = await fetch('http://localhost:8080/clienti', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+  
+      if (response.ok) {
+        console.log('Account created successfully');
+        setIsSubmissionSuccessful(true);
+      } else {
+        console.error('Failed to create account');
+        alert('Failed to create account. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error creating account:', error);
+      alert('An error occurred. Please try again later.');
+    }
   };
+  
 
   return (
     <div id="newUserForm">

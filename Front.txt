@@ -1,24 +1,15 @@
-Welcome (facut)
-AboutUs (facut)
-NewUser (facut)
-LogIn :
-	-> butoanele de LogOut
+
 
 CEO : 
 	-> ManagementProiect (acceptare sau respingere) (facut)
-	-> Vizualizare Clienti  (facut)
-	-> Vizualizare Angajati (facut)
-	-> Vizualizare TeamLideri (facut)
 	-> Modifica Salariul (facut)
 	-> Vizualizare Proiecte (facut)
 	-> Alege TeamLeader (facut)
 	-> Promovare (facut)
+	-> Creaza angajat (nefacut)
 	
 Client :
 	-> Creare Proiect 
-
-Angajat :
-	
 
 TeamLeader :
 	-> Procentaje (facut)
