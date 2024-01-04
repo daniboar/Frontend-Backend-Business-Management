@@ -7,7 +7,6 @@ const VizProiect = ({ onBackClick }) => {
   const [successMessage, setSuccessMessage] = useState('');
   const [comentariu, setComentariu] = useState('');
 
-  // ...
 const handleAfisare = () => {
   // Logica pentru acțiunea de afișare
   console.log('Afișare Proiecte!');
@@ -32,22 +31,6 @@ const handleAfisare = () => {
       setComentariu('Eroare la preluarea datelor despre proiect.');
     });
 };
-// ...
-
-
-  const handleAfisareButtonClick = () => {
-    if (!id) {
-      alert('Vă rugăm să completați toate câmpurile înainte de a trimite.');
-      return;
-    }
-
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { id });
-
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsReadOnly(true);
-    setSuccessMessage('Detaliile despre proiect au fost afișate cu succes.');
-  };
 
   return (
     <div className="pageContainer">

@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import './CerereMarire.css';
 
 const CerereMarire = ({ onBackClick }) => {
-  const [title1, setTitle1] = useState('');
+  const [angajatId, setAngajatId] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1) {
-      alert('Please fill in all fields before submitting.');
+  const handleDepuneCerereClick = async () => {
+    if (!angajatId) {
+      alert('Vă rugăm să completați ID-ul înainte de a trimite.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1 });
+    try {
+      const response = await fetch(`http://localhost:8080/angajati/adauga-cerere-marire/${angajatId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        setIsSubmissionSuccessful(true);
+      } else {
+        setIsSubmissionSuccessful(false);
+        alert('Eroare la depunerea cererii. Vă rugăm să încercați din nou.');
+      }
+    } catch (error) {
+      console.error('Eroare în timpul cererii:', error);
+      setIsSubmissionSuccessful(false);
+      alert('Eroare la depunerea cererii. Vă rugăm să încercați din nou.');
+    }
   };
 
   return (
@@ -28,16 +42,16 @@ const CerereMarire = ({ onBackClick }) => {
       <h1 className="pageTitle">Depune o cerere de marire</h1>
 
       <label className="inputLabel">
-        ID:
+        ID Angajat:
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={angajatId}
+          onChange={(e) => setAngajatId(e.target.value)}
         />
       </label>
 
-      <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
+      <button className="atribuieButton" onClick={handleDepuneCerereClick}>
         Depune Cerere
       </button>
 

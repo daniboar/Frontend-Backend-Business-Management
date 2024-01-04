@@ -1,60 +1,71 @@
-// AlegeTL.jsx
-
 import React, { useState } from 'react';
 import './Procentaj.css';
 
-const Procentaj = ({onBackClick}) => {
-  const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
+const Procentaj = ({ onBackClick }) => {
+  const [id, setId] = useState('');
+  const [procentaj, setProcentaj] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2) {
-      alert('Please fill in all fields before submitting.');
+  const handleSchimbaButtonClick = async () => {
+    if (!id || !procentaj) {
+      alert('Vă rugăm să completați toate câmpurile înainte de a trimite.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2});
+    try {
+      const response = await fetch(`http://localhost:8080/angajati/procentaj/${id}/${procentaj}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
+        setIsSubmissionSuccessful(true);
+      } else {
+        alert('Eroare la actualizarea procentajului. Vă rugăm să încercați din nou.');
+      }
+    } catch (error) {
+      console.error('Error updating percentage:', error);
+      alert('Error updating percentage. Please try again.');
+    }
   };
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Actualizeaza proncentajul propriu la proiect</h1>
+      <h1 className="pageTitle">Actualizare procentaj propriu la proiect</h1>
 
       <label className="inputLabel">
-        ID:
+        ID Proiect:
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={id}
+          onChange={(e) => setId(e.target.value)}
         />
       </label>
 
       <label className="inputLabel">
-        Procentaj:
+        Procentaj Nou:
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
+          value={procentaj}
+          onChange={(e) => setProcentaj(e.target.value)}
         />
       </label>
 
       <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Actualizeaza
-        </button>
+        Actualizează
+      </button>
 
-        {isSubmissionSuccessful && (
-          <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Actualizarea procentajului a fost realizata cu succes.
-          </p>
-        )}
-    
+      {isSubmissionSuccessful && (
+        <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
+          Actualizarea procentajului a fost realizată cu succes.
+        </p>
+      )}
+
       <button onClick={onBackClick}>Back</button>
     </div>
   );
