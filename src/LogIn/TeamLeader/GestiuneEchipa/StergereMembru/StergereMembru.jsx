@@ -1,63 +1,80 @@
-//StergereMembru.jsx
-
 import React, { useState } from 'react';
 import './StergereMembru.css';
 
-const StergereMembru = ({onBackClick}) => {
-    const [title1, setTitle1] = useState('');
-    const [title2, setTitle2] = useState('');
-    const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
-  
-    const handleSchimbaButtonClick = () => {
-      if (!title1 || !title2) {
-        alert('Please fill in all fields before submitting.');
-        return;
+const StergereMembru = ({ onBackClick }) => {
+  const [teamLeaderId, setTeamLeaderId] = useState('');
+  const [angajatId, setAngajatId] = useState('');
+  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
+
+  const handleEliminaDinEchipaClick = async () => {
+    if (!teamLeaderId || !angajatId) {
+      alert('Please fill in all fields before submitting.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:8080/team-leaders/echipa/${teamLeaderId}/${angajatId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          // Add any additional headers if required
+        },
+      });
+
+      if (response.ok) {
+        // Logica pentru tratarea datelor la submit
+        console.log('Form submitted:', { teamLeaderId, angajatId });
+
+        // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Team Leader-ul sau angajatul nu au fost găsite.');
+      } else {
+        alert('Eroare la eliminarea angajatului din echipă.');
       }
-  
-      // Logica pentru tratarea datelor la submit
-      console.log('Form submitted:', { title1, title2 });
-  
-      // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-      setIsSubmissionSuccessful(true);
-    };
-  
-    return (
-      <div className="pageContainer">
-        <h1 className="pageTitle">Elimina un angajat din echipa ta</h1>
-  
-        <label className="inputLabel">
-          ID TeamLeader:
-          <input
-            type="text"
-            className="textInput"
-            value={title1}
-            onChange={(e) => setTitle1(e.target.value)}
-          />
-        </label>
-  
-        <label className="inputLabel">
-          ID Angajat:
-          <input
-            type="text"
-            className="textInput"
-            value={title2}
-            onChange={(e) => setTitle2(e.target.value)}
-          />
-        </label>
-  
-        <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Elimina din echipa
-        </button>
-  
-        {isSubmissionSuccessful && (
-          <p className="successMessage">
-            Eliminarea angajatului din echipa s-a realizat cu succes.
-          </p>
-        )}
-  
-        <button onClick={onBackClick}>Back</button>
-      </div>
-    );
+    } catch (error) {
+      console.error('Eroare în timpul cererii:', error);
+      alert('Eroare la eliminarea angajatului din echipă.');
+    }
   };
-  
-  export default StergereMembru;
+
+  return (
+    <div className="pageContainer">
+      <h1 className="pageTitle">Elimina un angajat din echipa ta</h1>
+
+      <label className="inputLabel">
+        ID TeamLeader:
+        <input
+          type="text"
+          className="textInput"
+          value={teamLeaderId}
+          onChange={(e) => setTeamLeaderId(e.target.value)}
+        />
+      </label>
+
+      <label className="inputLabel">
+        ID Angajat:
+        <input
+          type="text"
+          className="textInput"
+          value={angajatId}
+          onChange={(e) => setAngajatId(e.target.value)}
+        />
+      </label>
+
+      <button className="atribuieButton" onClick={handleEliminaDinEchipaClick}>
+        Elimina din echipa
+      </button>
+
+      {isSubmissionSuccessful && (
+        <p className="successMessage">
+          Eliminarea angajatului din echipa s-a realizat cu succes.
+        </p>
+      )}
+
+      <button onClick={onBackClick}>Back</button>
+    </div>
+  );
+};
+
+export default StergereMembru;

@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 import './CerereProiect.css';
 
 const CerereProiect = ({ onBackClick }) => {
-  const [title1, setTitle1] = useState('');
+  const [proiectId, setProiectId] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSubmitButtonClick = () => {
-    if (!title1) {
+  const handleSubmitButtonClick = async () => {
+    if (!proiectId) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1 });
+    try {
+      const response = await fetch(`http://localhost:8080/clienti/adauga_cerere_proiect/${proiectId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+        // Add body data here if needed
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
+        setIsSubmissionSuccessful(true);
+      } else {
+        alert('Error submitting project request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting project request:', error);
+      alert('Error submitting project request. Please try again.');
+    }
   };
 
   return (
@@ -33,8 +47,8 @@ const CerereProiect = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={proiectId}
+          onChange={(e) => setProiectId(e.target.value)}
         />
       </label>
 
