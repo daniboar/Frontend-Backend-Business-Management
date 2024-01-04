@@ -72,6 +72,10 @@ public class CEOController {
         return proiectService.getProjectById(id);
     }
 
+//    @GetMapping("/login/{email}/{parola}")
+//    @Operation(summary = "Endpoint pentru login CEO")
+//    public CEO getLogin(@RequestBody )
+
     @GetMapping("/angajati")
     @Operation(summary = "Endpoint pentru a vedea toti angajatii")
     public List<Angajat> getAngajati(){

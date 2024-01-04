@@ -3,8 +3,8 @@ import './VizProiect.css';
 
 const VizProiect = ({ onBackClick }) => {
   const [id, setId] = useState('');
-  const [isReadOnly, setIsReadOnly] = useState(false);
-  const [successMessage, setSuccessMessage] = useState('');
+  const [isReadOnly] = useState(false);
+  const [successMessage] = useState('');
   const [comentariu, setComentariu] = useState('');
 
   // ...
@@ -33,21 +33,6 @@ const handleAfisare = () => {
     });
 };
 // ...
-
-
-  const handleAfisareButtonClick = () => {
-    if (!id) {
-      alert('Vă rugăm să completați toate câmpurile înainte de a trimite.');
-      return;
-    }
-
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { id });
-
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsReadOnly(true);
-    setSuccessMessage('Detaliile despre proiect au fost afișate cu succes.');
-  };
 
   return (
     <div className="pageContainer">
