@@ -1,38 +1,38 @@
 import React, { useState } from 'react';
 import './VizProiect.css';
 
-const VizProiect = ({onBackClick}) => {
+const VizProiect = ({ onBackClick }) => {
   const [id, setId] = useState('');
   const [isReadOnly, setIsReadOnly] = useState(false);
+  const [projectDetails, setProjectDetails] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const handleAfisareButtonClick = () => {
+
+  const handleAfisareButtonClick = async () => {
     if (!id) {
       alert('Vă rugăm să completați toate câmpurile înainte de a trimite.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { id });
+    try {
+      // Make a request to your Spring Boot backend
+      const response = await fetch(`/angajati/proiect/${id}`);
+      const data = await response.json();
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsReadOnly(true);
-    setSuccessMessage('Detaliile despre proiect au fost afișate cu succes.');
+      // Update the state with project details
+      setProjectDetails(data);
+
+      // Set the state for readOnly and successMessage
+      setIsReadOnly(true);
+      setSuccessMessage('Detaliile despre proiect au fost afișate cu succes.');
+    } catch (error) {
+      console.error('Error fetching project details:', error);
+      alert('Error fetching project details. Please try again.');
+    }
   };
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Vizualizare informatii despre proiect</h1>
-
-      <label className="inputLabel">
-        ID:
-        <input
-          type="text"
-          className="textInput"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-          readOnly={isReadOnly}
-        />
-      </label>
+      {/* ... (existing JSX) ... */}
 
       <button className="atribuieButton" onClick={handleAfisareButtonClick}>
         Afisare
@@ -41,19 +41,14 @@ const VizProiect = ({onBackClick}) => {
       <textarea
         className="customTextArea"
         placeholder="Detalii aici..."
-        value=''
+        value={projectDetails}
         readOnly={isReadOnly}
       />
-
-      {successMessage && (
-        <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-          {successMessage}
-        </p>
-      )}
 
       <button onClick={onBackClick}>Back</button>
     </div>
   );
 };
+
 
 export default VizProiect;
