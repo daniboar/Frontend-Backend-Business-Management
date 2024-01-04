@@ -48,9 +48,7 @@ import GestiuneEchipa from './LogIn/TeamLeader/GestiuneEchipa/GestiuneEchipa.jsx
 import AdaugareMembru from './LogIn/TeamLeader/GestiuneEchipa/AdaugaMembru/AdaugareMembru.jsx';
 import StergereMembru from './LogIn/TeamLeader/GestiuneEchipa/StergereMembru/StergereMembru.jsx';
 import VizualizareEchipa from './LogIn/TeamLeader/GestiuneEchipa/VizualizareMembrii/VizualizareEchipa.jsx';
-import Procentaje from './LogIn/TeamLeader/Procentaje/Procentaje.jsx';
-import ProcentajPropriu from './LogIn/TeamLeader/Procentaje/ProcentajPropriu/ProcentajPropriu.jsx';
-import ProcentajTotal from './LogIn/TeamLeader/Procentaje/ProcentajTotal/ProcentajTotal.jsx';
+import ProcentajTotal from './LogIn/TeamLeader/Procentaje/ProcentajTotal.jsx';
 import VizualizareDetaliiProiect from './LogIn/TeamLeader/VizualizareProiect/VizualizareProiect.jsx';
 
 function App() {
@@ -70,13 +68,11 @@ function App() {
   const [showVizualizareTeamLeader, setVizualizareTeamLeader] = useState(false);
   const [showVizualizareClienti, setVizualizareClienti] = useState(false);
   const [showGestiuneEchipa, setGestiuneEchipa] = useState(false);
-  const [showProcentajeProiect, setProcentajeProiect] = useState(false);
   const [showVizualizareDetaliiProiect, setVizualizareDetaliiProiect] = useState(false);
   const [showVizualizareDatePersonale, setVizualizareDatePersonale] = useState(false);
   const [showAdaugareMembru, setAdaugareMembru] = useState(false);
   const [showStergereMembru, setStergereMembru] = useState(false);
   const [showVizualizareEchipa, setVizualizareEchipa] = useState(false);
-  const [showProcentajPropriu, setProcentajPropriu] = useState(false);
   const [showProcentajTotal, setProcentajTotal] = useState(false);
   const [showDatePersonaleA, setDatePersonaleA] = useState(false);
   const [showProcentaj, setProcentaj] = useState(false);
@@ -101,13 +97,12 @@ function App() {
     setVizualizareClienti(false);
     //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -153,13 +148,12 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -188,13 +182,12 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -228,13 +221,12 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -270,13 +262,12 @@ const handleVizualizareCerereProiectClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -309,13 +300,12 @@ const handleManageriazaProiecteleClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -349,13 +339,12 @@ const handlePromovariClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -388,13 +377,12 @@ const handleModificareSalariuClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -427,13 +415,12 @@ const handleAsignareTeamLeaderClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -466,13 +453,12 @@ const handleVizualizareAngajatClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -505,13 +491,12 @@ const handleVizualizareTeamLeaderClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -544,13 +529,12 @@ const handleVizualizareClientiClick = () => {
    setVizualizareClienti(true);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -585,13 +569,12 @@ const handleGestiuneEchipaClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(true);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -611,45 +594,7 @@ const handleGestiuneEchipaClick = () => {
    setShowNewUser(false);
 };
 
-const handleProcentajeProiectClick = () => {
-  setShowLogin(false);
-   //CEO
-   setShowCEO(false);
-   setVizualizareCerereProiect(false);
-   setManageriazaProiectele(false);
-   setShowPromovari(false);
-   setModificareSalariu(false);
-   setAsignareTeamLeader(false);
-   setVizualizareAngajat(false);
-   setVizualizareTeamLeader(false);
-   setVizualizareClienti(false);
-   //TL
-   setGestiuneEchipa(false);
-   setProcentajeProiect(true);
-   setVizualizareDetaliiProiect(false);
-   setVizualizareDatePersonale(false);
-   setAdaugareMembru(false);
-   setStergereMembru(false);
-   setVizualizareEchipa(false);
-   setProcentajPropriu(false);
-   setProcentajTotal(false);
-   //Angajat
-   setDatePersonaleA(false);
-   setProcentaj(false);
-   setVizProiect(false);
-   setCerereMarire(false);
-   //Client
-   setDatePersonale(false);
-   setVerificareProiecte(false);
-   setCerereProiect(false);
-   setCreareProiectForm(false);
-   //
-   setShowTeamLeader(false);
-   setShowAngajat(false);
-   setShowClient(false);
-   setShowInfo(false);
-   setShowNewUser(false);
-};
+
 const handleVizualizareDetaliiProiectClick = () => {
   setShowLogin(false);
    //CEO
@@ -664,13 +609,12 @@ const handleVizualizareDetaliiProiectClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(true);
    setVizualizareDatePersonale(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -703,13 +647,12 @@ const handleVizualizareDatePersonaleClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setProcentajeProiect(false);
+  
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(true);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //Angajat
    setDatePersonaleA(false);
@@ -742,13 +685,12 @@ const handleAdaugareMembruClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(true);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -782,17 +724,15 @@ const handleStergereMembruClick = () => {
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
-   setProcentajPropriu(false);
    setProcentajTotal(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(true);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -825,13 +765,12 @@ const handleVizualizareEchipaClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(true);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -865,13 +804,12 @@ const handleModificareProcentajPropriu = () => {
    
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(true);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -904,13 +842,12 @@ const handleModificareProcentajTotal = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(true);
   //Angajat
   setDatePersonaleA(false);
@@ -945,13 +882,12 @@ const handleVizualizareDatePersonaleAClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(true);
@@ -984,13 +920,12 @@ const handleProcentajProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1023,13 +958,12 @@ const handleVizualizareProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1064,13 +998,12 @@ const handleVerificareProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1103,13 +1036,12 @@ const handleVizualizareDatePersonaleCClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1143,13 +1075,12 @@ const handleCerereProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1183,13 +1114,12 @@ const handleCreareProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setProcentajeProiect(false);
+ 
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
   setAdaugareMembru(false);
   setStergereMembru(false);
   setVizualizareEchipa(false);
-  setProcentajPropriu(false);
   setProcentajTotal(false);
   //Angajat
   setDatePersonaleA(false);
@@ -1224,13 +1154,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -1263,13 +1192,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
     //Angajat
     setDatePersonaleA(false);
@@ -1303,13 +1231,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
      //Angajat
      setDatePersonaleA(false);
@@ -1342,52 +1269,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(true);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
-    setProcentajTotal(false);
-     //Angajat
-     setDatePersonaleA(false);
-     setProcentaj(false);
-     setVizProiect(false);
-     setCerereMarire(false);
-     //Client
-     setDatePersonale(false);
-     setVerificareProiecte(false);
-     setCerereProiect(false);
-     setCreareProiectForm(false);
-     //
-     setShowTeamLeader(false);
-     setShowAngajat(false);
-     setShowClient(false);
-     setShowInfo(false);
-     setShowNewUser(false);
-  };
-  const handleTLProcentajeBackButtonClick = () => {
-    setShowLogin(false);
-     //CEO
-     setShowCEO(false);
-     setVizualizareCerereProiect(false);
-     setManageriazaProiectele(false);
-     setShowPromovari(false);
-     setModificareSalariu(false);
-     setAsignareTeamLeader(false);
-     setVizualizareAngajat(false);
-     setVizualizareTeamLeader(false);
-     setVizualizareClienti(false);
-     //TL
-    setGestiuneEchipa(false);
-    setProcentajeProiect(true);
-    setVizualizareDetaliiProiect(false);
-    setVizualizareDatePersonale(false);
-    setAdaugareMembru(false);
-    setStergereMembru(false);
-    setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
      //Angajat
      setDatePersonaleA(false);
@@ -1420,13 +1307,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
      //Angajat
      setDatePersonaleA(false);
@@ -1459,13 +1345,12 @@ const handleCreareProiectClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setProcentajeProiect(false);
+   
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
     setAdaugareMembru(false);
     setStergereMembru(false);
     setVizualizareEchipa(false);
-    setProcentajPropriu(false);
     setProcentajTotal(false);
      //Angajat
      setDatePersonaleA(false);
@@ -1499,13 +1384,12 @@ const handleCreareProiectClick = () => {
        setVizualizareClienti(false);
        //TL
       setGestiuneEchipa(false);
-      setProcentajeProiect(false);
+     
       setVizualizareDetaliiProiect(false);
       setVizualizareDatePersonale(false);
       setAdaugareMembru(false);
       setStergereMembru(false);
       setVizualizareEchipa(false);
-      setProcentajPropriu(false);
       setProcentajTotal(false);
        //Angajat
        setDatePersonaleA(false);
@@ -1539,13 +1423,12 @@ const handleCreareProiectClick = () => {
        setVizualizareClienti(false);
        //TL
       setGestiuneEchipa(false);
-      setProcentajeProiect(false);
+     
       setVizualizareDetaliiProiect(false);
       setVizualizareDatePersonale(false);
       setAdaugareMembru(false);
       setStergereMembru(false);
       setVizualizareEchipa(false);
-      setProcentajPropriu(false);
       setProcentajTotal(false);
        //Angajat
        setDatePersonaleA(false);
@@ -1621,7 +1504,7 @@ const handleCreareProiectClick = () => {
       ): showTeamLeader ? (
         <TeamLeader 
           onGestiuneEchipa={handleGestiuneEchipaClick}
-          onProcentajeProiect={handleProcentajeProiectClick}
+          onProcentajeProiect={handleModificareProcentajTotal}
           onVizualizareDetaliiProiect={handleVizualizareDetaliiProiectClick}
           onVizualizareDatePersonale={handleVizualizareDatePersonaleClick}
           onLogoutClick={handleLogoutClick} />
@@ -1644,19 +1527,9 @@ const handleCreareProiectClick = () => {
               <VizualizareEchipa
                 onBackClick={handleTLGestiuneBackButtonClick}
               />
-            ) : showProcentajeProiect ? (
-            <Procentaje
-              onModificareProcentajPropriu={handleModificareProcentajPropriu}
-              onModificareProcentajTotal={handleModificareProcentajTotal}
-              onBackClick={handleTLBackButtonClick}
-            />
-            ) : showProcentajPropriu ? (
-              <ProcentajPropriu
-                onBackClick={handleTLProcentajeBackButtonClick}
-              />
             ) : showProcentajTotal ? (
               <ProcentajTotal
-                onBackClick={handleTLProcentajeBackButtonClick}
+                onBackClick={handleTLGestiuneBackButtonClick}
               />
             ) : showVizualizareDetaliiProiect ? (
             <VizualizareDetaliiProiect

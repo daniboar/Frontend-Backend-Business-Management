@@ -1,48 +1,60 @@
-// AlegeTL.jsx
-
 import React, { useState } from 'react';
 import './AlegeTL.css';
 
 const AlegeTL = ({ onBackClick }) => {
-  const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
-  const [title3, setTitle3] = useState('');
+  const [ceoId, setCeoId] = useState('');
+  const [echipaId, setEchipaId] = useState('');
+  const [teamLeaderId, setTeamLeaderId] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2 || !title3) {
+  const handleAtribuieButtonClick = async () => {
+    if (!ceoId || !echipaId || !teamLeaderId) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2, title3});
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/adauga_teamleader/${ceoId}/${echipaId}/${teamLeaderId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Ceo, team, or team leader not found.');
+      } else {
+        alert('Error adding team leader to the team.');
+      }
+    } catch (error) {
+      console.error('Error during request:', error);
+      alert('Error adding team leader to the team.');
+    }
   };
 
   return (
     <div className="pageContainer">
-      <h1 className="pageTitle">Atribuie TeamLeader unei echipe</h1>
+      <h1 className="pageTitle">Assign a TeamLeader to a Team</h1>
 
       <label className="inputLabel">
         CEO ID:
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={ceoId}
+          onChange={(e) => setCeoId(e.target.value)}
         />
       </label>
 
       <label className="inputLabel">
-        Echipa ID:
+        Team ID:
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
+          value={echipaId}
+          onChange={(e) => setEchipaId(e.target.value)}
         />
       </label>
 
@@ -51,21 +63,21 @@ const AlegeTL = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title3}
-          onChange={(e) => setTitle3(e.target.value)}
+          value={teamLeaderId}
+          onChange={(e) => setTeamLeaderId(e.target.value)}
         />
       </label>
 
-      <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Atribuie
-        </button>
+      <button className="atribuieButton" onClick={handleAtribuieButtonClick}>
+        Assign
+      </button>
 
-        {isSubmissionSuccessful && (
-          <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Atribuirea la echipa a avut succes.
-          </p>
-        )}
-    
+      {isSubmissionSuccessful && (
+        <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
+          TeamLeader assignment was successful.
+        </p>
+      )}
+
       <button onClick={onBackClick}>Back</button>
     </div>
   );

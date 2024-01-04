@@ -1,24 +1,37 @@
-// AlegeTL.jsx
-
 import React, { useState } from 'react';
 import './Promovari.css';
 
 const Promovari = ({ onBackClick }) => {
-  const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
+  const [ceoID, setCeoID] = useState('');
+  const [angajatID, setAngajatID] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2) {
+  const handlePromovareClick = async () => {
+    if (!ceoID || !angajatID) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2});
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/promoveaza/${ceoID}/${angajatID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        console.log('Promotion successful!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Employee not found.');
+      } else {
+        alert('Error promoting employee.');
+      }
+    } catch (error) {
+      console.error('Error during promotion:', error);
+      alert('Error promoting employee.');
+    }
   };
 
   return (
@@ -30,8 +43,8 @@ const Promovari = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={ceoID}
+          onChange={(e) => setCeoID(e.target.value)}
         />
       </label>
 
@@ -40,21 +53,21 @@ const Promovari = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
+          value={angajatID}
+          onChange={(e) => setAngajatID(e.target.value)}
         />
       </label>
 
-      <button className="atribuieButton" onClick={handleSchimbaButtonClick}>
-          Promovare
-        </button>
+      <button className="atribuieButton" onClick={handlePromovareClick}>
+        Promovare
+      </button>
 
-        {isSubmissionSuccessful && (
-          <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-            Promovarea a fost realizata cu succes.
-          </p>
-        )}
-    
+      {isSubmissionSuccessful && (
+        <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
+          Promovarea a fost realizata cu succes.
+        </p>
+      )}
+
       <button onClick={onBackClick}>Back</button>
     </div>
   );

@@ -1,26 +1,39 @@
-// SchimbaSalariu.jsx
-
 import React, { useState } from 'react';
 import './SchimbaSalariu.css';
 
 const SchimbaSalariu = ({ onBackClick }) => {
+  const [ceoId, setCeoId] = useState('');
+  const [angajatId, setAngajatId] = useState('');
+  const [salariuNou, setSalariuNou] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
-  const [title1, setTitle1] = useState('');
-  const [title2, setTitle2] = useState('');
-  const [title3, setTitle3] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
-  const handleSchimbaButtonClick = () => {
-    if (!title1 || !title2 || !title3 || !selectedRole) {
+  const handleSchimbaButtonClick = async () => {
+    if (!ceoId || !angajatId || !salariuNou || !selectedRole) {
       alert('Please fill in all fields before submitting.');
       return;
     }
 
-    // Logica pentru tratarea datelor la submit
-    console.log('Form submitted:', { title1, title2, title3, selectedRole });
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/schimba-salariu/angajat/${ceoId}/${angajatId}/${salariuNou}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    // Setează starea pentru afișarea mesajului de succes și șterge mesajul de eroare
-    setIsSubmissionSuccessful(true);
+      if (response.ok) {
+        console.log('Salary change successful!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Employee not found.');
+      } else {
+        alert('Error changing salary.');
+      }
+    } catch (error) {
+      console.error('Error during salary change:', error);
+      alert('Error changing salary.');
+    }
   };
 
   return (
@@ -32,8 +45,8 @@ const SchimbaSalariu = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title1}
-          onChange={(e) => setTitle1(e.target.value)}
+          value={ceoId}
+          onChange={(e) => setCeoId(e.target.value)}
         />
       </label>
 
@@ -42,8 +55,8 @@ const SchimbaSalariu = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
+          value={angajatId}
+          onChange={(e) => setAngajatId(e.target.value)}
         />
       </label>
 
@@ -52,8 +65,8 @@ const SchimbaSalariu = ({ onBackClick }) => {
         <input
           type="text"
           className="textInput"
-          value={title3}
-          onChange={(e) => setTitle3(e.target.value)}
+          value={salariuNou}
+          onChange={(e) => setSalariuNou(e.target.value)}
         />
       </label>
 
@@ -82,7 +95,7 @@ const SchimbaSalariu = ({ onBackClick }) => {
         )}
       </div>
 
-      <button  onClick={onBackClick}>Back</button>
+      <button onClick={onBackClick}>Back</button>
     </div>
   );
 };
