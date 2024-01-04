@@ -15,7 +15,7 @@ const ManagementCereri = ({ onBackClick }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/gestioneazaCerereProiect/${ceoID}/${numeProiect}/${stare}`, {
+      const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereProiect/${ceoID}/${numeProiect}/${stare}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
