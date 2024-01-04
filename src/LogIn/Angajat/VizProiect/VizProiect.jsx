@@ -1,10 +1,37 @@
 import React, { useState } from 'react';
 import './VizProiect.css';
 
-const VizProiect = ({onBackClick}) => {
+const VizProiect = ({ onBackClick }) => {
   const [id, setId] = useState('');
   const [isReadOnly, setIsReadOnly] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [comentariu, setComentariu] = useState('');
+
+  const handleAfisare = () => {
+    // Logica pentru acțiunea de afișare
+    console.log('Afișare Proiecte!');
+    fetch(`http://localhost:8080/angajati/proiect/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.numeProiect) {
+          // Formatăm detaliile proiectului pentru a le afișa în textarea
+          const proiectDetails = `ID Proiect: ${data.id}\nNume Proiect: ${data.numeProiect}\nProcentaj: ${data.procentaj}%\nStare Proiect: ${data.stareProiect}\nClient ID: ${data.clientId}`;
+          setComentariu(proiectDetails);
+        } else {
+          setComentariu('Nu s-au găsit detalii despre proiect.');
+        }
+      })
+      .catch(error => {
+        console.error('Eroare în timpul cererii:', error);
+        setComentariu('Eroare la preluarea datelor despre proiect.');
+      });
+  };
+
   const handleAfisareButtonClick = () => {
     if (!id) {
       alert('Vă rugăm să completați toate câmpurile înainte de a trimite.');
@@ -34,14 +61,14 @@ const VizProiect = ({onBackClick}) => {
         />
       </label>
 
-      <button className="atribuieButton" onClick={handleAfisareButtonClick}>
+      <button className="atribuieButton" onClick={handleAfisare}>
         Afisare
       </button>
 
       <textarea
         className="customTextArea"
         placeholder="Detalii aici..."
-        value=''
+        value={comentariu}
         readOnly={isReadOnly}
       />
 
