@@ -24,4 +24,16 @@
     border: none;
     cursor: pointer;
   }
+
+  .your-id-label {
+    display: block;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  .your-id-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
   

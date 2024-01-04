@@ -30,6 +30,8 @@ import Promovari from './LogIn/CEO/Promovari/Promovari.jsx'
 //----------------------------------------------------------------
 import DatePersonale from './LogIn/Client/DatePersonale/DatePersonale.jsx';
 import VerificareProiecte from './LogIn/Client/VerifProiecte/VerificareProiecte.jsx';
+import CerereProiect from './LogIn/Client/CerereProiect/CerereProiect.jsx';
+import CreareProiectForm from './LogIn/Client/CreareProiect/CreareProiect.jsx';
 //cerereProiect
 
 //Importuri pentru Angajat
@@ -68,7 +70,6 @@ function App() {
   const [showVizualizareTeamLeader, setVizualizareTeamLeader] = useState(false);
   const [showVizualizareClienti, setVizualizareClienti] = useState(false);
   const [showGestiuneEchipa, setGestiuneEchipa] = useState(false);
-  const [showPropunereMarire, setPropunereMarire] = useState(false);
   const [showProcentajeProiect, setProcentajeProiect] = useState(false);
   const [showVizualizareDetaliiProiect, setVizualizareDetaliiProiect] = useState(false);
   const [showVizualizareDatePersonale, setVizualizareDatePersonale] = useState(false);
@@ -83,7 +84,8 @@ function App() {
   const [showDatePersonale, setDatePersonale] = useState(false);
   const [showVerificareProiecte, setVerificareProiecte] = useState(false);
   const [showCerereMarire,setCerereMarire] = useState(false);
-
+  const [showCerereProiect, setCerereProiect] = useState(false);
+  const [showCreareProiectForm,setCreareProiectForm] = useState(false);
 
   const handleLoginPageButtonClick = () => {
     setShowLogin(true);
@@ -99,7 +101,6 @@ function App() {
     setVizualizareClienti(false);
     //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -116,6 +117,8 @@ function App() {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
     //
     setShowTeamLeader(false);
     setShowAngajat(false);
@@ -150,7 +153,6 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -167,6 +169,8 @@ function App() {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
     //
   };
 
@@ -184,7 +188,6 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -201,6 +204,8 @@ function App() {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
     //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -223,7 +228,6 @@ function App() {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -240,6 +244,8 @@ function App() {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
      //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -264,7 +270,6 @@ const handleVizualizareCerereProiectClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -281,6 +286,8 @@ const handleVizualizareCerereProiectClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -302,7 +309,6 @@ const handleManageriazaProiecteleClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -319,6 +325,8 @@ const handleManageriazaProiecteleClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -341,7 +349,6 @@ const handlePromovariClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -358,6 +365,8 @@ const handlePromovariClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -379,7 +388,6 @@ const handleModificareSalariuClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -396,6 +404,8 @@ const handleModificareSalariuClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -417,7 +427,6 @@ const handleAsignareTeamLeaderClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -434,6 +443,8 @@ const handleAsignareTeamLeaderClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -455,7 +466,6 @@ const handleVizualizareAngajatClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -472,7 +482,8 @@ const handleVizualizareAngajatClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
-   
+  setCerereProiect(false);
+  setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -494,7 +505,6 @@ const handleVizualizareTeamLeaderClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -511,6 +521,8 @@ const handleVizualizareTeamLeaderClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -532,7 +544,6 @@ const handleVizualizareClientiClick = () => {
    setVizualizareClienti(true);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -549,6 +560,8 @@ const handleVizualizareClientiClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -572,7 +585,6 @@ const handleGestiuneEchipaClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(true);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -589,6 +601,8 @@ const handleGestiuneEchipaClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -596,44 +610,7 @@ const handleGestiuneEchipaClick = () => {
    setShowInfo(false);
    setShowNewUser(false);
 };
-const handlePropunereMarireClick = () => {
-  setShowLogin(false);
-   //CEO
-   setShowCEO(false);
-   setVizualizareCerereProiect(false);
-   setManageriazaProiectele(false);
-   setShowPromovari(false);
-   setModificareSalariu(false);
-   setAsignareTeamLeader(false);
-   setVizualizareAngajat(false);
-   setVizualizareTeamLeader(false);
-   setVizualizareClienti(false);
-   //TL
-   setGestiuneEchipa(false);
-   setPropunereMarire(true);
-   setProcentajeProiect(false);
-   setVizualizareDetaliiProiect(false);
-   setVizualizareDatePersonale(false);
-   setAdaugareMembru(false);
-   setStergereMembru(false);
-   setVizualizareEchipa(false);
-   setProcentajPropriu(false);
-   setProcentajTotal(false);
-   //Angajat
-   setDatePersonaleA(false);
-   setProcentaj(false);
-   setVizProiect(false);
-   setCerereMarire(false);
-   //Client
-   setDatePersonale(false);
-   setVerificareProiecte(false);
-   //
-   setShowTeamLeader(false);
-   setShowAngajat(false);
-   setShowClient(false);
-   setShowInfo(false);
-   setShowNewUser(false);
-};
+
 const handleProcentajeProiectClick = () => {
   setShowLogin(false);
    //CEO
@@ -648,7 +625,6 @@ const handleProcentajeProiectClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(true);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
@@ -665,6 +641,8 @@ const handleProcentajeProiectClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -686,7 +664,6 @@ const handleVizualizareDetaliiProiectClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(true);
    setVizualizareDatePersonale(false);
@@ -703,6 +680,8 @@ const handleVizualizareDetaliiProiectClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -724,7 +703,6 @@ const handleVizualizareDatePersonaleClick = () => {
    setVizualizareClienti(false);
    //TL
    setGestiuneEchipa(false);
-   setPropunereMarire(false);
    setProcentajeProiect(false);
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(true);
@@ -741,6 +719,8 @@ const handleVizualizareDatePersonaleClick = () => {
    //Client
    setDatePersonale(false);
    setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
    //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -762,7 +742,6 @@ const handleAdaugareMembruClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -779,6 +758,8 @@ const handleAdaugareMembruClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -805,7 +786,6 @@ const handleStergereMembruClick = () => {
    setProcentajTotal(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -822,6 +802,8 @@ const handleStergereMembruClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -843,7 +825,6 @@ const handleVizualizareEchipaClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -860,6 +841,8 @@ const handleVizualizareEchipaClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -882,7 +865,6 @@ const handleModificareProcentajPropriu = () => {
    
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -899,6 +881,8 @@ const handleModificareProcentajPropriu = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -920,7 +904,6 @@ const handleModificareProcentajTotal = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -937,6 +920,8 @@ const handleModificareProcentajTotal = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -960,7 +945,6 @@ const handleVizualizareDatePersonaleAClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -977,6 +961,8 @@ const handleVizualizareDatePersonaleAClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -998,7 +984,6 @@ const handleProcentajProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -1015,6 +1000,8 @@ const handleProcentajProiectClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -1036,7 +1023,6 @@ const handleVizualizareProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -1053,6 +1039,8 @@ const handleVizualizareProiectClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -1076,7 +1064,6 @@ const handleVerificareProiectClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -1093,6 +1080,8 @@ const handleVerificareProiectClick = () => {
   //Client
   setDatePersonale(false);
   setVerificareProiecte(true);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -1114,7 +1103,6 @@ const handleVizualizareDatePersonaleCClick = () => {
    setVizualizareClienti(false);
    //TL
   setGestiuneEchipa(false);
-  setPropunereMarire(false);
   setProcentajeProiect(false);
   setVizualizareDetaliiProiect(false);
   setVizualizareDatePersonale(false);
@@ -1131,6 +1119,8 @@ const handleVizualizareDatePersonaleCClick = () => {
   //Client
   setDatePersonale(true);
   setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(false);
   //
    setShowTeamLeader(false);
    setShowAngajat(false);
@@ -1138,6 +1128,87 @@ const handleVizualizareDatePersonaleCClick = () => {
    setShowInfo(false);
    setShowNewUser(false);
 };
+
+const handleCerereProiectClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   //TL
+  setGestiuneEchipa(false);
+  setProcentajeProiect(false);
+  setVizualizareDetaliiProiect(false);
+  setVizualizareDatePersonale(false);
+  setAdaugareMembru(false);
+  setStergereMembru(false);
+  setVizualizareEchipa(false);
+  setProcentajPropriu(false);
+  setProcentajTotal(false);
+  //Angajat
+  setDatePersonaleA(false);
+  setProcentaj(false);
+  setVizProiect(false);
+  setCerereMarire(false);
+  //Client
+  setDatePersonale(false);
+  setVerificareProiecte(false);
+  setCerereProiect(true);
+  setCreareProiectForm(false);
+  //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+
+const handleCreareProiectClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   //TL
+  setGestiuneEchipa(false);
+  setProcentajeProiect(false);
+  setVizualizareDetaliiProiect(false);
+  setVizualizareDatePersonale(false);
+  setAdaugareMembru(false);
+  setStergereMembru(false);
+  setVizualizareEchipa(false);
+  setProcentajPropriu(false);
+  setProcentajTotal(false);
+  //Angajat
+  setDatePersonaleA(false);
+  setProcentaj(false);
+  setVizProiect(false);
+  setCerereMarire(false);
+  //Client
+  setDatePersonale(false);
+  setVerificareProiecte(false);
+  setCerereProiect(false);
+  setCreareProiectForm(true);
+  //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+
 ////////////////////////////////////////////////////////////////////////////////////////////
   const handleBackButtonClick = () => {
     setShowLogin(false);
@@ -1153,7 +1224,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1170,6 +1240,8 @@ const handleVizualizareDatePersonaleCClick = () => {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
     //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1191,7 +1263,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1208,6 +1279,8 @@ const handleVizualizareDatePersonaleCClick = () => {
     //Client
     setDatePersonale(false);
     setVerificareProiecte(false);
+    setCerereProiect(false);
+    setCreareProiectForm(false);
     //     
     setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1230,7 +1303,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1247,6 +1319,8 @@ const handleVizualizareDatePersonaleCClick = () => {
      //Client
      setDatePersonale(false);
      setVerificareProiecte(false);
+     setCerereProiect(false);
+     setCreareProiectForm(false);
      //
      setShowTeamLeader(true);
      setShowAngajat(false);
@@ -1268,7 +1342,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(true);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1285,6 +1358,8 @@ const handleVizualizareDatePersonaleCClick = () => {
      //Client
      setDatePersonale(false);
      setVerificareProiecte(false);
+     setCerereProiect(false);
+     setCreareProiectForm(false);
      //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1306,7 +1381,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(true);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1323,6 +1397,8 @@ const handleVizualizareDatePersonaleCClick = () => {
      //Client
      setDatePersonale(false);
      setVerificareProiecte(false);
+     setCerereProiect(false);
+     setCreareProiectForm(false);
      //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1344,7 +1420,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1361,6 +1436,8 @@ const handleVizualizareDatePersonaleCClick = () => {
      //Client
      setDatePersonale(false);
      setVerificareProiecte(false);
+     setCerereProiect(false);
+     setCreareProiectForm(false);
      //
      setShowTeamLeader(false);
      setShowAngajat(true);
@@ -1382,7 +1459,6 @@ const handleVizualizareDatePersonaleCClick = () => {
      setVizualizareClienti(false);
      //TL
     setGestiuneEchipa(false);
-    setPropunereMarire(false);
     setProcentajeProiect(false);
     setVizualizareDetaliiProiect(false);
     setVizualizareDatePersonale(false);
@@ -1399,6 +1475,8 @@ const handleVizualizareDatePersonaleCClick = () => {
      //Client
      setDatePersonale(false);
      setVerificareProiecte(false);
+     setCerereProiect(false);
+     setCreareProiectForm(false);
      //
      setShowTeamLeader(false);
      setShowAngajat(false);
@@ -1421,7 +1499,6 @@ const handleVizualizareDatePersonaleCClick = () => {
        setVizualizareClienti(false);
        //TL
       setGestiuneEchipa(false);
-      setPropunereMarire(false);
       setProcentajeProiect(false);
       setVizualizareDetaliiProiect(false);
       setVizualizareDatePersonale(false);
@@ -1438,6 +1515,8 @@ const handleVizualizareDatePersonaleCClick = () => {
        //Client
        setDatePersonale(false);
        setVerificareProiecte(false);
+       setCerereProiect(false);
+       setCreareProiectForm(false);
        //
        setShowTeamLeader(false);
        setShowAngajat(false);
@@ -1460,7 +1539,6 @@ const handleVizualizareDatePersonaleCClick = () => {
        setVizualizareClienti(false);
        //TL
       setGestiuneEchipa(false);
-      setPropunereMarire(false);
       setProcentajeProiect(false);
       setVizualizareDetaliiProiect(false);
       setVizualizareDatePersonale(false);
@@ -1477,6 +1555,8 @@ const handleVizualizareDatePersonaleCClick = () => {
        //Client
        setDatePersonale(false);
        setVerificareProiecte(false);
+       setCerereProiect(false);
+       setCreareProiectForm(false);
        //
        setShowTeamLeader(false);
        setShowAngajat(false);
@@ -1541,7 +1621,6 @@ const handleVizualizareDatePersonaleCClick = () => {
       ): showTeamLeader ? (
         <TeamLeader 
           onGestiuneEchipa={handleGestiuneEchipaClick}
-          onPropunereMarire={handlePropunereMarireClick}
           onProcentajeProiect={handleProcentajeProiectClick}
           onVizualizareDetaliiProiect={handleVizualizareDetaliiProiectClick}
           onVizualizareDatePersonale={handleVizualizareDatePersonaleClick}
@@ -1565,12 +1644,7 @@ const handleVizualizareDatePersonaleCClick = () => {
               <VizualizareEchipa
                 onBackClick={handleTLGestiuneBackButtonClick}
               />
-          ) : showPropunereMarire ? (
-            //TODO
-            <ManagementCereri
-            onBackClick={handleTLBackButtonClick}
-          />
-          ) : showProcentajeProiect ? (
+            ) : showProcentajeProiect ? (
             <Procentaje
               onModificareProcentajPropriu={handleModificareProcentajPropriu}
               onModificareProcentajTotal={handleModificareProcentajTotal}
@@ -1584,11 +1658,11 @@ const handleVizualizareDatePersonaleCClick = () => {
               <ProcentajTotal
                 onBackClick={handleTLProcentajeBackButtonClick}
               />
-          ) : showVizualizareDetaliiProiect ? (
+            ) : showVizualizareDetaliiProiect ? (
             <VizualizareDetaliiProiect
               onBackClick={handleTLBackButtonClick}
             />
-          ) : showVizualizareDatePersonale ? (
+            ) : showVizualizareDatePersonale ? (
             <DatePersonaleT
               onBackClick={handleTLBackButtonClick}
             />
@@ -1596,7 +1670,6 @@ const handleVizualizareDatePersonaleCClick = () => {
 //Angajat
       ) : showAngajat ? (
         <Angajat 
-          //onCerereMarire={handleCerereMarireClick}
           onProcentajProiect={handleProcentajProiectClick}
           onVizualizareProiect={handleVizualizareProiectClick}
           onVizualizareDatePersonale={handleVizualizareDatePersonaleAClick}
@@ -1625,7 +1698,8 @@ const handleVizualizareDatePersonaleCClick = () => {
       ) : showClient ? (
         <Client 
           onVerificareProiect={handleVerificareProiectClick}
-          //onCerereProiect={handleCerereProiectClick}
+          onCerereProiect={handleCerereProiectClick}
+          onCreareProiect={handleCreareProiectClick}
           onVizualizareDatePersonale={handleVizualizareDatePersonaleCClick}
           onLogoutClick={handleLogoutClick} />
           ) : showDatePersonale ? (
@@ -1636,6 +1710,14 @@ const handleVizualizareDatePersonaleCClick = () => {
               <VerificareProiecte
                 onBackClick={handleClientBackButtonClick}
               />
+            ) : showCerereProiect ? (
+              <CerereProiect
+                onBackClick={handleClientBackButtonClick}
+              />
+            ) : showCreareProiectForm ? (
+              <CreareProiectForm
+                onBackClick={handleClientBackButtonClick}
+                />
 //////////////////////////////////////////////////////////////////////////////////
 //WelcomePage
       ) : showNewUser ? (

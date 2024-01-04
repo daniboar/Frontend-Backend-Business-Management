@@ -5,7 +5,6 @@ import './ManagementProiecte.css';
 
 const ManagementCereri = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
-  const [titluCerere, setTitluCerere] = useState('');
   const [numeProiect, setNumeProiect] = useState('');
 
   const handleAcceptare = () => {
@@ -21,17 +20,6 @@ const ManagementCereri = ({ onBackClick }) => {
   return (
     <div>
       <h1>Management cereri de proiect</h1>
-
-      {/* Primul câmp de text cu un text asociat */}
-      <label>
-        ID Proiect: 
-        <input
-          type="text"
-          value={titluCerere}
-          onChange={(e) => setTitluCerere(e.target.value)}
-        />
-      </label>
-      <br />
 
       {/* Al doilea câmp de text cu un text asociat */}
       <label>

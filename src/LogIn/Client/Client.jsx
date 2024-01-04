@@ -5,7 +5,7 @@ const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
 
 const FormTitle = (props) => <p id="formTitle">{props.title}</p>;
 
-const Client = ({ onLogoutClick, onVizualizareDatePersonale, onCerereProiect, onVerificareProiect }) => {
+const Client = ({ onLogoutClick, onVizualizareDatePersonale, onCerereProiect, onVerificareProiect, onCreareProiect }) => {
   return(
     <div className="client-page">
       <div className="container">    
@@ -14,6 +14,7 @@ const Client = ({ onLogoutClick, onVizualizareDatePersonale, onCerereProiect, on
         <div className="button-container-client">
           <button onClick={onVerificareProiect}>Verificare Proiecte</button>
           <button onClick={onCerereProiect}>Cerere Proiect</button>
+          <button onClick={onCreareProiect}>Creare Proiect</button>
           <button onClick={onVizualizareDatePersonale}>Vizualizare date personale</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>

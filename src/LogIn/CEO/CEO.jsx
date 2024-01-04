@@ -13,9 +13,8 @@ const CEO = ({ onLogoutClick, onVizualizareClienti,onManageriazaProiectele, onVi
         <FormHeader title="Bun venit, CEO!" />
         <FormTitle title="Gestioneaza proiectele si echipele" />
         <div className="button-container-ceo">
-        <button>Verificare Proiecte</button>
           <button onClick={onVizualizareCerereProiect}>Vizualizare cereri de proiecte</button>
-          <button onClick={onManageriazaProiectele}>Manageriaza proiectele</button>
+          <button onClick={onManageriazaProiectele}>Vizualizare proiecte</button>
           <button onClick={onPromovari}>Promovari</button>
           <button onClick={onModificareSalariu}>Modificare salariu</button>
           <button onClick={onAsignareTeamLeader}>Asignare TeamLeader</button>

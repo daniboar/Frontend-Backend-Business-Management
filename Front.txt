@@ -17,7 +17,8 @@ CEO :
 Client :
 	-> Afisare Date Personale (facut)
 	-> Vizualizare Proiecte (facut)
-	-> Cerere Proiect  (nu stiu exact ce cere aici pentru a crea un proiect)
+	-> Cerere Proiect  (facut)
+	-> Creare Proiect (facut)
 
 Angajat :
 	-> Afisare Date Personale (facut)
