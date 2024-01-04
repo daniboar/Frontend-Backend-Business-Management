@@ -31,10 +31,6 @@ const handleAfisare = () => {
       setComentariu('Eroare la preluarea datelor despre proiect.');
     });
 };
-<<<<<<< HEAD
-// ...
-=======
->>>>>>> 5516764df5067c8a11ab6b7e877322e649d7831d
 
   return (
     <div className="pageContainer">
