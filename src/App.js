@@ -30,7 +30,7 @@ import Vizualizari from './LogIn/CEO/Vizualizari/Vizualizari.jsx';
 import Stergeri from './LogIn/CEO/Stergeri/Stergeri.jsx';
 import StergereAngajat from './LogIn/CEO/Stergeri/StergereAngajat/StergereAngajat.jsx'
 import StergereTeamLeader from './LogIn/CEO/Stergeri/StergereTeamLeader/StergereTeamLeader.jsx';
-import StergereTeamLeaderEchipa from './LogIn/CEO/Stergeri/StergereTeamLeader/StergereTeamLeader.jsx';
+import StergereTeamLeaderEchipa from './LogIn/CEO/Stergeri/StergereTeamLeaderEchipa/StergereTeamLeaderEchipa.jsx';
 import StergereEchipa from './LogIn/CEO/Stergeri/StergereEchipa/StergereEchipa.jsx';
 
 //Importuri pentru Client
