@@ -25,6 +25,7 @@ import VizualizareA from './LogIn/CEO/VizualizareAngajati/VizualizareA.jsx';
 import VizualizareC from './LogIn/CEO/VizualizareClienti/VizualizareC.jsx';
 import VizualizareT from './LogIn/CEO/VizualizareTeamLeaderi/VizualizareT.jsx';
 import Promovari from './LogIn/CEO/Promovari/Promovari.jsx'
+import CreareAngajat from './LogIn/CEO/CreareAngajat/CreareAngajat.jsx';
 
 //Importuri pentru Client
 //----------------------------------------------------------------
@@ -82,6 +83,7 @@ function App() {
   const [showCerereMarire,setCerereMarire] = useState(false);
   const [showCerereProiect, setCerereProiect] = useState(false);
   const [showCreareProiectForm,setCreareProiectForm] = useState(false);
+  const [showCreareAngajat, setCreareAngajat] = useState(false);
 
   const handleLoginPageButtonClick = () => {
     setShowLogin(true);
@@ -95,6 +97,7 @@ function App() {
     setVizualizareAngajat(false);
     setVizualizareTeamLeader(false);
     setVizualizareClienti(false);
+    setCreareAngajat(false);
     //TL
     setGestiuneEchipa(false);
    
@@ -146,6 +149,7 @@ function App() {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -180,6 +184,7 @@ function App() {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -219,6 +224,7 @@ function App() {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -260,6 +266,7 @@ const handleVizualizareCerereProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -298,6 +305,7 @@ const handleManageriazaProiecteleClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -337,6 +345,7 @@ const handlePromovariClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -375,6 +384,7 @@ const handleModificareSalariuClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -413,6 +423,7 @@ const handleAsignareTeamLeaderClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -451,6 +462,7 @@ const handleVizualizareAngajatClick = () => {
    setVizualizareAngajat(true);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -489,6 +501,7 @@ const handleVizualizareTeamLeaderClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(true);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -527,6 +540,46 @@ const handleVizualizareClientiClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(true);
+   setCreareAngajat(false);
+   //TL
+   setGestiuneEchipa(false);
+  
+   setVizualizareDetaliiProiect(false);
+   setVizualizareDatePersonale(false);
+   setAdaugareMembru(false);
+   setStergereMembru(false);
+   setVizualizareEchipa(false);
+   setProcentajTotal(false);
+   //Angajat
+   setDatePersonaleA(false);
+   setProcentaj(false);
+   setVizProiect(false);
+   setCerereMarire(false);
+   //Client
+   setDatePersonale(false);
+   setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
+   //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+const handleCreareAngajatClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   setCreareAngajat(true);
    //TL
    setGestiuneEchipa(false);
   
@@ -567,6 +620,7 @@ const handleGestiuneEchipaClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(true);
   
@@ -607,6 +661,7 @@ const handleVizualizareDetaliiProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -645,6 +700,7 @@ const handleVizualizareDatePersonaleClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -683,6 +739,7 @@ const handleAdaugareMembruClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -725,6 +782,7 @@ const handleStergereMembruClick = () => {
    setStergereMembru(false);
    setVizualizareEchipa(false);
    setProcentajTotal(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -763,6 +821,7 @@ const handleVizualizareEchipaClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -789,45 +848,7 @@ const handleVizualizareEchipaClick = () => {
    setShowInfo(false);
    setShowNewUser(false);
 };
-const handleModificareProcentajPropriu = () => {
-  setShowLogin(false);
-   //CEO
-   setShowCEO(false);
-   setVizualizareCerereProiect(false);
-   setManageriazaProiectele(false);
-   setShowPromovari(false);
-   setModificareSalariu(false);
-   setAsignareTeamLeader(false);
-   setVizualizareAngajat(false);
-   setVizualizareTeamLeader(false);
-   setVizualizareClienti(false);
-   
-   //TL
-  setGestiuneEchipa(false);
- 
-  setVizualizareDetaliiProiect(false);
-  setVizualizareDatePersonale(false);
-  setAdaugareMembru(false);
-  setStergereMembru(false);
-  setVizualizareEchipa(false);
-  setProcentajTotal(false);
-  //Angajat
-  setDatePersonaleA(false);
-  setProcentaj(false);
-  setVizProiect(false);
-  setCerereMarire(false);
-  //Client
-  setDatePersonale(false);
-  setVerificareProiecte(false);
-  setCerereProiect(false);
-  setCreareProiectForm(false);
-  //
-   setShowTeamLeader(false);
-   setShowAngajat(false);
-   setShowClient(false);
-   setShowInfo(false);
-   setShowNewUser(false);
-};
+
 const handleModificareProcentajTotal = () => {
   setShowLogin(false);
    //CEO
@@ -840,6 +861,7 @@ const handleModificareProcentajTotal = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -880,6 +902,7 @@ const handleVizualizareDatePersonaleAClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -918,6 +941,7 @@ const handleProcentajProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -956,6 +980,7 @@ const handleVizualizareProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -996,6 +1021,7 @@ const handleVerificareProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1034,6 +1060,7 @@ const handleVizualizareDatePersonaleCClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1073,6 +1100,7 @@ const handleCerereProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1112,6 +1140,7 @@ const handleCreareProiectClick = () => {
    setVizualizareAngajat(false);
    setVizualizareTeamLeader(false);
    setVizualizareClienti(false);
+   setCreareAngajat(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1152,6 +1181,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1190,6 +1220,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1229,6 +1260,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1267,6 +1299,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(true);
    
@@ -1305,6 +1338,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1343,6 +1377,7 @@ const handleCreareProiectClick = () => {
      setVizualizareAngajat(false);
      setVizualizareTeamLeader(false);
      setVizualizareClienti(false);
+     setCreareAngajat(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1382,6 +1417,7 @@ const handleCreareProiectClick = () => {
        setVizualizareAngajat(false);
        setVizualizareTeamLeader(false);
        setVizualizareClienti(false);
+       setCreareAngajat(false);
        //TL
       setGestiuneEchipa(false);
      
@@ -1421,6 +1457,7 @@ const handleCreareProiectClick = () => {
        setVizualizareAngajat(false);
        setVizualizareTeamLeader(false);
        setVizualizareClienti(false);
+       setCreareAngajat(false);
        //TL
       setGestiuneEchipa(false);
      
@@ -1466,7 +1503,8 @@ const handleCreareProiectClick = () => {
           onVizualizareAngajat={handleVizualizareAngajatClick}
           onVizualizareTeamLeader={handleVizualizareTeamLeaderClick}
           onVizualizareClienti={handleVizualizareClientiClick}
-          onLogoutClick={handleLogoutClick} />
+          onLogoutClick={handleLogoutClick} 
+          onCreareAngajat={handleCreareAngajatClick}/>
       ) : showPromovari ? (
         <Promovari
            onBackClick={handleCEOBackButtonClick}
@@ -1499,7 +1537,11 @@ const handleCreareProiectClick = () => {
         <VizualizareC
           onBackClick={handleCEOBackButtonClick}
         />
-//////////////////////////////////////////////////////////////////////////////////
+      ) : showCreareAngajat ? ( 
+          <CreareAngajat 
+            onBackClick={handleCEOBackButtonClick}
+          />
+            //////////////////////////////////////////////////////////////////////////////////
 //TeamLeader
       ): showTeamLeader ? (
         <TeamLeader 
@@ -1529,7 +1571,7 @@ const handleCreareProiectClick = () => {
               />
             ) : showProcentajTotal ? (
               <ProcentajTotal
-                onBackClick={handleTLGestiuneBackButtonClick}
+                onBackClick={handleTLBackButtonClick}
               />
             ) : showVizualizareDetaliiProiect ? (
             <VizualizareDetaliiProiect
