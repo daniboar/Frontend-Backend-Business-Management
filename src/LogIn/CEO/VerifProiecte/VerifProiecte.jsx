@@ -34,10 +34,13 @@ const VerifProiecte = ({ onBackClick }) => {
   };
 
   const handleAfisare = () => {
-    // Logica pentru afisare proiecte
-    console.log('Proiecte firmei:', proiecte);
-    // Seteaza comentariul cu informatiile despre proiecte
-    setComentariu(JSON.stringify(proiecte, null, 2));
+    // Construiește șirul de text pentru fiecare proiect pe un rând
+    const proiecteText = proiecte.map((proiect) => {
+      return `ID: ${proiect.id}, Nume Proiect: ${proiect.numeProiect}, Procentaj: ${proiect.procentaj}, Stare Proiect: ${proiect.stareProiect}, Client : ${proiect.clientId}`;
+    }).join('\n');
+
+    // Setează comentariul cu șirul construit
+    setComentariu(proiecteText);
   };
 
   return (
