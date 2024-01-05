@@ -26,7 +26,7 @@ const CreareAngajat = ({ onBackClick }) => {
     };
   
     try {
-      const response = await fetch('http://localhost:8080/clienti', {
+      const response = await fetch('http://localhost:8080/ceos/angajat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

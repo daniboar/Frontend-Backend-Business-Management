@@ -15,20 +15,47 @@ const SchimbaSalariu = ({ onBackClick }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/ceos/schimba-salariu/angajat/${ceoId}/${angajatId}/${salariuNou}`, {
+      // Check if the "cere salariu" has been approved
+      const responseCereSalariu = await fetch(`http://localhost:8080/ceos/gestioneazaCerereMarire/${ceoId}/${angajatId}/true`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({}),
       });
 
-      if (response.ok) {
-        console.log('Salary change successful!');
-        setIsSubmissionSuccessful(true);
-      } else if (response.status === 404) {
-        alert('Employee not found.');
+      if (responseCereSalariu.ok) {
+        console.log('Salary request approved. Proceeding with salary change.');
+
+        // Construct the endpoint based on the selected role
+        let endpoint = '';
+        if (selectedRole === 'Angajat') {
+          endpoint = `http://localhost:8080/ceos/schimba-salariu/angajat/${ceoId}/${angajatId}/${salariuNou}`;
+        } else if (selectedRole === 'TeamLeader') {
+          endpoint = `http://localhost:8080/ceos/schimba-salariu/teamleader/${ceoId}/${angajatId}/${salariuNou}`;
+        } else {
+          alert('Invalid role selected.');
+          return;
+        }
+
+        // Make the request to change the salary
+        const responseSchimbaSalariu = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (responseSchimbaSalariu.ok) {
+          console.log('Salary change successful!');
+          setIsSubmissionSuccessful(true);
+        } else if (responseSchimbaSalariu.status === 404) {
+          alert('Employee not found.');
+        } else {
+          alert('Error changing salary.');
+        }
       } else {
-        alert('Error changing salary.');
+        alert('Salary request not approved. Cannot proceed with salary change.');
       }
     } catch (error) {
       console.error('Error during salary change:', error);
