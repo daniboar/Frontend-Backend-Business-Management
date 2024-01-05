@@ -2,10 +2,8 @@
 
 CEO : 
 	-> ManagementProiect (acceptare sau respingere) (facut)
-	-> Modifica Salariul (facut) aici trebuie 
-	-> Alege TeamLeader (facut)
 	-> creaza echipa 
 	-> schimba starea cererii de marire a unui angajat
-	-> vizualizare echipe 
+
 
 	
