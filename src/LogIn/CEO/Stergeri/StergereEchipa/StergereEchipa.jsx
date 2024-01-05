@@ -12,7 +12,7 @@ const StergereEchipa = ({ onBackClick }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/echipa/${echipaID}`, {
+      const response = await fetch(`http://localhost:8080/ceos/echipa/${echipaID}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

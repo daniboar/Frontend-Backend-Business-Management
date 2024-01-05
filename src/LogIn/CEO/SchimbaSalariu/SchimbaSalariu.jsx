@@ -15,16 +15,6 @@ const SchimbaSalariu = ({ onBackClick }) => {
     }
 
     try {
-      // Check if the "cere salariu" has been approved
-      const responseCereSalariu = await fetch(`http://localhost:8080/ceos/gestioneazaCerereMarire/${ceoId}/${angajatId}/true`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({}),
-      });
-
-      if (responseCereSalariu.ok) {
         console.log('Salary request approved. Proceeding with salary change.');
 
         // Construct the endpoint based on the selected role
@@ -54,9 +44,6 @@ const SchimbaSalariu = ({ onBackClick }) => {
         } else {
           alert('Error changing salary.');
         }
-      } else {
-        alert('Salary request not approved. Cannot proceed with salary change.');
-      }
     } catch (error) {
       console.error('Error during salary change:', error);
       alert('Error changing salary.');
