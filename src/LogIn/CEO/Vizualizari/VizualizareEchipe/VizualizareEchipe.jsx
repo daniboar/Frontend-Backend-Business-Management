@@ -18,10 +18,10 @@ const VizualizareEchipe = ({ onBackClick }) => {
   .then(response => response.json())
   .then(data => {
     // Selectați doar id, nume și prenume și concatenați-le pe un singur rând
-    //const echipeAtributeReduse = data.map(echipa => `${echipa.id}: ${angajat.nume} ${angajat.prenume}, salariu = ${angajat.salariu} RON, email = ${angajat.email}`).join('\n');
+    const echipeAtributeReduse = data.map(echipa => `Id-ul echipei: ${echipa.id}`).join('\n');
 
     // Actualizați state-ul pentru afișare
-    //setComentariu(echipeAtributeReduse);
+    setComentariu(echipeAtributeReduse);
   })
   .catch(error => {
     console.error('Eroare în timpul cererii:', error);

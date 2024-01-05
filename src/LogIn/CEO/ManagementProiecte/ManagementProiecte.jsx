@@ -4,7 +4,7 @@ import './ManagementProiecte.css';
 const ManagementCereri = ({ onBackClick }) => {
   const [comentariu, setComentariu] = useState('');
   const [numeProiect, setNumeProiect] = useState('');
-  const [cereriProiect, setCereriProiect] = useState([]);
+  const [cereriProiect] = useState([]);
 
   useEffect(() => {
     // Fetch all project requests when the component mounts
@@ -43,8 +43,7 @@ const ManagementCereri = ({ onBackClick }) => {
 
       try {
         // Assuming you have access to ceoID, replace 'yourCeoIDValue' with the actual value
-        const ceoID = numeProiect;
-        const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereProiect/${ceoID}/${numeProiect}/${stare}`, {
+        const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereProiect/${numeProiect}/${stare}`, {
           method: 'POST',
         });
 

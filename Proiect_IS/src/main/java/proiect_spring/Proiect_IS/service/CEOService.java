@@ -143,11 +143,9 @@ public class CEOService {
         }
     }
 
-    public void gestioneazaCerereProiect(int ceoId, int cerereProiectId, boolean stare){
-        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
+    public void gestioneazaCerereProiect(int cerereProiectId, boolean stare){
         CerereProiect cerereProiect = cerereProiectRepository.findById(cerereProiectId).orElse(null);
-
-        if (ceo != null && cerereProiect != null){
+        if (cerereProiect != null){
             cerereProiect.setAprobata(stare);
             cerereProiectRepository.save(cerereProiect);
         }

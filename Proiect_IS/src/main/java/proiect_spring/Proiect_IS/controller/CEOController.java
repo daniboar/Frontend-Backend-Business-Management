@@ -164,10 +164,10 @@ public class CEOController {
         ceoService.gestioneazaCerereMarire(ceoID, angajatID, salariu);
     }
 
-    @PostMapping("/gestioneazaCerereProiect/{ceoID}/{cerereProiectID}/{stare}")
+    @PostMapping("/gestioneazaCerereProiect/{cerereProiectID}/{stare}")
     @Operation(summary = "Endpoint care se aproba/refuza cererea de proiect.")
-    public void gestioneazaCerereProiect(@PathVariable int ceoID, @PathVariable int cerereProiectID, @PathVariable boolean stare) {
-        ceoService.gestioneazaCerereProiect(ceoID, cerereProiectID, stare);
+    public void gestioneazaCerereProiect(@PathVariable int cerereProiectID, @PathVariable boolean stare) {
+        ceoService.gestioneazaCerereProiect(cerereProiectID, stare);
     }
 
     @PostMapping("/asignareProiectEchipa/{echipaID}/{proiectID}")
