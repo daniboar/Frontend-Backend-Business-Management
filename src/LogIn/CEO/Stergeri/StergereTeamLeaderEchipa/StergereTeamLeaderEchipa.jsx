@@ -3,7 +3,7 @@ import './StergereTeamLeaderEchipa.css';
 
 const StergereTeamLeaderEchipa = ({ onBackClick }) => {
   const [CEOID, setCEOID] = useState('');
-  const [echipaID,setEchipaID] = useState('');
+  const [echipaID, setEchipaID] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
   const handleStergereTLEchipaClick = async () => {
@@ -12,6 +12,26 @@ const StergereTeamLeaderEchipa = ({ onBackClick }) => {
       return;
     }
 
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/sterge_teamleader/${CEOID}/${echipaID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        console.log('TeamLeader deleted from team successfully!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('TeamLeader or team not found.');
+      } else {
+        alert('Error deleting TeamLeader from team.');
+      }
+    } catch (error) {
+      console.error('Error during TeamLeader deletion from team:', error);
+      alert('Error deleting TeamLeader from team.');
+    }
   };
 
   return (

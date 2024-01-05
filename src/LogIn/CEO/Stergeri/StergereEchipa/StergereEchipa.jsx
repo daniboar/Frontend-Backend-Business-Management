@@ -11,6 +11,26 @@ const StergereEchipa = ({ onBackClick }) => {
       return;
     }
 
+    try {
+      const response = await fetch(`http://localhost:8080/echipa/${echipaID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        console.log('Team deleted successfully!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Team not found.');
+      } else {
+        alert('Error deleting team.');
+      }
+    } catch (error) {
+      console.error('Error during team deletion:', error);
+      alert('Error deleting team.');
+    }
   };
 
   return (

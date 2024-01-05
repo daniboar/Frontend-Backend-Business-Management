@@ -11,6 +11,26 @@ const StergereAngajat = ({ onBackClick }) => {
       return;
     }
 
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/angajat/${angajatID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        console.log('Angajat deleted successfully!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('Angajat not found.');
+      } else {
+        alert('Error deleting angajat.');
+      }
+    } catch (error) {
+      console.error('Error during angajat deletion:', error);
+      alert('Error deleting angajat.');
+    }
   };
 
   return (

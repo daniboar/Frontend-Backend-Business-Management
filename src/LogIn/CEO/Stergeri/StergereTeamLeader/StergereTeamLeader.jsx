@@ -11,7 +11,26 @@ const StergereTeamLeader = ({ onBackClick }) => {
       return;
     }
 
-    
+    try {
+      const response = await fetch(`http://localhost:8080/ceos/teamleader/${TLID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        console.log('TeamLeader deleted successfully!');
+        setIsSubmissionSuccessful(true);
+      } else if (response.status === 404) {
+        alert('TeamLeader not found.');
+      } else {
+        alert('Error deleting TeamLeader.');
+      }
+    } catch (error) {
+      console.error('Error during TeamLeader deletion:', error);
+      alert('Error deleting TeamLeader.');
+    }
   };
 
   return (
