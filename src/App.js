@@ -21,6 +21,8 @@ import SchimbareSalariu from './LogIn/CEO/SchimbaSalariu/SchimbaSalariu.jsx';
 import VerifProiecte from './LogIn/CEO/VerifProiecte/VerifProiecte.jsx'
 import AlegeTL from './LogIn/CEO/AlegeTeamLeader/AlegeTL.jsx';
 import ManagementCereri from './LogIn/CEO/ManagementProiecte/ManagementProiecte.jsx';
+import ManagementCereriMarire from './LogIn/CEO/ManagementCereriMarire/ManagementCereriMarire.jsx';
+
 import VizualizareA from './LogIn/CEO/Vizualizari/VizualizareAngajati/VizualizareA.jsx';
 import VizualizareC from './LogIn/CEO/Vizualizari/VizualizareClienti/VizualizareC.jsx';
 import VizualizareT from './LogIn/CEO/Vizualizari/VizualizareTeamLeaderi/VizualizareT.jsx';
@@ -71,6 +73,7 @@ function App() {
   const [showClient, setShowClient] = useState(false);
   const [showVizualizareCerereProiect, setVizualizareCerereProiect] = useState(false);
   const [showManageriazaProiectele, setManageriazaProiectele] = useState(false);
+  const [showManageriazaCereriMarire, setManageriazaCereriMarire] = useState(false);
   const [showPromovari, setShowPromovari] = useState(false);
   const [showModificareSalariu, setModificareSalariu] = useState(false);
   const [showAsignareTeamLeader, setAsignareTeamLeader] = useState(false);
@@ -109,6 +112,7 @@ function App() {
     //CEO
     setShowCEO(false);
     setVizualizareCerereProiect(false);
+    setManageriazaCereriMarire(false);
     setManageriazaProiectele(false);
     setShowPromovari(false);
     setModificareSalariu(false);
@@ -216,6 +220,7 @@ function App() {
     setShowInfo(false);
      //CEO
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -260,6 +265,7 @@ function App() {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -309,6 +315,7 @@ function App() {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -355,11 +362,61 @@ function App() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Actiuni CEO
+const handleManageriazaCereriMarireClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(true);
+   setManageriazaCereriMarire(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   setCreareAngajat(false);
+   setVizualizari(false);
+   setStergeri(false);
+   setStergereAngajat(false);
+    setStergereEchipa(false);
+    setStergereTeamLeaderEchipa(false);
+    setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
+   //TL
+   setGestiuneEchipa(false);
+  
+   setVizualizareDetaliiProiect(false);
+   setVizualizareDatePersonale(false);
+   setAdaugareMembru(false);
+   setStergereMembru(false);
+   setVizualizareEchipa(false);
+   setProcentajTotal(false);
+   //Angajat
+   setDatePersonaleA(false);
+   setProcentaj(false);
+   setVizProiect(false);
+   setCerereMarire(false);
+   //Client
+   setDatePersonale(false);
+   setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
+   //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
 const handleVizualizareCerereProiectClick = () => {
   setShowLogin(false);
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(true);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -408,6 +465,7 @@ const handleManageriazaProiecteleClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(true);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -457,6 +515,7 @@ const handlePromovariClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(true);
    setModificareSalariu(false);
@@ -505,6 +564,7 @@ const handleModificareSalariuClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(true);
@@ -553,6 +613,7 @@ const handleAsignareTeamLeaderClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -601,6 +662,7 @@ const handleVizualizareAngajatClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -649,6 +711,7 @@ const handleVizualizareTeamLeaderClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -697,6 +760,7 @@ const handleVizualizareClientiClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -745,6 +809,7 @@ const handleCreareAngajatClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -794,6 +859,7 @@ const handleVizualizariClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -843,6 +909,7 @@ const handleStergeriClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -892,6 +959,7 @@ const handleStergereAngajatClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -941,6 +1009,7 @@ const handleStergereEchipaClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -990,6 +1059,7 @@ const handleStergereTeamLeaderClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1012,6 +1082,7 @@ const handleStergereTeamLeaderClick = () => {
   
    setVizualizareDetaliiProiect(false);
    setVizualizareDatePersonale(false);
+   setManageriazaCereriMarire(false);
    setAdaugareMembru(false);
    setStergereMembru(false);
    setVizualizareEchipa(false);
@@ -1040,6 +1111,7 @@ const handleStergereTeamLeaderEchipaClick = () => {
    setShowCEO(false);
    setVizualizareCerereProiect(false);
    setManageriazaProiectele(false);
+   setManageriazaCereriMarire(false);
    setShowPromovari(false);
    setModificareSalariu(false);
    setAsignareTeamLeader(false);
@@ -1088,6 +1160,7 @@ const handleVizualizareEchipeClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1137,6 +1210,7 @@ const handleCreariClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1186,6 +1260,7 @@ const handleCreareEchipaClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1236,6 +1311,7 @@ const handleGestiuneEchipaClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1286,6 +1362,7 @@ const handleVizualizareDetaliiProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1334,6 +1411,7 @@ const handleVizualizareDatePersonaleClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1382,6 +1460,7 @@ const handleAdaugareMembruClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1430,6 +1509,7 @@ const handleStergereMembruClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1482,6 +1562,7 @@ const handleVizualizareEchipaClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1531,6 +1612,7 @@ const handleModificareProcentajTotal = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1581,6 +1663,7 @@ const handleVizualizareDatePersonaleAClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1629,6 +1712,7 @@ const handleProcentajProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1677,6 +1761,7 @@ const handleVizualizareProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1727,6 +1812,7 @@ const handleVerificareProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1775,6 +1861,7 @@ const handleVizualizareDatePersonaleCClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1824,6 +1911,7 @@ const handleCerereProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1873,6 +1961,7 @@ const handleCreareProiectClick = () => {
    //CEO
    setShowCEO(false);
    setVizualizareCerereProiect(false);
+   setManageriazaCereriMarire(false);
    setManageriazaProiectele(false);
    setShowPromovari(false);
    setModificareSalariu(false);
@@ -1923,6 +2012,7 @@ const handleCreareProiectClick = () => {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -1971,6 +2061,7 @@ const handleCreareProiectClick = () => {
     
      setShowCEO(true);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -2020,6 +2111,7 @@ const handleCreareProiectClick = () => {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -2068,6 +2160,7 @@ const handleCreareProiectClick = () => {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -2116,6 +2209,7 @@ const handleCreareProiectClick = () => {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -2164,6 +2258,7 @@ const handleCreareProiectClick = () => {
      //CEO
      setShowCEO(false);
      setVizualizareCerereProiect(false);
+     setManageriazaCereriMarire(false);
      setManageriazaProiectele(false);
      setShowPromovari(false);
      setModificareSalariu(false);
@@ -2213,6 +2308,7 @@ const handleCreareProiectClick = () => {
        //CEO
        setShowCEO(false);
        setVizualizareCerereProiect(false);
+       setManageriazaCereriMarire(false);
        setManageriazaProiectele(false);
        setShowPromovari(false);
        setModificareSalariu(false);
@@ -2262,6 +2358,7 @@ const handleCreareProiectClick = () => {
        //CEO
        setShowCEO(false);
        setVizualizareCerereProiect(false);
+       setManageriazaCereriMarire(false);
        setManageriazaProiectele(false);
        setShowPromovari(false);
        setModificareSalariu(false);
@@ -2320,12 +2417,17 @@ const handleCreareProiectClick = () => {
           onStergeri = {handleStergeriClick}
           onVizualizari={handleVizualizariClick}
           onVizualizareCerereProiect={handleManageriazaProiecteleClick}
+          showManageriazaCereriMarire={handleManageriazaCereriMarireClick}
           onManageriazaProiectele={handleVizualizareCerereProiectClick}
           onPromovari={handlePromovariClick}
           onModificareSalariu={handleModificareSalariuClick}
           onAsignareTeamLeader={handleAsignareTeamLeaderClick}
           onLogoutClick={handleLogoutClick} 
           onCreareAngajat={handleCreareAngajatClick}/>
+      ) : showManageriazaCereriMarire ? (
+        <ManagementCereriMarire
+        onBackClick={handleCEOBackButtonClick}
+        />
       ) : showPromovari ? (
         <Promovari
            onBackClick={handleCEOBackButtonClick}
