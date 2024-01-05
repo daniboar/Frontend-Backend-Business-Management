@@ -4,13 +4,13 @@ CEO :
 	-> ManagementProiect (acceptare sau respingere) (facut)
 	-> Modifica Salariul (facut) aici trebuie 
 	-> Alege TeamLeader (facut)
-	-> Creaza angajat (nefacut)
-	-> creaza echipa
+	-> Creaza angajat (nefacut) (nume prenume parola email salariu procentaj_proeict)
+	-> creaza echipa 
 	-> schimba starea cererii de marire a unui angajat
 	-> vizualizare echipe 
 	-> sterge teamleader din echipa
 	-> sterge echipa
 	-> sterge angajat
 	-> sterge teamleader
-	
+
 	
