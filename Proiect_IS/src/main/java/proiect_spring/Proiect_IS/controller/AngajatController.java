@@ -72,12 +72,9 @@ public class AngajatController {
 
     @PostMapping("/login")
     @Operation(summary = "Endpoint pentru login Angajat")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        if (angajatService.login(email, password)) {
-            return ResponseEntity.ok("Login successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
+    public Boolean login(@RequestParam String email, @RequestParam String password) {
+        return angajatService.login(email, password);
+
     }
 
     @DeleteMapping("/{id}")

@@ -154,18 +154,64 @@ function App() {
     
   };
 
-  const handleLoginButtonClick = (userType) => {
-    setShowLogin(false);
-    // Based on the selected user type, set the corresponding state to true
-    if (userType === 'CEO') {
-      setShowCEO(true);
-    } else if (userType === 'TeamLeader') {
-      setShowTeamLeader(true);
-    } else if (userType === 'Angajat') {
-      setShowAngajat(true);
-    } else if (userType === 'Client') {
-      setShowClient(true);
+  const CEO_LOGIN_ENDPOINT = 'http://localhost:8080/ceos/login';
+  const TEAM_LEADER_LOGIN_ENDPOINT = 'http://localhost:8080/team-leaders/login';
+  const ANGAJAT_LOGIN_ENDPOINT = 'http://localhost:8080/angajati/login';
+  const CLIENT_LOGIN_ENDPOINT = 'http://localhost:8080/clienti/login';
+
+  const handleLoginButtonClick = async (userType, email, password) => {
+  try {
+    let loginEndpoint = '';
+
+    // Set the endpoint based on the user type
+    switch (userType) {
+      case 'CEO':
+        loginEndpoint = CEO_LOGIN_ENDPOINT;
+        break;
+      case 'TeamLeader':
+        loginEndpoint = TEAM_LEADER_LOGIN_ENDPOINT;
+        break;
+      case 'Angajat':
+        loginEndpoint = ANGAJAT_LOGIN_ENDPOINT;
+        break;
+      case 'Client':
+        loginEndpoint = CLIENT_LOGIN_ENDPOINT;
+        break;
+      default:
+        break;
     }
+    const response = await fetch(loginEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        email: email,
+        password: password,
+      }),
+    });
+
+    const loginResult = await response.json();
+      if(loginResult === true){
+        setShowLogin(false);
+      // Login successful
+      if (userType === 'CEO') {
+        setShowCEO(true);
+      } else if (userType === 'TeamLeader') {
+        setShowTeamLeader(true);
+      } else if (userType === 'Angajat') {
+        setShowAngajat(true);
+      } else if (userType === 'Client') {
+        setShowClient(true);
+      }
+    } else {
+      // Invalid credentials
+      alert('Invalid email or password.');
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    alert('Error during login.');
+  }
     setShowNewUser(false);
     setShowInfo(false);
      //CEO

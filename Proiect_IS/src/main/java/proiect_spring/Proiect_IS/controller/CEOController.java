@@ -203,12 +203,9 @@ public class CEOController {
 
     @PostMapping("/login")
     @Operation(summary = "Endpoint pentru login CEO")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        if (ceoService.login(email, password)) {
-            return ResponseEntity.ok("Login successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
+    public Boolean login(@RequestParam String email, @RequestParam String password) {
+        System.out.println("Received login request with email: " + email + " and password: " + password);
+        return ceoService.login(email, password);
     }
 
     @DeleteMapping("/{id}")

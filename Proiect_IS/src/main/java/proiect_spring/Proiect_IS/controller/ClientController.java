@@ -65,12 +65,8 @@ public class ClientController {
 
     @PostMapping("/login")
     @Operation(summary = "Endpoint pentru login Client")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        if (clientService.login(email, password)) {
-            return ResponseEntity.ok("Login successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
+    public Boolean login(@RequestParam String email, @RequestParam String password) {
+        return clientService.login(email, password);
     }
 
     @DeleteMapping("/{id}")

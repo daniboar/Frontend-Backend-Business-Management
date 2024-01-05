@@ -88,12 +88,8 @@ public class TeamLeaderController {
 
     @PostMapping("/login")
     @Operation(summary = "Endpoint pentru login TeamLeader")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
-        if (teamLeaderService.login(email, password)) {
-            return ResponseEntity.ok("Login successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
+    public Boolean login(@RequestParam String email, @RequestParam String password) {
+        return teamLeaderService.login(email, password);
     }
 
     @PutMapping("/proiect/procentaj/{teamLeaderId}/{proiectId}/{procentaj}")
