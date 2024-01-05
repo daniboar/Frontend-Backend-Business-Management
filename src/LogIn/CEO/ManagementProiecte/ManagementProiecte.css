@@ -13,10 +13,28 @@
   margin-bottom: 20px;
 }
 
-/* Stiluri pentru eticheta textArea */
+/* Stiluri pentru butonul Respingere */
+button.rej {
+  background-color: #f44336; /* Red */
+  margin-bottom: 10px; /* Adăugat pentru a separa butonul de textArea */
+}
+
+/* Stiluri pentru butonul Acceptare */
+button.acc {
+  background-color: #4caf50; /* Green */
+  margin-bottom: 10px; /* Adăugat pentru a separa butonul de textArea */
+}
+
+/* Stiluri pentru eticheta textArea și input-ul ID Cerere */
 label {
   display: block;
   margin-bottom: 10px;
+}
+
+/* Stiluri pentru containerul ID Cerere */
+.id-container {
+  display: flex;
+  align-items: center;
 }
 
 /* Stiluri pentru textArea cu scroll */
@@ -28,17 +46,7 @@ textarea {
   overflow: auto; /* Adaugă scroll dacă textul depășește înălțimea specificată */
 }
 
-
-/* Stiluri pentru butonul Respingere */
-button.rej {
-  background-color: #f44336; /* Red */
-}
-
-/* Stiluri pentru butonul Acceptare */
-button.acc {
-  background-color: #4caf50; /* Green */
-}
-
+/* Stiluri pentru butonul Back */
 .backButton {
   position: absolute;
   bottom: 10px;
@@ -49,3 +57,8 @@ button.acc {
   border: none;
   cursor: pointer;
 }
+
+.id {
+  margin-left: 10px; /* Spațiu între etichetă și input */
+}
+

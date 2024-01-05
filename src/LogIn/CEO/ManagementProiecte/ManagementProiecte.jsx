@@ -7,49 +7,16 @@ const ManagementCereri = ({ onBackClick }) => {
 
   const handleGestioneazaCerere = async (stare) => {
     // Assuming you have access to ceoID, you need to replace 'yourCeoIDValue' with the actual value
-    const ceoID = 'yourCeoIDValue';
 
     if (!numeProiect) {
       alert('Please enter the project request ID before processing.');
       return;
-    }
-
-    try {
-      const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereProiect/${ceoID}/${numeProiect}/${stare}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ comentariu }),
-      });
-
-      if (response.ok) {
-        console.log(`Project request ${stare ? 'approved' : 'rejected'} successfully!`);
-      } else if (response.status === 404) {
-        alert('Project request not found.');
-      } else {
-        alert(`Error ${stare ? 'approving' : 'rejecting'} the project request.`);
-      }
-    } catch (error) {
-      console.error('Error during project request processing:', error);
-      alert(`Error ${stare ? 'approving' : 'rejecting'} the project request.`);
     }
   };
 
   return (
     <div>
       <h1>Management cereri de proiect</h1>
-
-      {/* Al doilea câmp de text cu un text asociat */}
-      <label>
-        ID Cerere: 
-        <input
-          type="text"
-          value={numeProiect}
-          onChange={(e) => setNumeProiect(e.target.value)}
-        />
-      </label>
-      <br />
 
       {/* Câmpul pentru comentarii (textArea) */}
       <label>
@@ -61,12 +28,26 @@ const ManagementCereri = ({ onBackClick }) => {
       </label>
       <br />
 
-      {/* Buton pentru acceptare */}
-      <button onClick={() => handleGestioneazaCerere(true)}>Acceptare</button>
+      {/* Eticheta și input-ul pentru ID Cerere */}
+      <div className="id-container">
+        <label>ID Cerere:</label>
+        <input
+          className="id"
+          type="text"
+          value={numeProiect}
+          onChange={(e) => setNumeProiect(e.target.value)}
+        />
+      </div>
+      <br />
 
       {/* Buton pentru respingere */}
-      <button onClick={() => handleGestioneazaCerere(false)}>Respingere</button>
-      <button onClick={onBackClick}>Back</button>
+      <button className="rej" onClick={() => handleGestioneazaCerere(false)}>Afisare cereri</button>
+
+      {/* Buton pentru acceptare */}
+      <button className="acc" onClick={() => handleGestioneazaCerere(true)}>Acceptare</button>
+
+      {/* Buton Back */}
+      <button className="backButton" onClick={onBackClick}>Back</button>
     </div>
   );
 };
