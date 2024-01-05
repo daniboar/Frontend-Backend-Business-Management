@@ -6,7 +6,7 @@ import './CEO.css';
 const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
 const FormTitle = (props) => <p id="formTitle">{props.title}</p>;
 
-const CEO = ({ onLogoutClick, onVizualizari,onStergeri,onManageriazaProiectele, onAsignareTeamLeader, onModificareSalariu, onPromovari, onVizualizareCerereProiect, onCreareAngajat }) => {
+const CEO = ({ onLogoutClick, onVizualizari,onStergeri,onManageriazaProiectele, onAsignareTeamLeader, onModificareSalariu, onPromovari, onVizualizareCerereProiect, onCreari }) => {
   return (
     <div className="ceo-page">
       <div className="container">
@@ -20,7 +20,7 @@ const CEO = ({ onLogoutClick, onVizualizari,onStergeri,onManageriazaProiectele, 
           <button onClick={onAsignareTeamLeader}>Asignare TeamLeader</button>
           <button onClick={onVizualizari}>Vizualizari pe firma</button>
           <button onClick={onStergeri}>Stergeri pe firma</button>
-          <button onClick={onCreareAngajat}>Adaugare Angajat Nou</button>
+          <button onClick={onCreari}>Creeaza Lucruri Noi</button>
           <button onClick={onLogoutClick}>Logout</button>
         </div>
       </div>

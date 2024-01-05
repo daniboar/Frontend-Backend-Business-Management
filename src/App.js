@@ -25,13 +25,16 @@ import VizualizareA from './LogIn/CEO/Vizualizari/VizualizareAngajati/Vizualizar
 import VizualizareC from './LogIn/CEO/Vizualizari/VizualizareClienti/VizualizareC.jsx';
 import VizualizareT from './LogIn/CEO/Vizualizari/VizualizareTeamLeaderi/VizualizareT.jsx';
 import Promovari from './LogIn/CEO/Promovari/Promovari.jsx'
-import CreareAngajat from './LogIn/CEO/CreareAngajat/CreareAngajat.jsx';
+import CreareAngajat from './LogIn/CEO/Creari/CreareAngajat/CreareAngajat.jsx';
 import Vizualizari from './LogIn/CEO/Vizualizari/Vizualizari.jsx';
 import Stergeri from './LogIn/CEO/Stergeri/Stergeri.jsx';
 import StergereAngajat from './LogIn/CEO/Stergeri/StergereAngajat/StergereAngajat.jsx'
 import StergereTeamLeader from './LogIn/CEO/Stergeri/StergereTeamLeader/StergereTeamLeader.jsx';
 import StergereTeamLeaderEchipa from './LogIn/CEO/Stergeri/StergereTeamLeaderEchipa/StergereTeamLeaderEchipa.jsx';
 import StergereEchipa from './LogIn/CEO/Stergeri/StergereEchipa/StergereEchipa.jsx';
+import VizualizareEchipe from './LogIn/CEO/Vizualizari/VizualizareEchipe/VizualizareEchipe.jsx';
+import Creari from './LogIn/CEO/Creari/Creari.jsx';
+import CreareEchipa from './LogIn/CEO/Creari/CreareEchipa/CreareEchipa.jsx';
 
 //Importuri pentru Client
 //----------------------------------------------------------------
@@ -96,7 +99,9 @@ function App() {
   const [showStergereTeamLeader, setStergereTeamLeader] = useState(false);
   const [showStergereEchipa,setStergereEchipa] = useState(false);
   const [showStergereTeamLeaderEchipa, setStergereTeamLeaderEchipa] = useState(false);
-
+  const [showVizualizareEchipe,setVizualizareEchipe] = useState(false);
+  const [showCreari,setCreari] = useState(false);
+  const [showCreareEchipa,setCreareEchipa] = useState(false);
 
 
   const handleLoginPageButtonClick = () => {
@@ -118,6 +123,9 @@ function App() {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
     //TL
     setGestiuneEchipa(false);
    
@@ -176,6 +184,9 @@ function App() {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -217,6 +228,9 @@ function App() {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -263,6 +277,9 @@ function App() {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -311,6 +328,9 @@ const handleVizualizareCerereProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -356,6 +376,9 @@ const handleManageriazaProiecteleClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -402,6 +425,9 @@ const handlePromovariClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -447,6 +473,9 @@ const handleModificareSalariuClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -492,6 +521,9 @@ const handleAsignareTeamLeaderClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -537,6 +569,9 @@ const handleVizualizareAngajatClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -582,6 +617,9 @@ const handleVizualizareTeamLeaderClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -627,6 +665,9 @@ const handleVizualizareClientiClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -672,6 +713,9 @@ const handleCreareAngajatClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -718,6 +762,9 @@ const handleVizualizariClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -764,6 +811,9 @@ const handleStergeriClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -810,6 +860,9 @@ const handleStergereAngajatClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -856,6 +909,9 @@ const handleStergereEchipaClick = () => {
     setStergereEchipa(true);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -902,6 +958,9 @@ const handleStergereTeamLeaderClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(true);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -948,6 +1007,156 @@ const handleStergereTeamLeaderEchipaClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(true);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
+   //TL
+   setGestiuneEchipa(false);
+  
+   setVizualizareDetaliiProiect(false);
+   setVizualizareDatePersonale(false);
+   setAdaugareMembru(false);
+   setStergereMembru(false);
+   setVizualizareEchipa(false);
+   setProcentajTotal(false);
+   //Angajat
+   setDatePersonaleA(false);
+   setProcentaj(false);
+   setVizProiect(false);
+   setCerereMarire(false);
+   //Client
+   setDatePersonale(false);
+   setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
+   //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+
+const handleVizualizareEchipeClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   setCreareAngajat(false);
+   setVizualizari(false);
+   setStergeri(false);
+   setStergereAngajat(false);
+    setStergereEchipa(false);
+    setStergereTeamLeaderEchipa(false);
+    setStergereTeamLeader(false);
+    setVizualizareEchipe(true);
+    setCreari(false);
+    setCreareEchipa(false);
+   //TL
+   setGestiuneEchipa(false);
+  
+   setVizualizareDetaliiProiect(false);
+   setVizualizareDatePersonale(false);
+   setAdaugareMembru(false);
+   setStergereMembru(false);
+   setVizualizareEchipa(false);
+   setProcentajTotal(false);
+   //Angajat
+   setDatePersonaleA(false);
+   setProcentaj(false);
+   setVizProiect(false);
+   setCerereMarire(false);
+   //Client
+   setDatePersonale(false);
+   setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
+   //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+
+const handleCreariClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   setCreareAngajat(false);
+   setVizualizari(false);
+   setStergeri(false);
+   setStergereAngajat(false);
+    setStergereEchipa(false);
+    setStergereTeamLeaderEchipa(false);
+    setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(true);
+    setCreareEchipa(false);
+   //TL
+   setGestiuneEchipa(false);
+  
+   setVizualizareDetaliiProiect(false);
+   setVizualizareDatePersonale(false);
+   setAdaugareMembru(false);
+   setStergereMembru(false);
+   setVizualizareEchipa(false);
+   setProcentajTotal(false);
+   //Angajat
+   setDatePersonaleA(false);
+   setProcentaj(false);
+   setVizProiect(false);
+   setCerereMarire(false);
+   //Client
+   setDatePersonale(false);
+   setVerificareProiecte(false);
+   setCerereProiect(false);
+   setCreareProiectForm(false);
+   //
+   setShowTeamLeader(false);
+   setShowAngajat(false);
+   setShowClient(false);
+   setShowInfo(false);
+   setShowNewUser(false);
+};
+
+const handleCreareEchipaClick = () => {
+  setShowLogin(false);
+   //CEO
+   setShowCEO(false);
+   setVizualizareCerereProiect(false);
+   setManageriazaProiectele(false);
+   setShowPromovari(false);
+   setModificareSalariu(false);
+   setAsignareTeamLeader(false);
+   setVizualizareAngajat(false);
+   setVizualizareTeamLeader(false);
+   setVizualizareClienti(false);
+   setCreareAngajat(false);
+   setVizualizari(false);
+   setStergeri(false);
+   setStergereAngajat(false);
+    setStergereEchipa(false);
+    setStergereTeamLeaderEchipa(false);
+    setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(true);
    //TL
    setGestiuneEchipa(false);
   
@@ -995,6 +1204,9 @@ const handleGestiuneEchipaClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(true);
   
@@ -1042,6 +1254,9 @@ const handleVizualizareDetaliiProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -1087,6 +1302,9 @@ const handleVizualizareDatePersonaleClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
    setGestiuneEchipa(false);
   
@@ -1132,6 +1350,9 @@ const handleAdaugareMembruClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1181,6 +1402,9 @@ const handleStergereMembruClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1226,6 +1450,9 @@ const handleVizualizareEchipaClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1272,6 +1499,9 @@ const handleModificareProcentajTotal = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1319,6 +1549,9 @@ const handleVizualizareDatePersonaleAClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1364,6 +1597,9 @@ const handleProcentajProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1409,6 +1645,9 @@ const handleVizualizareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1456,6 +1695,9 @@ const handleVerificareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1501,6 +1743,9 @@ const handleVizualizareDatePersonaleCClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1547,6 +1792,9 @@ const handleCerereProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1593,6 +1841,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
    //TL
   setGestiuneEchipa(false);
  
@@ -1640,6 +1891,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1685,6 +1939,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1731,6 +1988,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1776,6 +2036,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(true);
    
@@ -1821,6 +2084,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1866,6 +2132,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
      //TL
     setGestiuneEchipa(false);
    
@@ -1912,6 +2181,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
        //TL
       setGestiuneEchipa(false);
      
@@ -1958,6 +2230,9 @@ const handleCreareProiectClick = () => {
     setStergereEchipa(false);
     setStergereTeamLeaderEchipa(false);
     setStergereTeamLeader(false);
+    setVizualizareEchipe(false);
+    setCreari(false);
+    setCreareEchipa(false);
        //TL
       setGestiuneEchipa(false);
      
@@ -1995,6 +2270,7 @@ const handleCreareProiectClick = () => {
 //CEO
       ) : showCEO ? (
         <CEO
+          onCreari = {handleCreariClick}
           onStergeri = {handleStergeriClick}
           onVizualizari={handleVizualizariClick}
           onVizualizareCerereProiect={handleManageriazaProiecteleClick}
@@ -2024,10 +2300,20 @@ const handleCreareProiectClick = () => {
         <ManagementCereri
         onBackClick={handleCEOBackButtonClick}
       />
-      ) : showCreareAngajat ? ( 
-          <CreareAngajat 
-            onBackClick={handleCEOBackButtonClick}
+      ) : showCreari ? (
+        <Creari
+          onCreareAngajat={handleCreareAngajatClick}
+          onCreareEchipa={handleCreareEchipaClick}
+          onBackClick={handleCEOBackButtonClick}
           />
+      ) : showCreareAngajat ? (
+        <CreareAngajat
+          onBackClick={handleCreariClick}
+        />
+      ) : showCreareEchipa ? (
+        <CreareEchipa
+          onBackClick={handleCreariClick}
+        />
           ) : showStergeri ? (
             <Stergeri
             onStergereAngajat={handleStergereAngajatClick}
@@ -2058,6 +2344,7 @@ const handleCreareProiectClick = () => {
             onVizualizareAngajat={handleVizualizareAngajatClick}
             onVizualizareTeamLeader={handleVizualizareTeamLeaderClick}
             onVizualizareClienti={handleVizualizareClientiClick}
+            onVizualizareEchipe={handleVizualizareEchipeClick}
             onBackClick={handleCEOBackButtonClick}
         />
         
@@ -2071,6 +2358,10 @@ const handleCreareProiectClick = () => {
           />
         ) : showVizualizareClienti ? (
           <VizualizareC
+            onBackClick={handleVizualizariClick}
+          />
+        ) : showVizualizareEchipe ? (
+          <VizualizareEchipe 
             onBackClick={handleVizualizariClick}
           />
 //////////////////////////////////////////////////////////////////////////////////
@@ -2091,7 +2382,7 @@ const handleCreareProiectClick = () => {
             />
             ) : showAdaugareMembru ? (
               <AdaugareMembru
-              onBackClick={handleTLGestiuneBackButtonClick}
+              onBackClick={handleGestiuneEchipaClick}
             />
             ) : showStergereMembru ? (
               <StergereMembru
