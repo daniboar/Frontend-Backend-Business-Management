@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './CreareProiect.css';
 
 const CreareProiectForm = ({ onBackClick }) => {
-  const [projectName, setProjectName] = useState('');
-  const [idClient, setIdClient] = useState('');
+  const [nume_proiect, setProjectName] = useState('');
+  const [client_id, setIdClient] = useState('');
   const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
 
   const handleSubmit = async () => {
-    if (!projectName || !idClient) {
+    if (!nume_proiect || !client_id) {
       alert('Please fill in all fields before submitting.');
       return;
     }
@@ -18,7 +18,7 @@ const CreareProiectForm = ({ onBackClick }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ projectName, idClient }),
+        body: JSON.stringify({ numeProiect: nume_proiect, clientId: client_id }),
       });
 
       if (response.ok) {
@@ -43,7 +43,7 @@ const CreareProiectForm = ({ onBackClick }) => {
             placeholder="Enter the project's name"
             type="text"
             required
-            value={projectName}
+            value={nume_proiect}
             onChange={(e) => setProjectName(e.target.value)}
           />
           <FormInput
@@ -51,7 +51,7 @@ const CreareProiectForm = ({ onBackClick }) => {
             placeholder="Enter your ID"
             type="text"
             required
-            value={idClient}
+            value={client_id}
             onChange={(e) => setIdClient(e.target.value)}
           />
         </div>
@@ -61,7 +61,7 @@ const CreareProiectForm = ({ onBackClick }) => {
           </button>
           {isSubmissionSuccessful && (
             <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-              Cererea dvs. pentru proiect a fost trimisă. Veți primi un răspuns printr-un email în cel mai scurt timp posibil.
+              Proiectul a fost creat. Veți primi un răspuns printr-un email în cel mai scurt timp posibil.
             </p>
           )}
         </div>

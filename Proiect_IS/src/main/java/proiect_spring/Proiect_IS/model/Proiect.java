@@ -24,9 +24,8 @@ public class Proiect {
     @Column
     private String stareProiect;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @Column(name = "client_id")
+    private int clientId;
 
     @OneToMany(mappedBy = "proiectAsignat", cascade = CascadeType.ALL)
     private List<Angajat> angajati = new ArrayList<>();
@@ -53,13 +52,6 @@ public class Proiect {
         this.numeProiect = numeProiect;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
 
     public List<CerereProiect> getCereriProiect() {
         return cereriProiect;
@@ -85,10 +77,6 @@ public class Proiect {
         this.cereriProiect = cereriProiect;
     }
 
-    public int getClientId() {
-        return client != null ? client.getId() : 0;
-    }
-
     public List<Angajat> getAngajati() {
         return angajati;
     }
@@ -103,6 +91,14 @@ public class Proiect {
 
     public void setEchipe(List<Echipa> echipe) {
         this.echipe = echipe;
+    }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
     }
 
 }

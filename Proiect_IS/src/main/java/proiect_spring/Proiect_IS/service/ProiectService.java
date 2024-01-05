@@ -47,9 +47,8 @@ public class ProiectService {
     public Proiect saveProject(Proiect proiect) {
         proiect.setStareProiect("nefinalizat");
         proiect.setProcentaj(0);
-        Client client = clientRepository.findById(proiect.getClientId()).orElse(null);
-            proiect.setClient(client);
-            return proiectRepository.save(proiect);
+        proiect.setClientId(proiect.getClientId());
+        return proiectRepository.save(proiect);
     }
 
     public void deleteProject(int id) {
