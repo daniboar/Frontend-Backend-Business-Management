@@ -49,7 +49,7 @@ const ManagementCereriMarire = ({ onBackClick }) => {
 
         if (response.ok) {
           // Successfully accepted the project request
-          alert(`Project request ${numeProiect} has been accepted.`);
+          alert(`Marire request ${numeProiect} has been accepted.`);
           // Refresh the list of project requests
           fetchAllCereriProiect();
         } else {
@@ -70,7 +70,7 @@ const ManagementCereriMarire = ({ onBackClick }) => {
 
       {/* Câmpul pentru comentarii (textArea) */}
       <label>
-        Cereri de proiecte:
+        Cereri de marire:
         <textarea
           value={comentariu}
           onChange={(e) => setComentariu(e.target.value)}
