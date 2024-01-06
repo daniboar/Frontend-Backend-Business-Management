@@ -42,7 +42,6 @@ const ManagementCereri = ({ onBackClick }) => {
       }
 
       try {
-        // Assuming you have access to ceoID, replace 'yourCeoIDValue' with the actual value
         const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereProiect/${numeProiect}/${stare}`, {
           method: 'POST',
         });
@@ -90,8 +89,8 @@ const ManagementCereri = ({ onBackClick }) => {
       </div>
       <br />
 
-      {/* Buton pentru afișare cereri */}
-      <button onClick={() => fetchAllCereriProiect}>Afisare cereri</button>
+      {/* Buton pentru afișare cereri
+      <button onClick={() => fetchAllCereriProiect}>Afisare cereri</button> */}
 
       {/* Buton pentru acceptare */}
       <button className="acc" onClick={() => handleGestioneazaCerere(true)}>Acceptare</button>

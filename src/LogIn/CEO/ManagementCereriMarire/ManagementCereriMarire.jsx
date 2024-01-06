@@ -23,7 +23,7 @@ const ManagementCereriMarire = ({ onBackClick }) => {
   .then(response => response.json())
   .then(data => {
     // Selectați doar id, nume și prenume și concatenați-le pe un singur rând
-    const angajatiAtributeReduse = data.map(cerere => `Id-ul cererii: ${cerere.id}, Starea cererii: ${cerere.aprobata}`).join('\n');
+    const angajatiAtributeReduse = data.map(cerere => `Id-ul cererii: ${cerere.id}, Id-ul angajatului: ${cerere.angajatId}, Starea cererii: ${cerere.cerereAprobata}`).join('\n');
 
     // Actualizați state-ul pentru afișare
     setComentariu(angajatiAtributeReduse);
@@ -42,18 +42,17 @@ const ManagementCereriMarire = ({ onBackClick }) => {
       }
 
       try {
-        // Assuming you have access to ceoID, replace 'yourCeoIDValue' with the actual value
-        const response = await fetch(`http://localhost:8080/ceos/gestioneazaCerereMarire/${numeProiect}/${stare}`, {
+        const response = await fetch(`http://localhost:8080/ceos/schimbaStareCerereMarire/${numeProiect}/${stare}`, {
           method: 'POST',
         });
 
         if (response.ok) {
           // Successfully accepted the project request
-          alert(`Marire request ${numeProiect} has been accepted.`);
+          alert(`Cerearea de marire a angajatului cu id-ul ${numeProiect} a fost acceptata.`);
           // Refresh the list of project requests
           fetchAllCereriProiect();
         } else {
-          console.error('Failed to accept cerere de marire request.');
+          console.error('Nu s-a putut accepta cererea de marire.');
         }
       } catch (error) {
         console.error('Error during accept:', error);
@@ -80,7 +79,7 @@ const ManagementCereriMarire = ({ onBackClick }) => {
 
       {/* Eticheta și input-ul pentru ID Cerere */}
       <div className="id-container">
-        <label>ID Cerere:</label>
+        <label>ID Angajat:</label>
         <input
           className="id"
           type="text"
@@ -90,8 +89,8 @@ const ManagementCereriMarire = ({ onBackClick }) => {
       </div>
       <br />
 
-      {/* Buton pentru afișare cereri */}
-      <button onClick={() => fetchAllCereriProiect}>Afisare cereri</button>
+      {/* Buton pentru afișare cereri
+      <button onClick={() => fetchAllCereriProiect}>Afisare cereri</button> */}
 
       {/* Buton pentru acceptare */}
       <button className="acc" onClick={() => handleGestioneazaCerere(true)}>Acceptare</button>

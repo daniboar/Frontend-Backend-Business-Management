@@ -20,7 +20,7 @@ const SchimbaSalariu = ({ onBackClick }) => {
         // Construct the endpoint based on the selected role
         let endpoint = '';
         if (selectedRole === 'Angajat') {
-          endpoint = `http://localhost:8080/ceos/schimba-salariu/angajat/${ceoId}/${angajatId}/${salariuNou}`;
+          endpoint = `http://localhost:8080/ceos/gestioneazaCerereMarire/${ceoId}/${angajatId}/${salariuNou}`;
         } else if (selectedRole === 'TeamLeader') {
           endpoint = `http://localhost:8080/ceos/schimba-salariu/teamleader/${ceoId}/${angajatId}/${salariuNou}`;
         } else {
@@ -107,6 +107,7 @@ const SchimbaSalariu = ({ onBackClick }) => {
             Schimbare realizata cu succes.
           </p>
         )}
+
       </div>
 
       <button onClick={onBackClick}>Back</button>

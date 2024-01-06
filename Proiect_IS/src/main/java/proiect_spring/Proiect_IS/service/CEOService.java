@@ -103,9 +103,7 @@ public class CEOService {
     }
 
 
-    public void schimbaStareCerereMarireAngajat(int ceoId, int angajatId, boolean nouaStare) {
-        CEO ceo = ceoRepository.findById(ceoId).orElse(null);
-        if (ceo != null) {
+    public void schimbaStareCerereMarireAngajat(int angajatId, boolean nouaStare) {
             // Verificăm dacă angajatul există
             Angajat angajat = angajatRepository.findById(angajatId).orElse(null);
             if (angajat != null) {
@@ -119,8 +117,6 @@ public class CEOService {
                     cerereMarireRepository.save(cerereMarire);
                 }
             }
-
-        }
     }
 
     public void adaugaTeamLeaderInEchipa(int ceoId, int echipaId, int teamLeaderId) {

@@ -87,7 +87,7 @@ const FormInput = (props) => (
 
 const BackButton = ({ onBackClick }) => (
   <div id="button" className="row">
-    <button onClick={onBackClick}>Back to Homepage</button>
+    <button onClick={onBackClick}>Back</button>
   </div>
 );
 

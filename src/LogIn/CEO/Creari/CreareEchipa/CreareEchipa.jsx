@@ -11,7 +11,25 @@ const CreareEchipa = ({ onBackClick }) => {
       alert('Please fill in all fields before creating an account.');
       return;
     }
-    setIsSubmissionSuccessful(true);
+    try {
+      const response = await fetch('http://localhost:8080/ceos/echipa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ proiect_id: proiectID, team_leader_id: TLID }),
+      });
+
+      if (response.ok) {
+        // Setează starea pentru afișarea mesajului de succes
+        setIsSubmissionSuccessful(true);
+      } else {
+        alert('Error submitting team. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting team:', error);
+      alert('Error submitting team. Please try again.');
+    }
   };
   
 

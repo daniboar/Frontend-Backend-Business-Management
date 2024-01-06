@@ -189,10 +189,10 @@ public class CEOController {
         echipaService.asignareAngajatEchipa(echipaID, angajatID);
     }
 
-    @PostMapping("/schimbaStareCerereMarire/{ceoID}/{angajatID}/{nouaStare}")
+    @PostMapping("/schimbaStareCerereMarire/{angajatID}/{nouaStare}")
     @Operation(summary = "Endpoint care imi schimba starea cererii angajatului.")
-    public void schimbaStareCerereMarire(@PathVariable int ceoID, @PathVariable int angajatID, @PathVariable boolean nouaStare) {
-        ceoService.schimbaStareCerereMarireAngajat(ceoID, angajatID, nouaStare);
+    public void schimbaStareCerereMarire(@PathVariable int angajatID, @PathVariable boolean nouaStare) {
+        ceoService.schimbaStareCerereMarireAngajat(angajatID, nouaStare);
     }
 
     @PostMapping("/promoveaza/{ceoID}/{angajatID}")
