@@ -36,11 +36,11 @@ const CreareProiectForm = ({ onBackClick }) => {
   return (
     <div id="newUserForm">
       <div className="form-container">
-        <FormHeader title="Create a new team" />
+        <FormHeader title="Create a new project" />
         <div className="form-fields">
           <FormInput
-            description="Project ID"
-            placeholder="Enter project's ID"
+            description="Nume Proiect"
+            placeholder="Enter project's name"
             type="text"
             required
             value={nume_proiect}
@@ -48,8 +48,8 @@ const CreareProiectForm = ({ onBackClick }) => {
           />
 
           <FormInput
-            description="TeamLeader ID"
-            placeholder="Enter TeamLeader's ID"
+            description="ID Client"
+            placeholder="Enter your ID"
             type="text"
             required
             value={client_id}
