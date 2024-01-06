@@ -2609,7 +2609,7 @@ const handleCreareProiectClick = () => {
       ) : showNewUser ? (
         <NewUser onBackClick={handleBackButtonClick} />
       ) : showInfo ? (
-        <CreareProiectForm onBackClick={handleBackButtonClick} />
+        <AboutUs onBackClick={handleBackButtonClick} />
       ) : (
         <Welcome
           onLoginClick={handleLoginPageButtonClick}
