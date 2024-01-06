@@ -34,34 +34,36 @@ const CreareProiectForm = ({ onBackClick }) => {
   };
 
   return (
-    <div id="cerereProiectForm">
+    <div id="newUserForm">
       <div className="form-container">
-        <FormHeader title="Creare Proiect" />
+        <FormHeader title="Create a new team" />
         <div className="form-fields">
           <FormInput
-            description="Project Name"
-            placeholder="Enter the project's name"
+            description="Project ID"
+            placeholder="Enter project's ID"
             type="text"
             required
             value={nume_proiect}
             onChange={(e) => setProjectName(e.target.value)}
           />
+
           <FormInput
-            description="Client ID"
-            placeholder="Enter your ID"
+            description="TeamLeader ID"
+            placeholder="Enter TeamLeader's ID"
             type="text"
             required
             value={client_id}
             onChange={(e) => setIdClient(e.target.value)}
           />
+
         </div>
         <div className="form-buttons">
           <button id="submitBtn" type="submit" onClick={handleSubmit}>
-            Submit Project
+            Creare Proiect
           </button>
           {isSubmissionSuccessful && (
             <p style={{ color: 'green', marginTop: '8px', fontSize: '20px' }}>
-              Proiectul a fost creat. Veți primi un răspuns printr-un email în cel mai scurt timp posibil.
+              Proiectul a fost creat cu succes.
             </p>
           )}
         </div>
@@ -87,7 +89,7 @@ const FormInput = (props) => (
 
 const BackButton = ({ onBackClick }) => (
   <div id="button" className="row">
-    <button onClick={onBackClick}>Back to Homepage</button>
+    <button onClick={onBackClick}>Back</button>
   </div>
 );
 
