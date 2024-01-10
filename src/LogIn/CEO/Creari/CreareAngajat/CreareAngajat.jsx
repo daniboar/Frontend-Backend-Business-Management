@@ -20,7 +20,7 @@ const CreareAngajat = ({ onBackClick }) => {
       nume: lastName,
       prenume: firstName,
       email: email,
-      password: password,
+      parola: password,
       salariu: salariu,
       procentaj: procentaj
     };
@@ -89,7 +89,7 @@ const CreareAngajat = ({ onBackClick }) => {
         <FormInput
             description="Salariu"
             placeholder="Enter their salary"
-            type="salariu"
+            type="number"
             required
             value={salariu}
             onChange={(e) => setSalariu(e.target.value)}
@@ -98,7 +98,7 @@ const CreareAngajat = ({ onBackClick }) => {
         <FormInput
             description="Procentaj"
             placeholder="Type 0"
-            type="procentaj"
+            type="number"
             required
             value={procentaj}
             onChange={(e) => setProcentaj(e.target.value)}
