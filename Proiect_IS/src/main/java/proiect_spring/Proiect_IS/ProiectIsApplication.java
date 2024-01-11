@@ -14,4 +14,4 @@ public class ProiectIsApplication {
 	}
 }
 
-// http://localhost:8080/swagger-ui/index.html#/ //  testare SWAGGER doc
+// http://localhost:8080/swagger-ui/index.html#/ // 
