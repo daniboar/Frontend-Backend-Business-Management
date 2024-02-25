@@ -1,4 +1,4 @@
-  In this project, we were required to implement a system that utilizes both the frontend and the backend aspects. On the backend side, we used Java Spring Boot and MySQL for the database, while on the frontend, we employed React. The project is fundamentally about managing a business that includes employees, clients with projects, team leaders who oversee the teams, and a CEO who manages the entire company.
+In this project, my responsibility was to develop a system integrating both frontend and backend components. Utilizing Java Spring Boot and MySQL, I constructed a solid backend framework, while employing React for the frontend to ensure a responsive and engaging user interface. The core objective of this project was to facilitate efficient management within a business context, incorporating modules for employees, clients and their projects, team leaders responsible for guiding teams, and a CEO who oversees the entire organizational operations.
 
 # For accessing Swagger documentation:
 
